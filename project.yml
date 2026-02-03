@@ -1,0 +1,93 @@
+name: HomekitControl
+options:
+  bundleIdPrefix: com.jordankoch
+  deploymentTarget:
+    iOS: "17.0"
+    tvOS: "17.0"
+    macOS: "14.0"
+  xcodeVersion: "16.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    ENABLE_USER_SCRIPT_SANDBOXING: false
+    GENERATE_INFOPLIST_FILE: true
+    DEVELOPMENT_TEAM: QRRCB8HB3W
+    CODE_SIGN_STYLE: Automatic
+
+targets:
+  HomekitControl-iOS:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - Shared
+      - iOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jordankoch.HomekitControl
+        PRODUCT_NAME: HomekitControl
+        INFOPLIST_KEY_UILaunchScreen_Generation: true
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
+        INFOPLIST_KEY_NSHomeKitUsageDescription: "HomekitControl needs HomeKit access to control your smart home devices."
+        INFOPLIST_KEY_NSLocalNetworkUsageDescription: "HomekitControl needs local network access to discover smart home devices."
+        CODE_SIGN_ENTITLEMENTS: Resources/iOS.entitlements
+
+  HomekitControl-tvOS:
+    type: application
+    platform: tvOS
+    deploymentTarget: "17.0"
+    sources:
+      - Shared
+      - tvOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jordankoch.HomekitControl
+        PRODUCT_NAME: HomekitControl
+        INFOPLIST_KEY_UILaunchScreen_Generation: true
+        INFOPLIST_KEY_NSHomeKitUsageDescription: "HomekitControl needs HomeKit access to control your smart home devices."
+        INFOPLIST_KEY_NSLocalNetworkUsageDescription: "HomekitControl needs local network access to discover smart home devices."
+        CODE_SIGN_ENTITLEMENTS: Resources/tvOS.entitlements
+
+  HomekitControl-macOS:
+    type: application
+    platform: macOS
+    deploymentTarget: "14.0"
+    sources:
+      - Shared
+      - macOS
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.jordankoch.HomekitControl-macOS
+        PRODUCT_NAME: HomekitControl
+        INFOPLIST_KEY_NSLocalNetworkUsageDescription: "HomekitControl needs local network access to discover smart home devices."
+        CODE_SIGN_ENTITLEMENTS: Resources/macOS.entitlements
+
+schemes:
+  HomekitControl-iOS:
+    build:
+      targets:
+        HomekitControl-iOS: all
+    run:
+      config: Debug
+    archive:
+      config: Release
+
+  HomekitControl-tvOS:
+    build:
+      targets:
+        HomekitControl-tvOS: all
+    run:
+      config: Debug
+    archive:
+      config: Release
+
+  HomekitControl-macOS:
+    build:
+      targets:
+        HomekitControl-macOS: all
+    run:
+      config: Debug
+    archive:
+      config: Release

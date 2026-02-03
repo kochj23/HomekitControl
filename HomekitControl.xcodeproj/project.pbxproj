@@ -1,0 +1,754 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10839009CBA15C569A656195 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E2EC4980F86091E1DCB23E /* GlassCard.swift */; };
+		11AB6A410E6916CE33DD7C3F /* HomekitControl_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5AA038592F039C4E1661E9 /* HomekitControl_iOS.swift */; };
+		15604010CB2EDD260C888D36 /* UnifiedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DC03345637CB8E210A52F /* UnifiedScene.swift */; };
+		19C2B721C2E1391E4F4346F1 /* SceneAnalyzerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DF7982DF96652C50A2049 /* SceneAnalyzerService.swift */; };
+		1E918CC8BD5A4C3FE0B007DE /* UnifiedDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249E44D5A998074E51A7EE /* UnifiedDevice.swift */; };
+		20EC25C8B7736BCC825257EF /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286FFA143BADE2FD65D97CB7 /* AIService.swift */; };
+		210FF9EB283671E6AD78E1E5 /* Manufacturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503841297ADFFFAED238E4F /* Manufacturer.swift */; };
+		2AB9688CA8CC4555D9277F4C /* HealthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE12ABFDF5025381EBCDE57 /* HealthStatus.swift */; };
+		2CBBF1DEF8B128BCDA5016F3 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E2EC4980F86091E1DCB23E /* GlassCard.swift */; };
+		2D62037EA2DC09BFA80C9A54 /* iOS_AIAssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C6D93B314DE6725B16D9E /* iOS_AIAssistantView.swift */; };
+		2DE99F10B3057BF4DF2FA838 /* SetupCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF615C48CE28711A7F4055F /* SetupCode.swift */; };
+		33F86C3B3DC901FF8E5C3FF2 /* HealthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE12ABFDF5025381EBCDE57 /* HealthStatus.swift */; };
+		3422867174297D423E12851C /* DeviceHealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF79BEC3849F722BEE477BC /* DeviceHealthService.swift */; };
+		377E91A9F6EC40257AD4A2E0 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E2EC4980F86091E1DCB23E /* GlassCard.swift */; };
+		3A5588C7492AFD71939C9B43 /* HealthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE12ABFDF5025381EBCDE57 /* HealthStatus.swift */; };
+		40D6E9DD6E6A8BE279924739 /* iOS_DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA887658AF38BC68B60B57B /* iOS_DevicesView.swift */; };
+		4584A85DBC8C658AFF525712 /* CodeVaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6486CB8485D8FAABA6496B1 /* CodeVaultService.swift */; };
+		4799FF0430FD61A706BC2803 /* DeviceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE664AB0BE0E305B651B4CE /* DeviceCategory.swift */; };
+		4FA19EA76B8565CF26CE48DE /* ModernColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5E2688C27041778D4B6A27 /* ModernColors.swift */; };
+		536B20A7FE2F6C23108519F5 /* HomekitControl_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CCDC5704BA0248F36793EE /* HomekitControl_macOS.swift */; };
+		54052F74A307D6D1E81A1E2D /* NetworkDiscoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0926DC14D338FC4C21DFAA /* NetworkDiscoveryService.swift */; };
+		588D807933F96CD7BBD2176B /* macOS_ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6AFC1460856E3CDC684E44 /* macOS_ContentView.swift */; };
+		58B4B65A694F6309A880F058 /* DiscoveredDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60072A353B200FD41A9AED3 /* DiscoveredDevice.swift */; };
+		5A283133EF496D130C4B260C /* ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8FC35168BA43672142476 /* ExportService.swift */; };
+		5DAC16FC106780988D4AFABD /* CircularGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF0F1979F3881CAE2977BD /* CircularGauge.swift */; };
+		5ED5B0299915D24C3358ED95 /* Manufacturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503841297ADFFFAED238E4F /* Manufacturer.swift */; };
+		644678C3B361C83932C434A7 /* DeviceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55145EDC6807EEEE7EEF2BBA /* DeviceProtocol.swift */; };
+		6515458E028E691B454E11C1 /* SceneAnalyzerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DF7982DF96652C50A2049 /* SceneAnalyzerService.swift */; };
+		65FB6B897053508878504CB5 /* DiscoveredDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60072A353B200FD41A9AED3 /* DiscoveredDevice.swift */; };
+		6803E3FA4F3822A01E6F77A3 /* CodeVaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6486CB8485D8FAABA6496B1 /* CodeVaultService.swift */; };
+		69E46D0DBEDCD5CC4F6D90FB /* PlatformCapabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1BA78F6FC9CFE0F529BC0 /* PlatformCapabilities.swift */; };
+		6B0ADBFD926F38B9AE351B86 /* tvOS_ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62B5272BB4F5A51878F6C08 /* tvOS_ContentView.swift */; };
+		6E662CE8EC84D33ABC040FED /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286FFA143BADE2FD65D97CB7 /* AIService.swift */; };
+		6E77DA49BB89AF3031960D15 /* HomekitControl_tvOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01813897B6CE969CBE3AF7AC /* HomekitControl_tvOS.swift */; };
+		6FACD1CCC88B3BD7816F54ED /* ModernColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5E2688C27041778D4B6A27 /* ModernColors.swift */; };
+		79126B45E126E4CF1AB6CB47 /* UnifiedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DC03345637CB8E210A52F /* UnifiedScene.swift */; };
+		8C8CE2565F22AA0784A8795F /* CircularGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF0F1979F3881CAE2977BD /* CircularGauge.swift */; };
+		8EFB08889FFB957281561B12 /* DeviceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE664AB0BE0E305B651B4CE /* DeviceCategory.swift */; };
+		90247E4E965D3E941D272435 /* iOS_ScenesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE23DBB69058A92DAC75DE /* iOS_ScenesView.swift */; };
+		91CC431D7032EFF029847819 /* Manufacturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503841297ADFFFAED238E4F /* Manufacturer.swift */; };
+		9BC9E9CD30A50DB4FBB94E40 /* ModernColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5E2688C27041778D4B6A27 /* ModernColors.swift */; };
+		9BE48AAF110E040C36BE63CD /* UnifiedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DC03345637CB8E210A52F /* UnifiedScene.swift */; };
+		9E18481C33A9BEDB02634794 /* DeviceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE664AB0BE0E305B651B4CE /* DeviceCategory.swift */; };
+		A01B253FFA9BCE1C37CF3B2D /* NetworkDiscoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0926DC14D338FC4C21DFAA /* NetworkDiscoveryService.swift */; };
+		A13061108CB49A890F936883 /* ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8FC35168BA43672142476 /* ExportService.swift */; };
+		A6423A78B1BE6FCEA16C6BA4 /* DeviceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55145EDC6807EEEE7EEF2BBA /* DeviceProtocol.swift */; };
+		AE13F8C646150DB06C48C0EF /* CircularGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF0F1979F3881CAE2977BD /* CircularGauge.swift */; };
+		AED55D48AF8B18C4C188522D /* GlassmorphicBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA25866EC0428B78E7EDE89 /* GlassmorphicBackground.swift */; };
+		B30AB1C864F19196DE4030F2 /* SetupCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF615C48CE28711A7F4055F /* SetupCode.swift */; };
+		B3DDC00896071C29F3019091 /* PlatformCapabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1BA78F6FC9CFE0F529BC0 /* PlatformCapabilities.swift */; };
+		B4CCFD37DA1EA9062A669BE6 /* GlassmorphicBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA25866EC0428B78E7EDE89 /* GlassmorphicBackground.swift */; };
+		B4FB1D81F5CD9558788E0AE9 /* DeviceHealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF79BEC3849F722BEE477BC /* DeviceHealthService.swift */; };
+		B655E28A643E6450D02B9416 /* NetworkDiscoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0926DC14D338FC4C21DFAA /* NetworkDiscoveryService.swift */; };
+		BDCAB8F1F4C2C4C7004BF92C /* CodeVaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6486CB8485D8FAABA6496B1 /* CodeVaultService.swift */; };
+		C2C566991516AE945CB5975F /* UnifiedDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249E44D5A998074E51A7EE /* UnifiedDevice.swift */; };
+		CA661C9AF114C8728032C1AB /* iOS_NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA430F62847D14861DC769C7 /* iOS_NetworkView.swift */; };
+		CB846EC3C43490743E7C8F8C /* ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8FC35168BA43672142476 /* ExportService.swift */; };
+		D0D6A94F8A340627F9F696A2 /* HomeKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615441A8A3D06D6AF29CA30 /* HomeKitService.swift */; };
+		D5C563BC42BEF23A6DC20985 /* GlassmorphicBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA25866EC0428B78E7EDE89 /* GlassmorphicBackground.swift */; };
+		D88615101DA772880538348F /* DeviceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55145EDC6807EEEE7EEF2BBA /* DeviceProtocol.swift */; };
+		DB3B538D57EEB89667AD4D8C /* DeviceHealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF79BEC3849F722BEE477BC /* DeviceHealthService.swift */; };
+		E06A2EDAA4FBEC0634ED9ADC /* PlatformCapabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1BA78F6FC9CFE0F529BC0 /* PlatformCapabilities.swift */; };
+		E7E4C4D1EBE8DB9C3ADDF381 /* iOS_SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B1AC50C5A96EB35BAA4BF7 /* iOS_SettingsView.swift */; };
+		EC3A4AC73579011A6F393E23 /* SetupCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF615C48CE28711A7F4055F /* SetupCode.swift */; };
+		ECFF67545B87F9381B9FD2C9 /* iOS_ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F833439D6E1B9A4486C93981 /* iOS_ContentView.swift */; };
+		F50C1203DD4D521A9BCEA33B /* UnifiedDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249E44D5A998074E51A7EE /* UnifiedDevice.swift */; };
+		F6D2BDBE761E58BDA331E1A1 /* HomeKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615441A8A3D06D6AF29CA30 /* HomeKitService.swift */; };
+		F877C8E660F76BBAD892AC9A /* DiscoveredDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60072A353B200FD41A9AED3 /* DiscoveredDevice.swift */; };
+		FC2004E864A2F0824EC55614 /* SceneAnalyzerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DF7982DF96652C50A2049 /* SceneAnalyzerService.swift */; };
+		FDD42E923BB55AA798C19A4D /* HomeKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615441A8A3D06D6AF29CA30 /* HomeKitService.swift */; };
+		FE977A6CEF9C2F1B5B0EE5FB /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286FFA143BADE2FD65D97CB7 /* AIService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		01813897B6CE969CBE3AF7AC /* HomekitControl_tvOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomekitControl_tvOS.swift; sourceTree = "<group>"; };
+		01DE23DBB69058A92DAC75DE /* iOS_ScenesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ScenesView.swift; sourceTree = "<group>"; };
+		031DF7982DF96652C50A2049 /* SceneAnalyzerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneAnalyzerService.swift; sourceTree = "<group>"; };
+		04FF0F1979F3881CAE2977BD /* CircularGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularGauge.swift; sourceTree = "<group>"; };
+		286FFA143BADE2FD65D97CB7 /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
+		3BA887658AF38BC68B60B57B /* iOS_DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_DevicesView.swift; sourceTree = "<group>"; };
+		3FF615C48CE28711A7F4055F /* SetupCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCode.swift; sourceTree = "<group>"; };
+		4503841297ADFFFAED238E4F /* Manufacturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manufacturer.swift; sourceTree = "<group>"; };
+		4615441A8A3D06D6AF29CA30 /* HomeKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitService.swift; sourceTree = "<group>"; };
+		494C6D93B314DE6725B16D9E /* iOS_AIAssistantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_AIAssistantView.swift; sourceTree = "<group>"; };
+		55145EDC6807EEEE7EEF2BBA /* DeviceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceProtocol.swift; sourceTree = "<group>"; };
+		58CCDC5704BA0248F36793EE /* HomekitControl_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomekitControl_macOS.swift; sourceTree = "<group>"; };
+		5CA25866EC0428B78E7EDE89 /* GlassmorphicBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassmorphicBackground.swift; sourceTree = "<group>"; };
+		5E249E44D5A998074E51A7EE /* UnifiedDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifiedDevice.swift; sourceTree = "<group>"; };
+		6BE12ABFDF5025381EBCDE57 /* HealthStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStatus.swift; sourceTree = "<group>"; };
+		7F0926DC14D338FC4C21DFAA /* NetworkDiscoveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDiscoveryService.swift; sourceTree = "<group>"; };
+		7FF79BEC3849F722BEE477BC /* DeviceHealthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHealthService.swift; sourceTree = "<group>"; };
+		AF5AA038592F039C4E1661E9 /* HomekitControl_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomekitControl_iOS.swift; sourceTree = "<group>"; };
+		B60072A353B200FD41A9AED3 /* DiscoveredDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveredDevice.swift; sourceTree = "<group>"; };
+		B6B1AC50C5A96EB35BAA4BF7 /* iOS_SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_SettingsView.swift; sourceTree = "<group>"; };
+		BAA8FC35168BA43672142476 /* ExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportService.swift; sourceTree = "<group>"; };
+		BC5E2688C27041778D4B6A27 /* ModernColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernColors.swift; sourceTree = "<group>"; };
+		C097788E85717340DC476FFB /* HomekitControl-iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "HomekitControl-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5F1BA78F6FC9CFE0F529BC0 /* PlatformCapabilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformCapabilities.swift; sourceTree = "<group>"; };
+		D8E2EC4980F86091E1DCB23E /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
+		DA1DC03345637CB8E210A52F /* UnifiedScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifiedScene.swift; sourceTree = "<group>"; };
+		DA430F62847D14861DC769C7 /* iOS_NetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_NetworkView.swift; sourceTree = "<group>"; };
+		DCE664AB0BE0E305B651B4CE /* DeviceCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCategory.swift; sourceTree = "<group>"; };
+		E6486CB8485D8FAABA6496B1 /* CodeVaultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVaultService.swift; sourceTree = "<group>"; };
+		E99D7C21375178ECAF13DD27 /* HomekitControl-tvOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "HomekitControl-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED6AFC1460856E3CDC684E44 /* macOS_ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macOS_ContentView.swift; sourceTree = "<group>"; };
+		F62B5272BB4F5A51878F6C08 /* tvOS_ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOS_ContentView.swift; sourceTree = "<group>"; };
+		F833439D6E1B9A4486C93981 /* iOS_ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ContentView.swift; sourceTree = "<group>"; };
+		FBE5D348536A52EE8A1C6131 /* HomekitControl-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomekitControl-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0378505DE7212EF578EBC981 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				AF5AA038592F039C4E1661E9 /* HomekitControl_iOS.swift */,
+				A496722472DE6D987999A7AB /* Views */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		0677F885E27AAA7C4BB747AE /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				DCE664AB0BE0E305B651B4CE /* DeviceCategory.swift */,
+				55145EDC6807EEEE7EEF2BBA /* DeviceProtocol.swift */,
+				6BE12ABFDF5025381EBCDE57 /* HealthStatus.swift */,
+				4503841297ADFFFAED238E4F /* Manufacturer.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		1270A5FA2CC52CFFE7A8A06E /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				58CCDC5704BA0248F36793EE /* HomekitControl_macOS.swift */,
+				F95F4A8C5810D09284CFB196 /* Views */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		29B69017FAFD8B5C245AC7A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C097788E85717340DC476FFB /* HomekitControl-iOS.app */,
+				FBE5D348536A52EE8A1C6131 /* HomekitControl-macOS.app */,
+				E99D7C21375178ECAF13DD27 /* HomekitControl-tvOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		33AC8CEBA81B5A16EC3C4055 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				286FFA143BADE2FD65D97CB7 /* AIService.swift */,
+				E6486CB8485D8FAABA6496B1 /* CodeVaultService.swift */,
+				7FF79BEC3849F722BEE477BC /* DeviceHealthService.swift */,
+				BAA8FC35168BA43672142476 /* ExportService.swift */,
+				4615441A8A3D06D6AF29CA30 /* HomeKitService.swift */,
+				7F0926DC14D338FC4C21DFAA /* NetworkDiscoveryService.swift */,
+				031DF7982DF96652C50A2049 /* SceneAnalyzerService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		586F39430DA15B1062C328B1 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				B69D85474EDE088C43C15C7F /* Design */,
+				67411DAACA0EF3457B1F702C /* Models */,
+				33AC8CEBA81B5A16EC3C4055 /* Services */,
+				C139C5570CB903CBAE6B6582 /* Utilities */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		67411DAACA0EF3457B1F702C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B60072A353B200FD41A9AED3 /* DiscoveredDevice.swift */,
+				3FF615C48CE28711A7F4055F /* SetupCode.swift */,
+				5E249E44D5A998074E51A7EE /* UnifiedDevice.swift */,
+				DA1DC03345637CB8E210A52F /* UnifiedScene.swift */,
+				0677F885E27AAA7C4BB747AE /* Enums */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A496722472DE6D987999A7AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				494C6D93B314DE6725B16D9E /* iOS_AIAssistantView.swift */,
+				F833439D6E1B9A4486C93981 /* iOS_ContentView.swift */,
+				3BA887658AF38BC68B60B57B /* iOS_DevicesView.swift */,
+				DA430F62847D14861DC769C7 /* iOS_NetworkView.swift */,
+				01DE23DBB69058A92DAC75DE /* iOS_ScenesView.swift */,
+				B6B1AC50C5A96EB35BAA4BF7 /* iOS_SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B69D85474EDE088C43C15C7F /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				04FF0F1979F3881CAE2977BD /* CircularGauge.swift */,
+				D8E2EC4980F86091E1DCB23E /* GlassCard.swift */,
+				5CA25866EC0428B78E7EDE89 /* GlassmorphicBackground.swift */,
+				BC5E2688C27041778D4B6A27 /* ModernColors.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
+		BA5D1A4683B6DB6DACE1EF8A = {
+			isa = PBXGroup;
+			children = (
+				0378505DE7212EF578EBC981 /* iOS */,
+				1270A5FA2CC52CFFE7A8A06E /* macOS */,
+				586F39430DA15B1062C328B1 /* Shared */,
+				F56D9AD5064DC93AFB8018A9 /* tvOS */,
+				29B69017FAFD8B5C245AC7A6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BC492EF8FAEA97D98F929D79 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F62B5272BB4F5A51878F6C08 /* tvOS_ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C139C5570CB903CBAE6B6582 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D5F1BA78F6FC9CFE0F529BC0 /* PlatformCapabilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F56D9AD5064DC93AFB8018A9 /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				01813897B6CE969CBE3AF7AC /* HomekitControl_tvOS.swift */,
+				BC492EF8FAEA97D98F929D79 /* Views */,
+			);
+			path = tvOS;
+			sourceTree = "<group>";
+		};
+		F95F4A8C5810D09284CFB196 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED6AFC1460856E3CDC684E44 /* macOS_ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2CE95FFC0100A32CDEFEECF1 /* HomekitControl-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C87AEA61979F933731ACFAF /* Build configuration list for PBXNativeTarget "HomekitControl-macOS" */;
+			buildPhases = (
+				3000F5FAB7B7C83A4D8ECAB0 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HomekitControl-macOS";
+			packageProductDependencies = (
+			);
+			productName = "HomekitControl-macOS";
+			productReference = FBE5D348536A52EE8A1C6131 /* HomekitControl-macOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		422FBF8167444668044072BA /* HomekitControl-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD47FB8F02115DC87E54A52B /* Build configuration list for PBXNativeTarget "HomekitControl-tvOS" */;
+			buildPhases = (
+				70AEB4AEB589D83950CA7109 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HomekitControl-tvOS";
+			packageProductDependencies = (
+			);
+			productName = "HomekitControl-tvOS";
+			productReference = E99D7C21375178ECAF13DD27 /* HomekitControl-tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		722708BC69014078F1964884 /* HomekitControl-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A43D3C11B3AF57483A62E5FA /* Build configuration list for PBXNativeTarget "HomekitControl-iOS" */;
+			buildPhases = (
+				B8A525DDB91512783A1474A6 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HomekitControl-iOS";
+			packageProductDependencies = (
+			);
+			productName = "HomekitControl-iOS";
+			productReference = C097788E85717340DC476FFB /* HomekitControl-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3EC9AB1FA4B433778CB4416A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					2CE95FFC0100A32CDEFEECF1 = {
+						DevelopmentTeam = QRRCB8HB3W;
+						ProvisioningStyle = Automatic;
+					};
+					422FBF8167444668044072BA = {
+						DevelopmentTeam = QRRCB8HB3W;
+						ProvisioningStyle = Automatic;
+					};
+					722708BC69014078F1964884 = {
+						DevelopmentTeam = QRRCB8HB3W;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 04ECBBFB83389A732645D7D3 /* Build configuration list for PBXProject "HomekitControl" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = BA5D1A4683B6DB6DACE1EF8A;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				722708BC69014078F1964884 /* HomekitControl-iOS */,
+				2CE95FFC0100A32CDEFEECF1 /* HomekitControl-macOS */,
+				422FBF8167444668044072BA /* HomekitControl-tvOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3000F5FAB7B7C83A4D8ECAB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E662CE8EC84D33ABC040FED /* AIService.swift in Sources */,
+				AE13F8C646150DB06C48C0EF /* CircularGauge.swift in Sources */,
+				6803E3FA4F3822A01E6F77A3 /* CodeVaultService.swift in Sources */,
+				4799FF0430FD61A706BC2803 /* DeviceCategory.swift in Sources */,
+				B4FB1D81F5CD9558788E0AE9 /* DeviceHealthService.swift in Sources */,
+				A6423A78B1BE6FCEA16C6BA4 /* DeviceProtocol.swift in Sources */,
+				F877C8E660F76BBAD892AC9A /* DiscoveredDevice.swift in Sources */,
+				5A283133EF496D130C4B260C /* ExportService.swift in Sources */,
+				2CBBF1DEF8B128BCDA5016F3 /* GlassCard.swift in Sources */,
+				D5C563BC42BEF23A6DC20985 /* GlassmorphicBackground.swift in Sources */,
+				3A5588C7492AFD71939C9B43 /* HealthStatus.swift in Sources */,
+				D0D6A94F8A340627F9F696A2 /* HomeKitService.swift in Sources */,
+				536B20A7FE2F6C23108519F5 /* HomekitControl_macOS.swift in Sources */,
+				5ED5B0299915D24C3358ED95 /* Manufacturer.swift in Sources */,
+				9BC9E9CD30A50DB4FBB94E40 /* ModernColors.swift in Sources */,
+				54052F74A307D6D1E81A1E2D /* NetworkDiscoveryService.swift in Sources */,
+				B3DDC00896071C29F3019091 /* PlatformCapabilities.swift in Sources */,
+				FC2004E864A2F0824EC55614 /* SceneAnalyzerService.swift in Sources */,
+				2DE99F10B3057BF4DF2FA838 /* SetupCode.swift in Sources */,
+				C2C566991516AE945CB5975F /* UnifiedDevice.swift in Sources */,
+				79126B45E126E4CF1AB6CB47 /* UnifiedScene.swift in Sources */,
+				588D807933F96CD7BBD2176B /* macOS_ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70AEB4AEB589D83950CA7109 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20EC25C8B7736BCC825257EF /* AIService.swift in Sources */,
+				8C8CE2565F22AA0784A8795F /* CircularGauge.swift in Sources */,
+				BDCAB8F1F4C2C4C7004BF92C /* CodeVaultService.swift in Sources */,
+				9E18481C33A9BEDB02634794 /* DeviceCategory.swift in Sources */,
+				DB3B538D57EEB89667AD4D8C /* DeviceHealthService.swift in Sources */,
+				644678C3B361C83932C434A7 /* DeviceProtocol.swift in Sources */,
+				58B4B65A694F6309A880F058 /* DiscoveredDevice.swift in Sources */,
+				CB846EC3C43490743E7C8F8C /* ExportService.swift in Sources */,
+				10839009CBA15C569A656195 /* GlassCard.swift in Sources */,
+				B4CCFD37DA1EA9062A669BE6 /* GlassmorphicBackground.swift in Sources */,
+				33F86C3B3DC901FF8E5C3FF2 /* HealthStatus.swift in Sources */,
+				FDD42E923BB55AA798C19A4D /* HomeKitService.swift in Sources */,
+				6E77DA49BB89AF3031960D15 /* HomekitControl_tvOS.swift in Sources */,
+				210FF9EB283671E6AD78E1E5 /* Manufacturer.swift in Sources */,
+				4FA19EA76B8565CF26CE48DE /* ModernColors.swift in Sources */,
+				B655E28A643E6450D02B9416 /* NetworkDiscoveryService.swift in Sources */,
+				E06A2EDAA4FBEC0634ED9ADC /* PlatformCapabilities.swift in Sources */,
+				6515458E028E691B454E11C1 /* SceneAnalyzerService.swift in Sources */,
+				EC3A4AC73579011A6F393E23 /* SetupCode.swift in Sources */,
+				1E918CC8BD5A4C3FE0B007DE /* UnifiedDevice.swift in Sources */,
+				15604010CB2EDD260C888D36 /* UnifiedScene.swift in Sources */,
+				6B0ADBFD926F38B9AE351B86 /* tvOS_ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B8A525DDB91512783A1474A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE977A6CEF9C2F1B5B0EE5FB /* AIService.swift in Sources */,
+				5DAC16FC106780988D4AFABD /* CircularGauge.swift in Sources */,
+				4584A85DBC8C658AFF525712 /* CodeVaultService.swift in Sources */,
+				8EFB08889FFB957281561B12 /* DeviceCategory.swift in Sources */,
+				3422867174297D423E12851C /* DeviceHealthService.swift in Sources */,
+				D88615101DA772880538348F /* DeviceProtocol.swift in Sources */,
+				65FB6B897053508878504CB5 /* DiscoveredDevice.swift in Sources */,
+				A13061108CB49A890F936883 /* ExportService.swift in Sources */,
+				377E91A9F6EC40257AD4A2E0 /* GlassCard.swift in Sources */,
+				AED55D48AF8B18C4C188522D /* GlassmorphicBackground.swift in Sources */,
+				2AB9688CA8CC4555D9277F4C /* HealthStatus.swift in Sources */,
+				F6D2BDBE761E58BDA331E1A1 /* HomeKitService.swift in Sources */,
+				11AB6A410E6916CE33DD7C3F /* HomekitControl_iOS.swift in Sources */,
+				91CC431D7032EFF029847819 /* Manufacturer.swift in Sources */,
+				6FACD1CCC88B3BD7816F54ED /* ModernColors.swift in Sources */,
+				A01B253FFA9BCE1C37CF3B2D /* NetworkDiscoveryService.swift in Sources */,
+				69E46D0DBEDCD5CC4F6D90FB /* PlatformCapabilities.swift in Sources */,
+				19C2B721C2E1391E4F4346F1 /* SceneAnalyzerService.swift in Sources */,
+				B30AB1C864F19196DE4030F2 /* SetupCode.swift in Sources */,
+				F50C1203DD4D521A9BCEA33B /* UnifiedDevice.swift in Sources */,
+				9BE48AAF110E040C36BE63CD /* UnifiedScene.swift in Sources */,
+				2D62037EA2DC09BFA80C9A54 /* iOS_AIAssistantView.swift in Sources */,
+				ECFF67545B87F9381B9FD2C9 /* iOS_ContentView.swift in Sources */,
+				40D6E9DD6E6A8BE279924739 /* iOS_DevicesView.swift in Sources */,
+				CA661C9AF114C8728032C1AB /* iOS_NetworkView.swift in Sources */,
+				90247E4E965D3E941D272435 /* iOS_ScenesView.swift in Sources */,
+				E7E4C4D1EBE8DB9C3ADDF381 /* iOS_SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D1149E539180D529ED5246E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resources/macOS.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "HomekitControl needs local network access to discover smart home devices.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jordankoch.HomekitControl-macOS";
+				PRODUCT_NAME = HomekitControl;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		429DF75CEF42AF4A9ED3A963 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resources/iOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_KEY_NSHomeKitUsageDescription = "HomekitControl needs HomeKit access to control your smart home devices.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "HomekitControl needs local network access to discover smart home devices.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jordankoch.HomekitControl;
+				PRODUCT_NAME = HomekitControl;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		551413C5743AF1A0B296ECAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resources/iOS.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_KEY_NSHomeKitUsageDescription = "HomekitControl needs HomeKit access to control your smart home devices.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "HomekitControl needs local network access to discover smart home devices.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jordankoch.HomekitControl;
+				PRODUCT_NAME = HomekitControl;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8893F0CCD11DAAF8DA3E618D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Resources/tvOS.entitlements;
+				INFOPLIST_KEY_NSHomeKitUsageDescription = "HomekitControl needs HomeKit access to control your smart home devices.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "HomekitControl needs local network access to discover smart home devices.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jordankoch.HomekitControl;
+				PRODUCT_NAME = HomekitControl;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+			};
+			name = Release;
+		};
+		AB3F6566EAAB9AA3855612B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = QRRCB8HB3W;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+			};
+			name = Debug;
+		};
+		AB472D50DF50188894E32C35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = QRRCB8HB3W;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+			};
+			name = Release;
+		};
+		BBF12FE39A83942FFB9BB5C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = Resources/tvOS.entitlements;
+				INFOPLIST_KEY_NSHomeKitUsageDescription = "HomekitControl needs HomeKit access to control your smart home devices.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "HomekitControl needs local network access to discover smart home devices.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jordankoch.HomekitControl;
+				PRODUCT_NAME = HomekitControl;
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 17.0;
+			};
+			name = Debug;
+		};
+		EA12C73D9D10A512FCC1646B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resources/macOS.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "HomekitControl needs local network access to discover smart home devices.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jordankoch.HomekitControl-macOS";
+				PRODUCT_NAME = HomekitControl;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		04ECBBFB83389A732645D7D3 /* Build configuration list for PBXProject "HomekitControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB3F6566EAAB9AA3855612B4 /* Debug */,
+				AB472D50DF50188894E32C35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		0C87AEA61979F933731ACFAF /* Build configuration list for PBXNativeTarget "HomekitControl-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D1149E539180D529ED5246E /* Debug */,
+				EA12C73D9D10A512FCC1646B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		A43D3C11B3AF57483A62E5FA /* Build configuration list for PBXNativeTarget "HomekitControl-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				429DF75CEF42AF4A9ED3A963 /* Debug */,
+				551413C5743AF1A0B296ECAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DD47FB8F02115DC87E54A52B /* Build configuration list for PBXNativeTarget "HomekitControl-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BBF12FE39A83942FFB9BB5C0 /* Debug */,
+				8893F0CCD11DAAF8DA3E618D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3EC9AB1FA4B433778CB4416A /* Project object */;
+}
