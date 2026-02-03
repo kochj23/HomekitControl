@@ -490,7 +490,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jordankoch.HomekitControl;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kochj.HomeKitTV;
 				PRODUCT_NAME = HomekitControl;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -513,7 +513,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jordankoch.HomekitControl;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kochj.HomeKitTV;
 				PRODUCT_NAME = HomekitControl;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -533,7 +533,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jordankoch.HomekitControl;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kochj.HomeKitTV;
 				PRODUCT_NAME = HomekitControl;
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -683,7 +683,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jordankoch.HomekitControl;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kochj.HomeKitTV;
 				PRODUCT_NAME = HomekitControl;
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;

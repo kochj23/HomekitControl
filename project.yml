@@ -25,7 +25,7 @@ targets:
       - iOS
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.jordankoch.HomekitControl
+        PRODUCT_BUNDLE_IDENTIFIER: com.kochj.HomeKitTV
         PRODUCT_NAME: HomekitControl
         INFOPLIST_KEY_UILaunchScreen_Generation: true
         INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
@@ -43,7 +43,7 @@ targets:
       - tvOS
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.jordankoch.HomekitControl
+        PRODUCT_BUNDLE_IDENTIFIER: com.kochj.HomeKitTV
         PRODUCT_NAME: HomekitControl
         INFOPLIST_KEY_UILaunchScreen_Generation: true
         INFOPLIST_KEY_NSHomeKitUsageDescription: "HomekitControl needs HomeKit access to control your smart home devices."
