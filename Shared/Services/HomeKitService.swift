@@ -160,6 +160,26 @@ final class HomeKitService: NSObject, ObservableObject {
         clearStatusMessage()
     }
 
+    func setAccessoryPower(_ accessory: HMAccessory, on: Bool) async throws {
+        guard let service = accessory.services.first(where: { $0.serviceType == HMServiceTypeLightbulb || $0.serviceType == HMServiceTypeSwitch || $0.serviceType == HMServiceTypeOutlet }),
+              let powerChar = service.characteristics.first(where: { $0.characteristicType == HMCharacteristicTypePowerState }) else {
+            return
+        }
+
+        try await powerChar.writeValue(on)
+        statusMessage = "\(accessory.name) turned \(on ? "on" : "off")"
+        clearStatusMessage()
+    }
+
+    func getBrightness(_ accessory: HMAccessory) -> Int? {
+        guard let service = accessory.services.first(where: { $0.serviceType == HMServiceTypeLightbulb }),
+              let brightnessChar = service.characteristics.first(where: { $0.characteristicType == HMCharacteristicTypeBrightness }),
+              let value = brightnessChar.value as? Int else {
+            return nil
+        }
+        return value
+    }
+
     func executeScene(_ scene: HMActionSet) async throws {
         guard let home = currentHome else { return }
 

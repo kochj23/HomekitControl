@@ -25,6 +25,19 @@ final class DeviceHealthService: ObservableObject {
     @Published var deviceHealth: [UUID: DeviceHealthRecord] = [:]
     @Published var statusMessage = ""
 
+    // Alias for compatibility
+    var healthRecords: [UUID: DeviceHealthInfo] {
+        deviceHealth.mapValues { record in
+            DeviceHealthInfo(
+                deviceId: record.deviceId,
+                status: getHealthStatus(for: record.deviceId),
+                uptimePercentage: record.reliabilityScore,
+                averageResponseTime: record.averageResponseTime,
+                lastSeen: record.lastTested
+            )
+        }
+    }
+
     // MARK: - Configuration
 
     var testInterval: TimeInterval = 30.0  // seconds between tests
@@ -107,6 +120,17 @@ final class DeviceHealthService: ObservableObject {
         testTask?.cancel()
         testTask = nil
     }
+
+    func startMonitoring() {
+        guard let home = HomeKitService.shared.currentHome else { return }
+        startContinuousTesting(in: home)
+    }
+    #endif
+
+    #if os(macOS)
+    func startMonitoring() {
+        // No-op on macOS
+    }
     #endif
 
     // MARK: - Health Records
@@ -181,6 +205,15 @@ final class DeviceHealthService: ObservableObject {
 }
 
 // MARK: - Supporting Types
+
+struct DeviceHealthInfo: Codable, Identifiable {
+    var id: UUID { deviceId }
+    let deviceId: UUID
+    let status: HealthStatus
+    let uptimePercentage: Double
+    let averageResponseTime: Double?
+    let lastSeen: Date?
+}
 
 struct DeviceHealthRecord: Codable, Identifiable {
     var id: UUID { deviceId }

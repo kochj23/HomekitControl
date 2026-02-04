@@ -67,6 +67,9 @@ struct ModernColors {
     /// Dark navy background end
     static let backgroundEnd = Color(red: 0.12, green: 0.18, blue: 0.32)
 
+    /// Dark background (alias for backgroundStart)
+    static let darkBackground = Color(red: 0.08, green: 0.12, blue: 0.22)
+
     /// Glass effect background
     static let glassBackground = Color.white.opacity(0.05)
 

@@ -8,6 +8,9 @@
 //
 
 import SwiftUI
+#if canImport(HomeKit)
+import HomeKit
+#endif
 
 struct iOS_ContentView: View {
     @State private var selectedTab = 0
@@ -36,25 +39,207 @@ struct iOS_ContentView: View {
                     }
                     .tag(2)
 
-                iOS_NetworkView()
+                iOS_AutomationView()
                     .tabItem {
-                        Label("Network", systemImage: "network")
+                        Label("Automate", systemImage: "gearshape.2.fill")
                     }
                     .tag(3)
 
-                iOS_AIAssistantView()
+                iOS_MoreView()
                     .tabItem {
-                        Label("AI", systemImage: "sparkles")
+                        Label("More", systemImage: "ellipsis.circle.fill")
                     }
                     .tag(4)
-
-                iOS_SettingsView()
-                    .tabItem {
-                        Label("Settings", systemImage: "gearshape.fill")
-                    }
-                    .tag(5)
             }
             .tint(ModernColors.cyan)
+        }
+    }
+}
+
+// MARK: - More View (Hub for additional features)
+
+struct iOS_MoreView: View {
+    var body: some View {
+        NavigationStack {
+            ZStack {
+                GlassmorphicBackground()
+                    .ignoresSafeArea()
+
+                ScrollView {
+                    VStack(spacing: 16) {
+                        // Feature Cards - All Clickable
+                        NavigationLink {
+                            iOS_GroupsView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Device Groups",
+                                subtitle: "Control multiple devices together",
+                                icon: "rectangle.3.group.fill",
+                                color: ModernColors.cyan
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_ScheduleView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Scene Scheduling",
+                                subtitle: "Schedule scenes by time or sun",
+                                icon: "calendar.badge.clock",
+                                color: ModernColors.orange
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_EnergyView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Energy Monitor",
+                                subtitle: "Track power consumption",
+                                icon: "bolt.fill",
+                                color: ModernColors.yellow
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_HealthDashboardView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Device Health",
+                                subtitle: "Monitor device status",
+                                icon: "heart.fill",
+                                color: ModernColors.magenta
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_NotificationsView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Notifications",
+                                subtitle: "Configure alerts",
+                                icon: "bell.fill",
+                                color: ModernColors.purple
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_ShortcutsView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Siri Shortcuts",
+                                subtitle: "Voice control & widgets",
+                                icon: "mic.fill",
+                                color: ModernColors.accentBlue
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_GuestModeView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Guest Access",
+                                subtitle: "Temporary device access",
+                                icon: "person.badge.key.fill",
+                                color: ModernColors.teal
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_BackupView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Backup & Restore",
+                                subtitle: "Save your configuration",
+                                icon: "arrow.down.doc.fill",
+                                color: ModernColors.accentGreen
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_NetworkView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Network Scanner",
+                                subtitle: "Discover local devices",
+                                icon: "network",
+                                color: ModernColors.cyan
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_AIAssistantView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "AI Assistant",
+                                subtitle: "Smart home help",
+                                icon: "sparkles",
+                                color: ModernColors.magenta
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_SettingsView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Settings",
+                                subtitle: "App configuration",
+                                icon: "gearshape.fill",
+                                color: ModernColors.textSecondary
+                            )
+                        }
+                        .buttonStyle(.plain)
+                    }
+                    .padding()
+                }
+            }
+            .navigationTitle("More")
+        }
+    }
+}
+
+// MARK: - More Feature Card
+
+struct MoreFeatureCard: View {
+    let title: String
+    let subtitle: String
+    let icon: String
+    let color: Color
+
+    var body: some View {
+        GlassCard {
+            HStack {
+                Image(systemName: icon)
+                    .font(.title2)
+                    .foregroundStyle(color)
+                    .frame(width: 40)
+
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(title)
+                        .font(.headline)
+                        .foregroundStyle(.white)
+
+                    Text(subtitle)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer()
+
+                Image(systemName: "chevron.right")
+                    .foregroundStyle(.secondary)
+            }
+            .padding()
         }
     }
 }
@@ -65,6 +250,7 @@ struct iOS_HomeView: View {
     @StateObject private var homeKitService = HomeKitService.shared
     @StateObject private var healthService = DeviceHealthService.shared
     @StateObject private var networkService = NetworkDiscoveryService.shared
+    @StateObject private var notificationService = NotificationService.shared
 
     var body: some View {
         NavigationStack {
@@ -73,16 +259,10 @@ struct iOS_HomeView: View {
 
                 ScrollView {
                     VStack(spacing: 20) {
-                        // Welcome header
                         welcomeHeader
-
-                        // Quick stats
                         statsSection
-
-                        // Quick actions
                         quickActionsSection
 
-                        // Recent activity
                         if !homeKitService.scenes.isEmpty {
                             recentScenesSection
                         }
@@ -91,6 +271,23 @@ struct iOS_HomeView: View {
                 }
             }
             .navigationTitle("Home")
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    if notificationService.unreadCount > 0 {
+                        NavigationLink {
+                            iOS_NotificationsView()
+                        } label: {
+                            ZStack(alignment: .topTrailing) {
+                                Image(systemName: "bell.fill")
+                                Circle()
+                                    .fill(ModernColors.red)
+                                    .frame(width: 8, height: 8)
+                                    .offset(x: 4, y: -4)
+                            }
+                        }
+                    }
+                }
+            }
             .refreshable {
                 await homeKitService.refreshAll()
             }
@@ -98,27 +295,32 @@ struct iOS_HomeView: View {
     }
 
     private var welcomeHeader: some View {
-        GlassCard {
-            HStack {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("HomekitControl")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundStyle(.white)
+        NavigationLink {
+            iOS_SettingsView()
+        } label: {
+            GlassCard {
+                HStack {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("HomekitControl")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundStyle(.white)
 
-                    Text(homeKitService.currentHome?.name ?? "Smart Home")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
+                        Text(homeKitService.currentHome?.name ?? "Smart Home")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+
+                    Spacer()
+
+                    Image(systemName: "house.fill")
+                        .font(.system(size: 40))
+                        .foregroundStyle(ModernColors.accent)
                 }
-
-                Spacer()
-
-                Image(systemName: "house.fill")
-                    .font(.system(size: 40))
-                    .foregroundStyle(ModernColors.accent)
+                .padding()
             }
-            .padding()
         }
+        .buttonStyle(.plain)
     }
 
     private var statsSection: some View {
@@ -127,9 +329,26 @@ struct iOS_HomeView: View {
             GridItem(.flexible()),
             GridItem(.flexible())
         ], spacing: 16) {
-            StatCard(value: "\(homeKitService.accessories.count)", label: "Devices", icon: "lightbulb.fill", color: ModernColors.accent)
-            StatCard(value: "\(homeKitService.scenes.count)", label: "Scenes", icon: "theatermasks.fill", color: ModernColors.cyan)
-            StatCard(value: "\(homeKitService.rooms.count)", label: "Rooms", icon: "rectangle.split.3x3", color: ModernColors.magenta)
+            NavigationLink {
+                iOS_DevicesView()
+            } label: {
+                StatCard(value: "\(homeKitService.accessories.count)", label: "Devices", icon: "lightbulb.fill", color: ModernColors.accent)
+            }
+            .buttonStyle(.plain)
+
+            NavigationLink {
+                iOS_ScenesView()
+            } label: {
+                StatCard(value: "\(homeKitService.scenes.count)", label: "Scenes", icon: "theatermasks.fill", color: ModernColors.cyan)
+            }
+            .buttonStyle(.plain)
+
+            NavigationLink {
+                iOS_GroupsView()
+            } label: {
+                StatCard(value: "\(homeKitService.rooms.count)", label: "Rooms", icon: "rectangle.split.3x3", color: ModernColors.magenta)
+            }
+            .buttonStyle(.plain)
         }
     }
 
@@ -140,26 +359,38 @@ struct iOS_HomeView: View {
                 .foregroundStyle(.white)
 
             LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
-                QuickActionCard(title: "Scan Network", icon: "antenna.radiowaves.left.and.right", color: ModernColors.cyan) {
-                    networkService.startDiscovery()
+                NavigationLink {
+                    iOS_NetworkView()
+                } label: {
+                    QuickActionCard(title: "Scan Network", icon: "antenna.radiowaves.left.and.right", color: ModernColors.cyan) { }
                 }
+                .buttonStyle(.plain)
 
-                QuickActionCard(title: "Test Devices", icon: "heart.fill", color: ModernColors.magenta) {
-                    Task {
-                        if let home = homeKitService.currentHome {
-                            await healthService.testAllDevices(in: home)
-                        }
-                    }
+                NavigationLink {
+                    iOS_HealthDashboardView()
+                } label: {
+                    QuickActionCard(title: "Device Health", icon: "heart.fill", color: ModernColors.magenta) { }
                 }
+                .buttonStyle(.plain)
             }
         }
     }
 
     private var recentScenesSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Quick Scenes")
-                .font(.headline)
-                .foregroundStyle(.white)
+            HStack {
+                Text("Quick Scenes")
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                Spacer()
+                NavigationLink {
+                    iOS_ScenesView()
+                } label: {
+                    Text("See All")
+                        .font(.caption)
+                        .foregroundStyle(ModernColors.cyan)
+                }
+            }
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
@@ -210,26 +441,23 @@ struct QuickActionCard: View {
     let action: () -> Void
 
     var body: some View {
-        Button(action: action) {
-            GlassCard {
-                HStack {
-                    Image(systemName: icon)
-                        .font(.title2)
-                        .foregroundStyle(color)
+        GlassCard {
+            HStack {
+                Image(systemName: icon)
+                    .font(.title2)
+                    .foregroundStyle(color)
 
-                    Text(title)
-                        .font(.subheadline)
-                        .foregroundStyle(.white)
+                Text(title)
+                    .font(.subheadline)
+                    .foregroundStyle(.white)
 
-                    Spacer()
+                Spacer()
 
-                    Image(systemName: "chevron.right")
-                        .foregroundStyle(.secondary)
-                }
-                .padding()
+                Image(systemName: "chevron.right")
+                    .foregroundStyle(.secondary)
             }
+            .padding()
         }
-        .buttonStyle(.plain)
     }
 }
 
@@ -266,10 +494,6 @@ struct QuickSceneCard: View {
         return "sparkles"
     }
 }
-
-#if canImport(HomeKit)
-import HomeKit
-#endif
 
 #Preview {
     iOS_ContentView()

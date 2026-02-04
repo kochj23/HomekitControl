@@ -260,31 +260,113 @@ struct tvOS_NetworkView: View {
 
 struct tvOS_MoreView: View {
     @StateObject private var aiService = AIService.shared
+    @State private var showingRemoteControl = false
+    @State private var showingAmbientMode = false
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 40) {
-                // AI Assistant
-                GlassCard {
-                    HStack {
-                        VStack(alignment: .leading, spacing: 12) {
-                            Label("AI Assistant", systemImage: "brain")
-                                .font(.system(size: 32, weight: .semibold))
-                                .foregroundStyle(.white)
-
-                            Text("Ask about your smart home")
-                                .font(.system(size: 22))
-                                .foregroundStyle(.secondary)
-                        }
-
-                        Spacer()
-
-                        Image(systemName: aiService.selectedProvider.icon)
-                            .font(.system(size: 50))
-                            .foregroundStyle(ModernColors.accent)
+            VStack(spacing: 50) {
+                // Quick Access Row
+                HStack(spacing: 40) {
+                    TVMoreFeatureCard(
+                        title: "Quick Controls",
+                        subtitle: "Remote widget",
+                        icon: "hand.tap.fill",
+                        color: ModernColors.accent
+                    ) {
+                        showingRemoteControl = true
                     }
-                    .padding(40)
+
+                    TVMoreFeatureCard(
+                        title: "Ambient Mode",
+                        subtitle: "Clock screensaver",
+                        icon: "clock.fill",
+                        color: ModernColors.purple
+                    ) {
+                        showingAmbientMode = true
+                    }
                 }
+                .padding(.horizontal, 80)
+
+                // Feature Grid
+                LazyVGrid(columns: [
+                    GridItem(.flexible(), spacing: 40),
+                    GridItem(.flexible(), spacing: 40),
+                    GridItem(.flexible(), spacing: 40)
+                ], spacing: 40) {
+                    NavigationLink {
+                        tvOS_GroupsView()
+                    } label: {
+                        TVMoreCard(
+                            title: "Device Groups",
+                            subtitle: "Control multiple devices",
+                            icon: "rectangle.3.group.fill",
+                            color: ModernColors.cyan
+                        )
+                    }
+                    .buttonStyle(.card)
+
+                    NavigationLink {
+                        tvOS_EnergyView()
+                    } label: {
+                        TVMoreCard(
+                            title: "Energy Monitor",
+                            subtitle: "Power consumption",
+                            icon: "bolt.fill",
+                            color: ModernColors.yellow
+                        )
+                    }
+                    .buttonStyle(.card)
+
+                    NavigationLink {
+                        tvOS_HealthView()
+                    } label: {
+                        TVMoreCard(
+                            title: "Device Health",
+                            subtitle: "Monitor status",
+                            icon: "heart.fill",
+                            color: ModernColors.magenta
+                        )
+                    }
+                    .buttonStyle(.card)
+
+                    NavigationLink {
+                        tvOS_ScheduleView()
+                    } label: {
+                        TVMoreCard(
+                            title: "Schedules",
+                            subtitle: "Scene scheduling",
+                            icon: "calendar.badge.clock",
+                            color: ModernColors.orange
+                        )
+                    }
+                    .buttonStyle(.card)
+
+                    NavigationLink {
+                        tvOS_AutomationView()
+                    } label: {
+                        TVMoreCard(
+                            title: "Automations",
+                            subtitle: "Custom automations",
+                            icon: "gearshape.2.fill",
+                            color: ModernColors.purple
+                        )
+                    }
+                    .buttonStyle(.card)
+
+                    NavigationLink {
+                        tvOS_AIAssistantView()
+                    } label: {
+                        TVMoreCard(
+                            title: "AI Assistant",
+                            subtitle: "Smart home help",
+                            icon: "sparkles",
+                            color: ModernColors.accentBlue
+                        )
+                    }
+                    .buttonStyle(.card)
+                }
+                .padding(.horizontal, 80)
 
                 // App Info
                 GlassCard {
@@ -307,9 +389,212 @@ struct tvOS_MoreView: View {
                     }
                     .padding(40)
                 }
+                .padding(.horizontal, 80)
             }
-            .padding(80)
+            .padding(.vertical, 60)
         }
+        .fullScreenCover(isPresented: $showingRemoteControl) {
+            tvOS_RemoteControlWidget(isPresented: $showingRemoteControl)
+        }
+        .fullScreenCover(isPresented: $showingAmbientMode) {
+            tvOS_AmbientModeView(isPresented: $showingAmbientMode)
+        }
+    }
+}
+
+// MARK: - TV More Feature Card (Interactive)
+
+struct TVMoreFeatureCard: View {
+    let title: String
+    let subtitle: String
+    let icon: String
+    let color: Color
+    let action: () -> Void
+
+    @FocusState private var isFocused: Bool
+
+    var body: some View {
+        Button(action: action) {
+            GlassCard {
+                VStack(spacing: 16) {
+                    Image(systemName: icon)
+                        .font(.system(size: 50))
+                        .foregroundStyle(color)
+
+                    Text(title)
+                        .font(.system(size: 28, weight: .semibold))
+                        .foregroundStyle(.white)
+
+                    Text(subtitle)
+                        .font(.system(size: 18))
+                        .foregroundStyle(.secondary)
+                }
+                .padding(40)
+                .frame(maxWidth: .infinity)
+            }
+        }
+        .buttonStyle(.card)
+        .focused($isFocused)
+        .scaleEffect(isFocused ? 1.05 : 1.0)
+        .animation(.easeInOut(duration: 0.15), value: isFocused)
+    }
+}
+
+// MARK: - TV More Card (Navigation)
+
+struct TVMoreCard: View {
+    let title: String
+    let subtitle: String
+    let icon: String
+    let color: Color
+
+    @FocusState private var isFocused: Bool
+
+    var body: some View {
+        GlassCard {
+            VStack(spacing: 16) {
+                Image(systemName: icon)
+                    .font(.system(size: 50))
+                    .foregroundStyle(color)
+
+                Text(title)
+                    .font(.system(size: 24, weight: .semibold))
+                    .foregroundStyle(.white)
+
+                Text(subtitle)
+                    .font(.system(size: 16))
+                    .foregroundStyle(.secondary)
+            }
+            .padding(30)
+            .frame(maxWidth: .infinity)
+        }
+        .focused($isFocused)
+        .scaleEffect(isFocused ? 1.05 : 1.0)
+        .animation(.easeInOut(duration: 0.15), value: isFocused)
+    }
+}
+
+// MARK: - TV AI Assistant View
+
+struct tvOS_AIAssistantView: View {
+    @StateObject private var aiService = AIService.shared
+    @State private var query = ""
+    @State private var response = ""
+    @State private var isProcessing = false
+
+    var body: some View {
+        VStack(spacing: 40) {
+            // Header
+            HStack {
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("AI Assistant")
+                        .font(.system(size: 48, weight: .bold))
+                        .foregroundStyle(.white)
+
+                    Text("Powered by \(aiService.selectedProvider.rawValue)")
+                        .font(.system(size: 24))
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer()
+
+                Image(systemName: "sparkles")
+                    .font(.system(size: 60))
+                    .foregroundStyle(ModernColors.accent)
+            }
+            .padding(.horizontal, 80)
+
+            // Chat Display
+            GlassCard {
+                VStack(alignment: .leading, spacing: 20) {
+                    if !response.isEmpty {
+                        ScrollView {
+                            Text(response)
+                                .font(.system(size: 24))
+                                .foregroundStyle(.white)
+                        }
+                        .frame(maxHeight: 400)
+                    } else {
+                        VStack(spacing: 20) {
+                            Image(systemName: "bubble.left.and.bubble.right.fill")
+                                .font(.system(size: 60))
+                                .foregroundStyle(.secondary)
+                            Text("Ask about your smart home")
+                                .font(.system(size: 24))
+                                .foregroundStyle(.secondary)
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    }
+                }
+                .padding(40)
+                .frame(maxWidth: .infinity)
+            }
+            .padding(.horizontal, 80)
+
+            // Quick Questions
+            VStack(alignment: .leading, spacing: 20) {
+                Text("Quick Questions")
+                    .font(.system(size: 28, weight: .semibold))
+                    .foregroundStyle(.secondary)
+                    .padding(.horizontal, 80)
+
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 30) {
+                        TVQuickQuestionButton(question: "How many devices are online?") { q in
+                            askQuestion(q)
+                        }
+
+                        TVQuickQuestionButton(question: "What scenes do I have?") { q in
+                            askQuestion(q)
+                        }
+
+                        TVQuickQuestionButton(question: "Any device issues?") { q in
+                            askQuestion(q)
+                        }
+
+                        TVQuickQuestionButton(question: "Energy usage today?") { q in
+                            askQuestion(q)
+                        }
+                    }
+                    .padding(.horizontal, 80)
+                }
+            }
+        }
+        .padding(.vertical, 60)
+    }
+
+    private func askQuestion(_ question: String) {
+        isProcessing = true
+        Task {
+            response = await aiService.getResponse(question)
+            isProcessing = false
+        }
+    }
+}
+
+struct TVQuickQuestionButton: View {
+    let question: String
+    let action: (String) -> Void
+
+    @FocusState private var isFocused: Bool
+
+    var body: some View {
+        Button {
+            action(question)
+        } label: {
+            GlassCard {
+                Text(question)
+                    .font(.system(size: 20, weight: .medium))
+                    .foregroundStyle(.white)
+                    .multilineTextAlignment(.center)
+                    .padding(24)
+                    .frame(width: 220, height: 100)
+            }
+        }
+        .buttonStyle(.card)
+        .focused($isFocused)
+        .scaleEffect(isFocused ? 1.05 : 1.0)
+        .animation(.easeInOut(duration: 0.15), value: isFocused)
     }
 }
 

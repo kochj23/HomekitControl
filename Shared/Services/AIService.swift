@@ -106,6 +106,19 @@ final class AIService: ObservableObject {
         }
     }
 
+    // MARK: - Quick Response
+
+    func getResponse(_ query: String) async -> String {
+        isProcessing = true
+        defer { isProcessing = false }
+
+        do {
+            return try await generateResponse(for: query)
+        } catch {
+            return "I couldn't process that request: \(error.localizedDescription)"
+        }
+    }
+
     // MARK: - Network Analysis
 
     func analyzeNetwork(_ devices: [DiscoveredDevice]) async -> String {
