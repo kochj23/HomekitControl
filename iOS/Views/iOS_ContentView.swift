@@ -188,6 +188,188 @@ struct iOS_MoreView: View {
                         }
                         .buttonStyle(.plain)
 
+                        // New Features Section
+                        Divider()
+                            .background(ModernColors.textSecondary)
+                            .padding(.vertical, 8)
+
+                        Text("Smart Home Pro")
+                            .font(.headline)
+                            .foregroundStyle(.white)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+
+                        NavigationLink {
+                            iOS_PresenceView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Presence Detection",
+                                subtitle: "Geofencing & location triggers",
+                                icon: "location.fill",
+                                color: ModernColors.accentBlue
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_VoiceControlView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Voice Control",
+                                subtitle: "On-device voice commands",
+                                icon: "waveform",
+                                color: ModernColors.purple
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_AdaptiveLightingView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Adaptive Lighting",
+                                subtitle: "Circadian rhythm automation",
+                                icon: "sun.max.fill",
+                                color: ModernColors.orange
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_SecurityView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Security Dashboard",
+                                subtitle: "Locks, sensors & alerts",
+                                icon: "lock.shield.fill",
+                                color: ModernColors.red
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_ClimateView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Climate Zones",
+                                subtitle: "Multi-thermostat control",
+                                icon: "thermometer.medium",
+                                color: ModernColors.cyan
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_SuggestionsView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Smart Suggestions",
+                                subtitle: "ML-powered automations",
+                                icon: "brain.head.profile",
+                                color: ModernColors.magenta
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_FirmwareView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Firmware Tracker",
+                                subtitle: "Device updates & versions",
+                                icon: "arrow.down.circle.fill",
+                                color: ModernColors.teal
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_NetworkPerformanceView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Network Performance",
+                                subtitle: "Latency & connectivity",
+                                icon: "chart.line.uptrend.xyaxis",
+                                color: ModernColors.accentGreen
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_MultiHomeView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Multi-Home",
+                                subtitle: "Manage multiple homes",
+                                icon: "building.2.fill",
+                                color: ModernColors.purple
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_FloorPlanView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Floor Plan",
+                                subtitle: "Visual device layout",
+                                icon: "square.split.2x2",
+                                color: ModernColors.cyan
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_DeviceComparisonView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Device Comparison",
+                                subtitle: "Compare energy & reliability",
+                                icon: "arrow.left.arrow.right",
+                                color: ModernColors.yellow
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_MaintenanceView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Maintenance",
+                                subtitle: "Reminders & schedules",
+                                icon: "wrench.and.screwdriver.fill",
+                                color: ModernColors.orange
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_IntegrationHubView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Integration Hub",
+                                subtitle: "Matter & Thread setup",
+                                icon: "point.3.connected.trianglepath.dotted",
+                                color: ModernColors.accentBlue
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        NavigationLink {
+                            iOS_UsageReportsView()
+                        } label: {
+                            MoreFeatureCard(
+                                title: "Usage Reports",
+                                subtitle: "Weekly & monthly summaries",
+                                icon: "chart.bar.doc.horizontal.fill",
+                                color: ModernColors.accentGreen
+                            )
+                        }
+                        .buttonStyle(.plain)
+
+                        Divider()
+                            .background(ModernColors.textSecondary)
+                            .padding(.vertical, 8)
+
                         NavigationLink {
                             iOS_SettingsView()
                         } label: {

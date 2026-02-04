@@ -65,6 +65,18 @@ final class HomeKitService: NSObject, ObservableObject {
         isLoading = true
     }
 
+    /// Get the HMHomeManager instance for multi-home support
+    var getHomeManager: HMHomeManager? {
+        return homeManager
+    }
+
+    /// Set the current home for multi-home support
+    func setCurrentHome(_ home: HMHome?) {
+        guard let home = home else { return }
+        currentHome = home
+        loadHomeData()
+    }
+
     private func loadHomeData() {
         // primaryHome is deprecated on iOS 16.1+ and tvOS 16.1+
         // Just use homes.first as fallback

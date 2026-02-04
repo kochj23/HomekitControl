@@ -8,13 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		003A0304ECE1936EA724E7BD /* SiriShortcutsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9655AB57076108976C3CEFF8 /* SiriShortcutsService.swift */; };
+		02948F456234C5D9A925040C /* iOS_FloorPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6F8CDCD0A72DCDCA91B2FD /* iOS_FloorPlanView.swift */; };
+		0362009630101738FDCBCF38 /* iOS_SuggestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0781E8FA3B7B1B370E7D43 /* iOS_SuggestionsView.swift */; };
+		043F25F76FC3791CBA0B357B /* MultiHomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DE1799EF449E190FAFA7C /* MultiHomeService.swift */; };
+		08F430E34466ECA54D0C2AAB /* MultiHomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DE1799EF449E190FAFA7C /* MultiHomeService.swift */; };
+		0BF2EB61D8528334D5FC7566 /* ClimateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297BC6223A5C0E380D3C7A4 /* ClimateService.swift */; };
 		0C0F2A681381053753303F44 /* AutomationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BCC6AFC9A525914AF8266B /* AutomationService.swift */; };
+		0C7D6CB1AD5C8C3E131B92B7 /* SecurityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56E9A3D070E38E8D245F060 /* SecurityService.swift */; };
 		0E151A83083D2DFED0B05E12 /* tvOS_HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482B9BC1026401D680DF7052 /* tvOS_HealthView.swift */; };
+		0EB955015CC744106D574BFB /* iOS_UsageReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4220E69452AB7679CB28645F /* iOS_UsageReportsView.swift */; };
 		10366BFFD3880D83C76101AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DFC5E3FF020A31274FED41 /* Assets.xcassets */; };
 		10839009CBA15C569A656195 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E2EC4980F86091E1DCB23E /* GlassCard.swift */; };
 		11AB6A410E6916CE33DD7C3F /* HomekitControl_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5AA038592F039C4E1661E9 /* HomekitControl_iOS.swift */; };
+		1433F11BCE5B7E772CEFAB1F /* IntegrationHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B70CDE3650B309C92C574 /* IntegrationHubService.swift */; };
+		149F291C4F2DE0B19EF7AA8C /* AdaptiveLightingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E9CF7F8019B9E8EF355FEB /* AdaptiveLightingService.swift */; };
 		15604010CB2EDD260C888D36 /* UnifiedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DC03345637CB8E210A52F /* UnifiedScene.swift */; };
 		157974542807B5D8BE468390 /* GuestModeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6630619B6C59E72D0D19C7AD /* GuestModeService.swift */; };
+		15A79C2987BDAE1F6F4CCAA9 /* IntegrationHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B70CDE3650B309C92C574 /* IntegrationHubService.swift */; };
+		1639A01FE9896B9576EEA9B8 /* MaintenanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8023E9BD0549810A1545CAE1 /* MaintenanceService.swift */; };
 		19C2B721C2E1391E4F4346F1 /* SceneAnalyzerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DF7982DF96652C50A2049 /* SceneAnalyzerService.swift */; };
 		1E918CC8BD5A4C3FE0B007DE /* UnifiedDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249E44D5A998074E51A7EE /* UnifiedDevice.swift */; };
 		1FAF26387C4F0CB5A38ED072 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4368ADAC9C15C579520248AC /* NotificationService.swift */; };
@@ -22,8 +33,11 @@
 		210FF9EB283671E6AD78E1E5 /* Manufacturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503841297ADFFFAED238E4F /* Manufacturer.swift */; };
 		21CE11989D4E0AFB5E7559E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DFC5E3FF020A31274FED41 /* Assets.xcassets */; };
 		263FBDE95962D4E6FE59B8A0 /* tvOS_AutomationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E4745455C7D12ED97CF28 /* tvOS_AutomationView.swift */; };
+		27ABD176157E209E42931F1D /* MaintenanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8023E9BD0549810A1545CAE1 /* MaintenanceService.swift */; };
 		2AB9688CA8CC4555D9277F4C /* HealthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE12ABFDF5025381EBCDE57 /* HealthStatus.swift */; };
+		2AC2186B78607E6EB002D409 /* UsageReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506056D37347E9333FCFE80 /* UsageReportService.swift */; };
 		2B01575E8E111832B339B70B /* SceneSchedulingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1949EE7DC5F7F2E1C3860F0 /* SceneSchedulingService.swift */; };
+		2B0AC617E04C74E6DB2286E3 /* FirmwareTrackerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A3D4F709DD5ADB106FA5D6 /* FirmwareTrackerService.swift */; };
 		2CBBF1DEF8B128BCDA5016F3 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E2EC4980F86091E1DCB23E /* GlassCard.swift */; };
 		2D62037EA2DC09BFA80C9A54 /* iOS_AIAssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C6D93B314DE6725B16D9E /* iOS_AIAssistantView.swift */; };
 		2DE99F10B3057BF4DF2FA838 /* SetupCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF615C48CE28711A7F4055F /* SetupCode.swift */; };
@@ -32,22 +46,31 @@
 		33F86C3B3DC901FF8E5C3FF2 /* HealthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE12ABFDF5025381EBCDE57 /* HealthStatus.swift */; };
 		3422867174297D423E12851C /* DeviceHealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF79BEC3849F722BEE477BC /* DeviceHealthService.swift */; };
 		377E91A9F6EC40257AD4A2E0 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E2EC4980F86091E1DCB23E /* GlassCard.swift */; };
+		37D69CF24B28D84EE21A3F5C /* DeviceComparisonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F118A270A52A7BFE4725262 /* DeviceComparisonService.swift */; };
 		39F3343947906C25FC22FE21 /* tvOS_EnergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6EC104C9F28665C70B8514 /* tvOS_EnergyView.swift */; };
 		3A5588C7492AFD71939C9B43 /* HealthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE12ABFDF5025381EBCDE57 /* HealthStatus.swift */; };
+		3AECBABAA28E90414A8037F2 /* iOS_VoiceControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BCA493FD5917CEFD3DF40C /* iOS_VoiceControlView.swift */; };
 		3F50838244613D1C2F9DC152 /* SiriShortcutsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9655AB57076108976C3CEFF8 /* SiriShortcutsService.swift */; };
+		403D8B8D6EDBB9E65EEA60C2 /* SceneSuggestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913034B61692B2B727D589DB /* SceneSuggestionService.swift */; };
 		40D6E9DD6E6A8BE279924739 /* iOS_DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA887658AF38BC68B60B57B /* iOS_DevicesView.swift */; };
+		43C40D22A2A89223C772DB8A /* MultiHomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DE1799EF449E190FAFA7C /* MultiHomeService.swift */; };
 		4584A85DBC8C658AFF525712 /* CodeVaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6486CB8485D8FAABA6496B1 /* CodeVaultService.swift */; };
+		476F37CBA6D459BD2A477759 /* DeviceComparisonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F118A270A52A7BFE4725262 /* DeviceComparisonService.swift */; };
 		4799FF0430FD61A706BC2803 /* DeviceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE664AB0BE0E305B651B4CE /* DeviceCategory.swift */; };
 		4985D963939E0203FEBD9F7E /* BackupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2948FA33D30BDEDF6930BCB /* BackupService.swift */; };
 		4C788F2ABAA72F66D4895CDC /* AutomationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BCC6AFC9A525914AF8266B /* AutomationService.swift */; };
 		4FA19EA76B8565CF26CE48DE /* ModernColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5E2688C27041778D4B6A27 /* ModernColors.swift */; };
 		5212DC3A2D5795A6818692C8 /* EnergyMonitoringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F840E06F1DD16DC95CED8 /* EnergyMonitoringService.swift */; };
+		5247B2F7034D5E4601CB5AA2 /* PresenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1CB5067313FCA45A67F06 /* PresenceService.swift */; };
 		536B20A7FE2F6C23108519F5 /* HomekitControl_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CCDC5704BA0248F36793EE /* HomekitControl_macOS.swift */; };
 		54052F74A307D6D1E81A1E2D /* NetworkDiscoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0926DC14D338FC4C21DFAA /* NetworkDiscoveryService.swift */; };
+		559B5618CF8CC635E6D34CE9 /* MaintenanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8023E9BD0549810A1545CAE1 /* MaintenanceService.swift */; };
 		588D807933F96CD7BBD2176B /* macOS_ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6AFC1460856E3CDC684E44 /* macOS_ContentView.swift */; };
 		58B4B65A694F6309A880F058 /* DiscoveredDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60072A353B200FD41A9AED3 /* DiscoveredDevice.swift */; };
 		59324F98C20A2DE126D89057 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4368ADAC9C15C579520248AC /* NotificationService.swift */; };
 		5A283133EF496D130C4B260C /* ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8FC35168BA43672142476 /* ExportService.swift */; };
+		5AD9BF874D86EA2CA996D6F4 /* iOS_FirmwareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5702F9ABCD5592D6798BA4 /* iOS_FirmwareView.swift */; };
+		5B8CFD0EA16F2EF9E7DA4F75 /* SceneSuggestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913034B61692B2B727D589DB /* SceneSuggestionService.swift */; };
 		5D496CFA03BB53D525FA11FF /* iOS_HealthDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E556002A2CBFA0F1BECF6 /* iOS_HealthDashboardView.swift */; };
 		5DAC16FC106780988D4AFABD /* CircularGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF0F1979F3881CAE2977BD /* CircularGauge.swift */; };
 		5ED5B0299915D24C3358ED95 /* Manufacturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503841297ADFFFAED238E4F /* Manufacturer.swift */; };
@@ -57,58 +80,91 @@
 		644678C3B361C83932C434A7 /* DeviceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55145EDC6807EEEE7EEF2BBA /* DeviceProtocol.swift */; };
 		6515458E028E691B454E11C1 /* SceneAnalyzerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DF7982DF96652C50A2049 /* SceneAnalyzerService.swift */; };
 		65FB6B897053508878504CB5 /* DiscoveredDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60072A353B200FD41A9AED3 /* DiscoveredDevice.swift */; };
+		66049A3738778EF01C1C016D /* iOS_MultiHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC138105D6A04BF969948039 /* iOS_MultiHomeView.swift */; };
 		6803E3FA4F3822A01E6F77A3 /* CodeVaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6486CB8485D8FAABA6496B1 /* CodeVaultService.swift */; };
 		69E46D0DBEDCD5CC4F6D90FB /* PlatformCapabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1BA78F6FC9CFE0F529BC0 /* PlatformCapabilities.swift */; };
 		6AD38568BA665E41D5B3D556 /* SceneSchedulingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1949EE7DC5F7F2E1C3860F0 /* SceneSchedulingService.swift */; };
 		6B0ADBFD926F38B9AE351B86 /* tvOS_ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62B5272BB4F5A51878F6C08 /* tvOS_ContentView.swift */; };
+		6BE4AA85469E1E4237027F36 /* ClimateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297BC6223A5C0E380D3C7A4 /* ClimateService.swift */; };
+		6DCF58FB2FF06A12F6BF139F /* iOS_AdaptiveLightingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FAF906E2D7AA678FC894F4 /* iOS_AdaptiveLightingView.swift */; };
 		6E662CE8EC84D33ABC040FED /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286FFA143BADE2FD65D97CB7 /* AIService.swift */; };
 		6E77DA49BB89AF3031960D15 /* HomekitControl_tvOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01813897B6CE969CBE3AF7AC /* HomekitControl_tvOS.swift */; };
 		6FACD1CCC88B3BD7816F54ED /* ModernColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5E2688C27041778D4B6A27 /* ModernColors.swift */; };
+		77CEFCD67DC0EF02CB9325B3 /* VoiceControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA276E4C456B631BFE743B /* VoiceControlService.swift */; };
 		79126B45E126E4CF1AB6CB47 /* UnifiedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DC03345637CB8E210A52F /* UnifiedScene.swift */; };
+		7990B2BDCDE106EE0D6B7BC6 /* IntegrationHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B70CDE3650B309C92C574 /* IntegrationHubService.swift */; };
 		7B91D69C9C9624516C930707 /* iOS_NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45385B00F20B6518556DA69B /* iOS_NotificationsView.swift */; };
+		7ECC2BA9C71505104A4D73FF /* SecurityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56E9A3D070E38E8D245F060 /* SecurityService.swift */; };
 		80887A700E11A0BCB42F46D9 /* DeviceGroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D8E10F9D0C1C160C27ADE /* DeviceGroupService.swift */; };
+		85D969312E28349413C294C0 /* iOS_IntegrationHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59ECA8CD23685AFF2EB1E10 /* iOS_IntegrationHubView.swift */; };
 		89013E3C5FEE06619996D877 /* iOS_EnergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999807F3EB46D25D506EE85A /* iOS_EnergyView.swift */; };
+		8A1FF17E1DB95F3C5C865661 /* DeviceComparisonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F118A270A52A7BFE4725262 /* DeviceComparisonService.swift */; };
 		8A7AB536E02E1A43CFE13F9C /* EnergyMonitoringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F840E06F1DD16DC95CED8 /* EnergyMonitoringService.swift */; };
+		8B5937170295FB71929A99FB /* SecurityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56E9A3D070E38E8D245F060 /* SecurityService.swift */; };
 		8C8CE2565F22AA0784A8795F /* CircularGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF0F1979F3881CAE2977BD /* CircularGauge.swift */; };
 		8EFB08889FFB957281561B12 /* DeviceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE664AB0BE0E305B651B4CE /* DeviceCategory.swift */; };
 		90247E4E965D3E941D272435 /* iOS_ScenesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE23DBB69058A92DAC75DE /* iOS_ScenesView.swift */; };
 		91CC431D7032EFF029847819 /* Manufacturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503841297ADFFFAED238E4F /* Manufacturer.swift */; };
 		98EA766CA4D7EBCC69C9910D /* iOS_AutomationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F8C562DC0A20A8970D5718 /* iOS_AutomationView.swift */; };
+		9955F3E87745EA54798111D4 /* VoiceControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA276E4C456B631BFE743B /* VoiceControlService.swift */; };
 		9BC9E9CD30A50DB4FBB94E40 /* ModernColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5E2688C27041778D4B6A27 /* ModernColors.swift */; };
 		9BE48AAF110E040C36BE63CD /* UnifiedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DC03345637CB8E210A52F /* UnifiedScene.swift */; };
 		9E18481C33A9BEDB02634794 /* DeviceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE664AB0BE0E305B651B4CE /* DeviceCategory.swift */; };
+		9E40C1B49ED4FDE2391B104C /* AdaptiveLightingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E9CF7F8019B9E8EF355FEB /* AdaptiveLightingService.swift */; };
 		A01B253FFA9BCE1C37CF3B2D /* NetworkDiscoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0926DC14D338FC4C21DFAA /* NetworkDiscoveryService.swift */; };
 		A03562D8033566D68C3B4F3F /* EnergyMonitoringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F840E06F1DD16DC95CED8 /* EnergyMonitoringService.swift */; };
 		A13061108CB49A890F936883 /* ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8FC35168BA43672142476 /* ExportService.swift */; };
+		A4A5275784D31FD1D823CD61 /* iOS_DeviceComparisonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC76D470F6ADD279735C28F /* iOS_DeviceComparisonView.swift */; };
 		A535274DEC855C55B79BE61B /* DeviceGroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D8E10F9D0C1C160C27ADE /* DeviceGroupService.swift */; };
 		A6423A78B1BE6FCEA16C6BA4 /* DeviceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55145EDC6807EEEE7EEF2BBA /* DeviceProtocol.swift */; };
+		A7E3CBAA1347468BBCA69357 /* VoiceControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA276E4C456B631BFE743B /* VoiceControlService.swift */; };
+		AD6C6ADA1C5692A299FEFCBC /* NetworkPerformanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCA75115AEA7FFCBF1C981 /* NetworkPerformanceService.swift */; };
 		AE13F8C646150DB06C48C0EF /* CircularGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF0F1979F3881CAE2977BD /* CircularGauge.swift */; };
 		AED55D48AF8B18C4C188522D /* GlassmorphicBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA25866EC0428B78E7EDE89 /* GlassmorphicBackground.swift */; };
+		B0F9EBB782768717985F2709 /* FirmwareTrackerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A3D4F709DD5ADB106FA5D6 /* FirmwareTrackerService.swift */; };
 		B30AB1C864F19196DE4030F2 /* SetupCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF615C48CE28711A7F4055F /* SetupCode.swift */; };
 		B3DDC00896071C29F3019091 /* PlatformCapabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1BA78F6FC9CFE0F529BC0 /* PlatformCapabilities.swift */; };
 		B4CCFD37DA1EA9062A669BE6 /* GlassmorphicBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA25866EC0428B78E7EDE89 /* GlassmorphicBackground.swift */; };
 		B4FB1D81F5CD9558788E0AE9 /* DeviceHealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF79BEC3849F722BEE477BC /* DeviceHealthService.swift */; };
+		B5F96CF7C393EBA1EC3816E5 /* FirmwareTrackerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A3D4F709DD5ADB106FA5D6 /* FirmwareTrackerService.swift */; };
 		B655E28A643E6450D02B9416 /* NetworkDiscoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0926DC14D338FC4C21DFAA /* NetworkDiscoveryService.swift */; };
+		B93B99DC920EF29A29EF42ED /* FloorPlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A8C6F7DD51B730C72C02F /* FloorPlanService.swift */; };
+		B9ABC5362459ACD97D21FFFA /* iOS_NetworkPerformanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E5646E658ECF422415A5F1 /* iOS_NetworkPerformanceView.swift */; };
+		BAF427C7E0B7386333B48EA9 /* UsageReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506056D37347E9333FCFE80 /* UsageReportService.swift */; };
+		BDC60FBCB5A9DC11F54A6CCE /* UsageReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506056D37347E9333FCFE80 /* UsageReportService.swift */; };
 		BDCAB8F1F4C2C4C7004BF92C /* CodeVaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6486CB8485D8FAABA6496B1 /* CodeVaultService.swift */; };
 		BE0905726E621865392D83E4 /* AutomationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BCC6AFC9A525914AF8266B /* AutomationService.swift */; };
 		BEE488C4F5142BD86CD4784F /* SceneSchedulingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1949EE7DC5F7F2E1C3860F0 /* SceneSchedulingService.swift */; };
 		C2C566991516AE945CB5975F /* UnifiedDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249E44D5A998074E51A7EE /* UnifiedDevice.swift */; };
+		C314F3DB37B5C8D88E7A84DB /* iOS_ClimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFA2E78A62CE861E5C4565F /* iOS_ClimateView.swift */; };
+		C8D33F38CC280468AB4633DF /* ClimateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297BC6223A5C0E380D3C7A4 /* ClimateService.swift */; };
+		C9030E38D2AF8F676230C2AD /* NetworkPerformanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCA75115AEA7FFCBF1C981 /* NetworkPerformanceService.swift */; };
 		CA661C9AF114C8728032C1AB /* iOS_NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA430F62847D14861DC769C7 /* iOS_NetworkView.swift */; };
 		CB846EC3C43490743E7C8F8C /* ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8FC35168BA43672142476 /* ExportService.swift */; };
+		CD7AD53DFC96FD4C002B9B1B /* iOS_MaintenanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4264B1C54B70F78E1CC21C0 /* iOS_MaintenanceView.swift */; };
 		D0D6A94F8A340627F9F696A2 /* HomeKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615441A8A3D06D6AF29CA30 /* HomeKitService.swift */; };
+		D3C8E3C7128A5D0D354DF6CA /* FloorPlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A8C6F7DD51B730C72C02F /* FloorPlanService.swift */; };
 		D497CB9E3BE8435602ED9489 /* tvOS_RemoteControlWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03713333908ABFAAF08F6D12 /* tvOS_RemoteControlWidget.swift */; };
+		D50CBFDC2D095E82DD1B51CE /* PresenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1CB5067313FCA45A67F06 /* PresenceService.swift */; };
 		D5C563BC42BEF23A6DC20985 /* GlassmorphicBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA25866EC0428B78E7EDE89 /* GlassmorphicBackground.swift */; };
 		D79DA99E025EF580B7292FA0 /* iOS_GuestModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE05C876C992F86A203C41A5 /* iOS_GuestModeView.swift */; };
 		D88615101DA772880538348F /* DeviceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55145EDC6807EEEE7EEF2BBA /* DeviceProtocol.swift */; };
 		DB3B538D57EEB89667AD4D8C /* DeviceHealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF79BEC3849F722BEE477BC /* DeviceHealthService.swift */; };
 		DBC2AB171BBFA1D4F3265906 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4368ADAC9C15C579520248AC /* NotificationService.swift */; };
 		E06A2EDAA4FBEC0634ED9ADC /* PlatformCapabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1BA78F6FC9CFE0F529BC0 /* PlatformCapabilities.swift */; };
+		E47E56EB31C6955476B33337 /* NetworkPerformanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCA75115AEA7FFCBF1C981 /* NetworkPerformanceService.swift */; };
+		E624EA2C364D40E9A61AB2C1 /* FloorPlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A8C6F7DD51B730C72C02F /* FloorPlanService.swift */; };
+		E6B93A77842ABFB64F21CBFB /* SceneSuggestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913034B61692B2B727D589DB /* SceneSuggestionService.swift */; };
 		E7E4C4D1EBE8DB9C3ADDF381 /* iOS_SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B1AC50C5A96EB35BAA4BF7 /* iOS_SettingsView.swift */; };
 		EAA34E8C88F59860005708A6 /* iOS_GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5479E7732BD18D19896BD868 /* iOS_GroupsView.swift */; };
+		EB20B3C369029774EA303001 /* AdaptiveLightingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E9CF7F8019B9E8EF355FEB /* AdaptiveLightingService.swift */; };
 		EC1D4628C878B376AF29A642 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DFC5E3FF020A31274FED41 /* Assets.xcassets */; };
 		EC3A4AC73579011A6F393E23 /* SetupCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF615C48CE28711A7F4055F /* SetupCode.swift */; };
 		ECFF67545B87F9381B9FD2C9 /* iOS_ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F833439D6E1B9A4486C93981 /* iOS_ContentView.swift */; };
+		EEB7D546F220659093FBEE3A /* PresenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1CB5067313FCA45A67F06 /* PresenceService.swift */; };
 		F05B5F8E2AEA01275A69EDBE /* SiriShortcutsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9655AB57076108976C3CEFF8 /* SiriShortcutsService.swift */; };
+		F0E292B954BA75F4C767283F /* iOS_SecurityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F77D8117C87903A7969BEDC /* iOS_SecurityView.swift */; };
+		F1A8C68D0891CF663963C79C /* iOS_PresenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6661CE14D1782973F496105F /* iOS_PresenceView.swift */; };
 		F2A5ECA3C6920806D6F49039 /* GuestModeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6630619B6C59E72D0D19C7AD /* GuestModeService.swift */; };
 		F4AA4F8FD67104C149D706E2 /* BackupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2948FA33D30BDEDF6930BCB /* BackupService.swift */; };
 		F50C1203DD4D521A9BCEA33B /* UnifiedDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249E44D5A998074E51A7EE /* UnifiedDevice.swift */; };
@@ -128,11 +184,19 @@
 		031DF7982DF96652C50A2049 /* SceneAnalyzerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneAnalyzerService.swift; sourceTree = "<group>"; };
 		03713333908ABFAAF08F6D12 /* tvOS_RemoteControlWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOS_RemoteControlWidget.swift; sourceTree = "<group>"; };
 		04FF0F1979F3881CAE2977BD /* CircularGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularGauge.swift; sourceTree = "<group>"; };
+		0506056D37347E9333FCFE80 /* UsageReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageReportService.swift; sourceTree = "<group>"; };
 		07801F76E8ABB450BA955D24 /* tvOS_GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOS_GroupsView.swift; sourceTree = "<group>"; };
+		0D0781E8FA3B7B1B370E7D43 /* iOS_SuggestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_SuggestionsView.swift; sourceTree = "<group>"; };
+		185A8C6F7DD51B730C72C02F /* FloorPlanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorPlanService.swift; sourceTree = "<group>"; };
+		1CFA2E78A62CE861E5C4565F /* iOS_ClimateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ClimateView.swift; sourceTree = "<group>"; };
 		202E556002A2CBFA0F1BECF6 /* iOS_HealthDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_HealthDashboardView.swift; sourceTree = "<group>"; };
 		286FFA143BADE2FD65D97CB7 /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
+		30E9CF7F8019B9E8EF355FEB /* AdaptiveLightingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveLightingService.swift; sourceTree = "<group>"; };
+		3297BC6223A5C0E380D3C7A4 /* ClimateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateService.swift; sourceTree = "<group>"; };
 		3BA887658AF38BC68B60B57B /* iOS_DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_DevicesView.swift; sourceTree = "<group>"; };
 		3FF615C48CE28711A7F4055F /* SetupCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCode.swift; sourceTree = "<group>"; };
+		4220E69452AB7679CB28645F /* iOS_UsageReportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_UsageReportsView.swift; sourceTree = "<group>"; };
+		42FAF906E2D7AA678FC894F4 /* iOS_AdaptiveLightingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_AdaptiveLightingView.swift; sourceTree = "<group>"; };
 		4368ADAC9C15C579520248AC /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		43BCC6AFC9A525914AF8266B /* AutomationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationService.swift; sourceTree = "<group>"; };
 		4503841297ADFFFAED238E4F /* Manufacturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manufacturer.swift; sourceTree = "<group>"; };
@@ -140,6 +204,7 @@
 		4615441A8A3D06D6AF29CA30 /* HomeKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitService.swift; sourceTree = "<group>"; };
 		482B9BC1026401D680DF7052 /* tvOS_HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOS_HealthView.swift; sourceTree = "<group>"; };
 		494C6D93B314DE6725B16D9E /* iOS_AIAssistantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_AIAssistantView.swift; sourceTree = "<group>"; };
+		4F118A270A52A7BFE4725262 /* DeviceComparisonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceComparisonService.swift; sourceTree = "<group>"; };
 		5479E7732BD18D19896BD868 /* iOS_GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_GroupsView.swift; sourceTree = "<group>"; };
 		55145EDC6807EEEE7EEF2BBA /* DeviceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceProtocol.swift; sourceTree = "<group>"; };
 		56A74475BF36414EAC4AA182 /* iOS_BackupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_BackupView.swift; sourceTree = "<group>"; };
@@ -148,12 +213,21 @@
 		5E249E44D5A998074E51A7EE /* UnifiedDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifiedDevice.swift; sourceTree = "<group>"; };
 		5FE743BECA9965A84EBB8523 /* iOS_ShortcutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ShortcutsView.swift; sourceTree = "<group>"; };
 		6630619B6C59E72D0D19C7AD /* GuestModeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestModeService.swift; sourceTree = "<group>"; };
+		6661CE14D1782973F496105F /* iOS_PresenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_PresenceView.swift; sourceTree = "<group>"; };
+		69BCA493FD5917CEFD3DF40C /* iOS_VoiceControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_VoiceControlView.swift; sourceTree = "<group>"; };
+		6B5702F9ABCD5592D6798BA4 /* iOS_FirmwareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_FirmwareView.swift; sourceTree = "<group>"; };
 		6BE12ABFDF5025381EBCDE57 /* HealthStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStatus.swift; sourceTree = "<group>"; };
+		6F77D8117C87903A7969BEDC /* iOS_SecurityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_SecurityView.swift; sourceTree = "<group>"; };
+		71B1CB5067313FCA45A67F06 /* PresenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenceService.swift; sourceTree = "<group>"; };
+		71EA276E4C456B631BFE743B /* VoiceControlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControlService.swift; sourceTree = "<group>"; };
 		7F0926DC14D338FC4C21DFAA /* NetworkDiscoveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDiscoveryService.swift; sourceTree = "<group>"; };
 		7FF79BEC3849F722BEE477BC /* DeviceHealthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHealthService.swift; sourceTree = "<group>"; };
+		8023E9BD0549810A1545CAE1 /* MaintenanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceService.swift; sourceTree = "<group>"; };
+		913034B61692B2B727D589DB /* SceneSuggestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneSuggestionService.swift; sourceTree = "<group>"; };
 		9655AB57076108976C3CEFF8 /* SiriShortcutsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriShortcutsService.swift; sourceTree = "<group>"; };
 		999807F3EB46D25D506EE85A /* iOS_EnergyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_EnergyView.swift; sourceTree = "<group>"; };
 		9E6EC104C9F28665C70B8514 /* tvOS_EnergyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOS_EnergyView.swift; sourceTree = "<group>"; };
+		A4264B1C54B70F78E1CC21C0 /* iOS_MaintenanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_MaintenanceView.swift; sourceTree = "<group>"; };
 		A7DFC5E3FF020A31274FED41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF5AA038592F039C4E1661E9 /* HomekitControl_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomekitControl_iOS.swift; sourceTree = "<group>"; };
 		B2948FA33D30BDEDF6930BCB /* BackupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupService.swift; sourceTree = "<group>"; };
@@ -162,19 +236,29 @@
 		BAA8FC35168BA43672142476 /* ExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportService.swift; sourceTree = "<group>"; };
 		BC5E2688C27041778D4B6A27 /* ModernColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernColors.swift; sourceTree = "<group>"; };
 		C097788E85717340DC476FFB /* HomekitControl-iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "HomekitControl-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3DCA75115AEA7FFCBF1C981 /* NetworkPerformanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPerformanceService.swift; sourceTree = "<group>"; };
+		C67DE1799EF449E190FAFA7C /* MultiHomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiHomeService.swift; sourceTree = "<group>"; };
+		C6A3D4F709DD5ADB106FA5D6 /* FirmwareTrackerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirmwareTrackerService.swift; sourceTree = "<group>"; };
 		CEDF0C454C02679AC64CD0EE /* iOS_ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ScheduleView.swift; sourceTree = "<group>"; };
+		CFC76D470F6ADD279735C28F /* iOS_DeviceComparisonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_DeviceComparisonView.swift; sourceTree = "<group>"; };
 		D19D8E10F9D0C1C160C27ADE /* DeviceGroupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceGroupService.swift; sourceTree = "<group>"; };
 		D3F8C562DC0A20A8970D5718 /* iOS_AutomationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_AutomationView.swift; sourceTree = "<group>"; };
 		D5F1BA78F6FC9CFE0F529BC0 /* PlatformCapabilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformCapabilities.swift; sourceTree = "<group>"; };
 		D8E2EC4980F86091E1DCB23E /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
+		DA1B70CDE3650B309C92C574 /* IntegrationHubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegrationHubService.swift; sourceTree = "<group>"; };
 		DA1DC03345637CB8E210A52F /* UnifiedScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifiedScene.swift; sourceTree = "<group>"; };
 		DA430F62847D14861DC769C7 /* iOS_NetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_NetworkView.swift; sourceTree = "<group>"; };
 		DCE664AB0BE0E305B651B4CE /* DeviceCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCategory.swift; sourceTree = "<group>"; };
 		DE05C876C992F86A203C41A5 /* iOS_GuestModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_GuestModeView.swift; sourceTree = "<group>"; };
 		E1949EE7DC5F7F2E1C3860F0 /* SceneSchedulingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneSchedulingService.swift; sourceTree = "<group>"; };
+		E56E9A3D070E38E8D245F060 /* SecurityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityService.swift; sourceTree = "<group>"; };
 		E6486CB8485D8FAABA6496B1 /* CodeVaultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVaultService.swift; sourceTree = "<group>"; };
 		E99D7C21375178ECAF13DD27 /* HomekitControl-tvOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "HomekitControl-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9E5646E658ECF422415A5F1 /* iOS_NetworkPerformanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_NetworkPerformanceView.swift; sourceTree = "<group>"; };
+		EC138105D6A04BF969948039 /* iOS_MultiHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_MultiHomeView.swift; sourceTree = "<group>"; };
 		ED6AFC1460856E3CDC684E44 /* macOS_ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macOS_ContentView.swift; sourceTree = "<group>"; };
+		EF6F8CDCD0A72DCDCA91B2FD /* iOS_FloorPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_FloorPlanView.swift; sourceTree = "<group>"; };
+		F59ECA8CD23685AFF2EB1E10 /* iOS_IntegrationHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_IntegrationHubView.swift; sourceTree = "<group>"; };
 		F62B5272BB4F5A51878F6C08 /* tvOS_ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOS_ContentView.swift; sourceTree = "<group>"; };
 		F833439D6E1B9A4486C93981 /* iOS_ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ContentView.swift; sourceTree = "<group>"; };
 		F98A7B2E883AF17370C9EEDD /* tvOS_ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOS_ScheduleView.swift; sourceTree = "<group>"; };
@@ -226,21 +310,35 @@
 		33AC8CEBA81B5A16EC3C4055 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				30E9CF7F8019B9E8EF355FEB /* AdaptiveLightingService.swift */,
 				286FFA143BADE2FD65D97CB7 /* AIService.swift */,
 				43BCC6AFC9A525914AF8266B /* AutomationService.swift */,
 				B2948FA33D30BDEDF6930BCB /* BackupService.swift */,
+				3297BC6223A5C0E380D3C7A4 /* ClimateService.swift */,
 				E6486CB8485D8FAABA6496B1 /* CodeVaultService.swift */,
+				4F118A270A52A7BFE4725262 /* DeviceComparisonService.swift */,
 				D19D8E10F9D0C1C160C27ADE /* DeviceGroupService.swift */,
 				7FF79BEC3849F722BEE477BC /* DeviceHealthService.swift */,
 				FA8F840E06F1DD16DC95CED8 /* EnergyMonitoringService.swift */,
 				BAA8FC35168BA43672142476 /* ExportService.swift */,
+				C6A3D4F709DD5ADB106FA5D6 /* FirmwareTrackerService.swift */,
+				185A8C6F7DD51B730C72C02F /* FloorPlanService.swift */,
 				6630619B6C59E72D0D19C7AD /* GuestModeService.swift */,
 				4615441A8A3D06D6AF29CA30 /* HomeKitService.swift */,
+				DA1B70CDE3650B309C92C574 /* IntegrationHubService.swift */,
+				8023E9BD0549810A1545CAE1 /* MaintenanceService.swift */,
+				C67DE1799EF449E190FAFA7C /* MultiHomeService.swift */,
 				7F0926DC14D338FC4C21DFAA /* NetworkDiscoveryService.swift */,
+				C3DCA75115AEA7FFCBF1C981 /* NetworkPerformanceService.swift */,
 				4368ADAC9C15C579520248AC /* NotificationService.swift */,
+				71B1CB5067313FCA45A67F06 /* PresenceService.swift */,
 				031DF7982DF96652C50A2049 /* SceneAnalyzerService.swift */,
 				E1949EE7DC5F7F2E1C3860F0 /* SceneSchedulingService.swift */,
+				913034B61692B2B727D589DB /* SceneSuggestionService.swift */,
+				E56E9A3D070E38E8D245F060 /* SecurityService.swift */,
 				9655AB57076108976C3CEFF8 /* SiriShortcutsService.swift */,
+				0506056D37347E9333FCFE80 /* UsageReportService.swift */,
+				71EA276E4C456B631BFE743B /* VoiceControlService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -279,21 +377,35 @@
 		A496722472DE6D987999A7AB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				42FAF906E2D7AA678FC894F4 /* iOS_AdaptiveLightingView.swift */,
 				494C6D93B314DE6725B16D9E /* iOS_AIAssistantView.swift */,
 				D3F8C562DC0A20A8970D5718 /* iOS_AutomationView.swift */,
 				56A74475BF36414EAC4AA182 /* iOS_BackupView.swift */,
+				1CFA2E78A62CE861E5C4565F /* iOS_ClimateView.swift */,
 				F833439D6E1B9A4486C93981 /* iOS_ContentView.swift */,
+				CFC76D470F6ADD279735C28F /* iOS_DeviceComparisonView.swift */,
 				3BA887658AF38BC68B60B57B /* iOS_DevicesView.swift */,
 				999807F3EB46D25D506EE85A /* iOS_EnergyView.swift */,
+				6B5702F9ABCD5592D6798BA4 /* iOS_FirmwareView.swift */,
+				EF6F8CDCD0A72DCDCA91B2FD /* iOS_FloorPlanView.swift */,
 				5479E7732BD18D19896BD868 /* iOS_GroupsView.swift */,
 				DE05C876C992F86A203C41A5 /* iOS_GuestModeView.swift */,
 				202E556002A2CBFA0F1BECF6 /* iOS_HealthDashboardView.swift */,
+				F59ECA8CD23685AFF2EB1E10 /* iOS_IntegrationHubView.swift */,
+				A4264B1C54B70F78E1CC21C0 /* iOS_MaintenanceView.swift */,
+				EC138105D6A04BF969948039 /* iOS_MultiHomeView.swift */,
+				E9E5646E658ECF422415A5F1 /* iOS_NetworkPerformanceView.swift */,
 				DA430F62847D14861DC769C7 /* iOS_NetworkView.swift */,
 				45385B00F20B6518556DA69B /* iOS_NotificationsView.swift */,
+				6661CE14D1782973F496105F /* iOS_PresenceView.swift */,
 				01DE23DBB69058A92DAC75DE /* iOS_ScenesView.swift */,
 				CEDF0C454C02679AC64CD0EE /* iOS_ScheduleView.swift */,
+				6F77D8117C87903A7969BEDC /* iOS_SecurityView.swift */,
 				B6B1AC50C5A96EB35BAA4BF7 /* iOS_SettingsView.swift */,
 				5FE743BECA9965A84EBB8523 /* iOS_ShortcutsView.swift */,
+				0D0781E8FA3B7B1B370E7D43 /* iOS_SuggestionsView.swift */,
+				4220E69452AB7679CB28645F /* iOS_UsageReportsView.swift */,
+				69BCA493FD5917CEFD3DF40C /* iOS_VoiceControlView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -494,34 +606,48 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E662CE8EC84D33ABC040FED /* AIService.swift in Sources */,
+				149F291C4F2DE0B19EF7AA8C /* AdaptiveLightingService.swift in Sources */,
 				0C0F2A681381053753303F44 /* AutomationService.swift in Sources */,
 				F4AA4F8FD67104C149D706E2 /* BackupService.swift in Sources */,
 				AE13F8C646150DB06C48C0EF /* CircularGauge.swift in Sources */,
+				6BE4AA85469E1E4237027F36 /* ClimateService.swift in Sources */,
 				6803E3FA4F3822A01E6F77A3 /* CodeVaultService.swift in Sources */,
 				4799FF0430FD61A706BC2803 /* DeviceCategory.swift in Sources */,
+				476F37CBA6D459BD2A477759 /* DeviceComparisonService.swift in Sources */,
 				A535274DEC855C55B79BE61B /* DeviceGroupService.swift in Sources */,
 				B4FB1D81F5CD9558788E0AE9 /* DeviceHealthService.swift in Sources */,
 				A6423A78B1BE6FCEA16C6BA4 /* DeviceProtocol.swift in Sources */,
 				F877C8E660F76BBAD892AC9A /* DiscoveredDevice.swift in Sources */,
 				A03562D8033566D68C3B4F3F /* EnergyMonitoringService.swift in Sources */,
 				5A283133EF496D130C4B260C /* ExportService.swift in Sources */,
+				B0F9EBB782768717985F2709 /* FirmwareTrackerService.swift in Sources */,
+				B93B99DC920EF29A29EF42ED /* FloorPlanService.swift in Sources */,
 				2CBBF1DEF8B128BCDA5016F3 /* GlassCard.swift in Sources */,
 				D5C563BC42BEF23A6DC20985 /* GlassmorphicBackground.swift in Sources */,
 				FAEABB467AD2DFBF2F59694C /* GuestModeService.swift in Sources */,
 				3A5588C7492AFD71939C9B43 /* HealthStatus.swift in Sources */,
 				D0D6A94F8A340627F9F696A2 /* HomeKitService.swift in Sources */,
 				536B20A7FE2F6C23108519F5 /* HomekitControl_macOS.swift in Sources */,
+				7990B2BDCDE106EE0D6B7BC6 /* IntegrationHubService.swift in Sources */,
+				559B5618CF8CC635E6D34CE9 /* MaintenanceService.swift in Sources */,
 				5ED5B0299915D24C3358ED95 /* Manufacturer.swift in Sources */,
 				9BC9E9CD30A50DB4FBB94E40 /* ModernColors.swift in Sources */,
+				08F430E34466ECA54D0C2AAB /* MultiHomeService.swift in Sources */,
 				54052F74A307D6D1E81A1E2D /* NetworkDiscoveryService.swift in Sources */,
+				E47E56EB31C6955476B33337 /* NetworkPerformanceService.swift in Sources */,
 				DBC2AB171BBFA1D4F3265906 /* NotificationService.swift in Sources */,
 				B3DDC00896071C29F3019091 /* PlatformCapabilities.swift in Sources */,
+				EEB7D546F220659093FBEE3A /* PresenceService.swift in Sources */,
 				FC2004E864A2F0824EC55614 /* SceneAnalyzerService.swift in Sources */,
 				6AD38568BA665E41D5B3D556 /* SceneSchedulingService.swift in Sources */,
+				E6B93A77842ABFB64F21CBFB /* SceneSuggestionService.swift in Sources */,
+				0C7D6CB1AD5C8C3E131B92B7 /* SecurityService.swift in Sources */,
 				2DE99F10B3057BF4DF2FA838 /* SetupCode.swift in Sources */,
 				3F50838244613D1C2F9DC152 /* SiriShortcutsService.swift in Sources */,
 				C2C566991516AE945CB5975F /* UnifiedDevice.swift in Sources */,
 				79126B45E126E4CF1AB6CB47 /* UnifiedScene.swift in Sources */,
+				2AC2186B78607E6EB002D409 /* UsageReportService.swift in Sources */,
+				A7E3CBAA1347468BBCA69357 /* VoiceControlService.swift in Sources */,
 				588D807933F96CD7BBD2176B /* macOS_ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -531,34 +657,48 @@
 			buildActionMask = 2147483647;
 			files = (
 				20EC25C8B7736BCC825257EF /* AIService.swift in Sources */,
+				EB20B3C369029774EA303001 /* AdaptiveLightingService.swift in Sources */,
 				4C788F2ABAA72F66D4895CDC /* AutomationService.swift in Sources */,
 				2F92B725D2E95A9288F30131 /* BackupService.swift in Sources */,
 				8C8CE2565F22AA0784A8795F /* CircularGauge.swift in Sources */,
+				C8D33F38CC280468AB4633DF /* ClimateService.swift in Sources */,
 				BDCAB8F1F4C2C4C7004BF92C /* CodeVaultService.swift in Sources */,
 				9E18481C33A9BEDB02634794 /* DeviceCategory.swift in Sources */,
+				8A1FF17E1DB95F3C5C865661 /* DeviceComparisonService.swift in Sources */,
 				60875551205AE493B56F8F2E /* DeviceGroupService.swift in Sources */,
 				DB3B538D57EEB89667AD4D8C /* DeviceHealthService.swift in Sources */,
 				644678C3B361C83932C434A7 /* DeviceProtocol.swift in Sources */,
 				58B4B65A694F6309A880F058 /* DiscoveredDevice.swift in Sources */,
 				8A7AB536E02E1A43CFE13F9C /* EnergyMonitoringService.swift in Sources */,
 				CB846EC3C43490743E7C8F8C /* ExportService.swift in Sources */,
+				2B0AC617E04C74E6DB2286E3 /* FirmwareTrackerService.swift in Sources */,
+				E624EA2C364D40E9A61AB2C1 /* FloorPlanService.swift in Sources */,
 				10839009CBA15C569A656195 /* GlassCard.swift in Sources */,
 				B4CCFD37DA1EA9062A669BE6 /* GlassmorphicBackground.swift in Sources */,
 				157974542807B5D8BE468390 /* GuestModeService.swift in Sources */,
 				33F86C3B3DC901FF8E5C3FF2 /* HealthStatus.swift in Sources */,
 				FDD42E923BB55AA798C19A4D /* HomeKitService.swift in Sources */,
 				6E77DA49BB89AF3031960D15 /* HomekitControl_tvOS.swift in Sources */,
+				1433F11BCE5B7E772CEFAB1F /* IntegrationHubService.swift in Sources */,
+				1639A01FE9896B9576EEA9B8 /* MaintenanceService.swift in Sources */,
 				210FF9EB283671E6AD78E1E5 /* Manufacturer.swift in Sources */,
 				4FA19EA76B8565CF26CE48DE /* ModernColors.swift in Sources */,
+				043F25F76FC3791CBA0B357B /* MultiHomeService.swift in Sources */,
 				B655E28A643E6450D02B9416 /* NetworkDiscoveryService.swift in Sources */,
+				C9030E38D2AF8F676230C2AD /* NetworkPerformanceService.swift in Sources */,
 				59324F98C20A2DE126D89057 /* NotificationService.swift in Sources */,
 				E06A2EDAA4FBEC0634ED9ADC /* PlatformCapabilities.swift in Sources */,
+				5247B2F7034D5E4601CB5AA2 /* PresenceService.swift in Sources */,
 				6515458E028E691B454E11C1 /* SceneAnalyzerService.swift in Sources */,
 				BEE488C4F5142BD86CD4784F /* SceneSchedulingService.swift in Sources */,
+				5B8CFD0EA16F2EF9E7DA4F75 /* SceneSuggestionService.swift in Sources */,
+				7ECC2BA9C71505104A4D73FF /* SecurityService.swift in Sources */,
 				EC3A4AC73579011A6F393E23 /* SetupCode.swift in Sources */,
 				F05B5F8E2AEA01275A69EDBE /* SiriShortcutsService.swift in Sources */,
 				1E918CC8BD5A4C3FE0B007DE /* UnifiedDevice.swift in Sources */,
 				15604010CB2EDD260C888D36 /* UnifiedScene.swift in Sources */,
+				BAF427C7E0B7386333B48EA9 /* UsageReportService.swift in Sources */,
+				9955F3E87745EA54798111D4 /* VoiceControlService.swift in Sources */,
 				263FBDE95962D4E6FE59B8A0 /* tvOS_AutomationView.swift in Sources */,
 				6B0ADBFD926F38B9AE351B86 /* tvOS_ContentView.swift in Sources */,
 				39F3343947906C25FC22FE21 /* tvOS_EnergyView.swift in Sources */,
@@ -574,49 +714,77 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE977A6CEF9C2F1B5B0EE5FB /* AIService.swift in Sources */,
+				9E40C1B49ED4FDE2391B104C /* AdaptiveLightingService.swift in Sources */,
 				BE0905726E621865392D83E4 /* AutomationService.swift in Sources */,
 				4985D963939E0203FEBD9F7E /* BackupService.swift in Sources */,
 				5DAC16FC106780988D4AFABD /* CircularGauge.swift in Sources */,
+				0BF2EB61D8528334D5FC7566 /* ClimateService.swift in Sources */,
 				4584A85DBC8C658AFF525712 /* CodeVaultService.swift in Sources */,
 				8EFB08889FFB957281561B12 /* DeviceCategory.swift in Sources */,
+				37D69CF24B28D84EE21A3F5C /* DeviceComparisonService.swift in Sources */,
 				80887A700E11A0BCB42F46D9 /* DeviceGroupService.swift in Sources */,
 				3422867174297D423E12851C /* DeviceHealthService.swift in Sources */,
 				D88615101DA772880538348F /* DeviceProtocol.swift in Sources */,
 				65FB6B897053508878504CB5 /* DiscoveredDevice.swift in Sources */,
 				5212DC3A2D5795A6818692C8 /* EnergyMonitoringService.swift in Sources */,
 				A13061108CB49A890F936883 /* ExportService.swift in Sources */,
+				B5F96CF7C393EBA1EC3816E5 /* FirmwareTrackerService.swift in Sources */,
+				D3C8E3C7128A5D0D354DF6CA /* FloorPlanService.swift in Sources */,
 				377E91A9F6EC40257AD4A2E0 /* GlassCard.swift in Sources */,
 				AED55D48AF8B18C4C188522D /* GlassmorphicBackground.swift in Sources */,
 				F2A5ECA3C6920806D6F49039 /* GuestModeService.swift in Sources */,
 				2AB9688CA8CC4555D9277F4C /* HealthStatus.swift in Sources */,
 				F6D2BDBE761E58BDA331E1A1 /* HomeKitService.swift in Sources */,
 				11AB6A410E6916CE33DD7C3F /* HomekitControl_iOS.swift in Sources */,
+				15A79C2987BDAE1F6F4CCAA9 /* IntegrationHubService.swift in Sources */,
+				27ABD176157E209E42931F1D /* MaintenanceService.swift in Sources */,
 				91CC431D7032EFF029847819 /* Manufacturer.swift in Sources */,
 				6FACD1CCC88B3BD7816F54ED /* ModernColors.swift in Sources */,
+				43C40D22A2A89223C772DB8A /* MultiHomeService.swift in Sources */,
 				A01B253FFA9BCE1C37CF3B2D /* NetworkDiscoveryService.swift in Sources */,
+				AD6C6ADA1C5692A299FEFCBC /* NetworkPerformanceService.swift in Sources */,
 				1FAF26387C4F0CB5A38ED072 /* NotificationService.swift in Sources */,
 				69E46D0DBEDCD5CC4F6D90FB /* PlatformCapabilities.swift in Sources */,
+				D50CBFDC2D095E82DD1B51CE /* PresenceService.swift in Sources */,
 				19C2B721C2E1391E4F4346F1 /* SceneAnalyzerService.swift in Sources */,
 				2B01575E8E111832B339B70B /* SceneSchedulingService.swift in Sources */,
+				403D8B8D6EDBB9E65EEA60C2 /* SceneSuggestionService.swift in Sources */,
+				8B5937170295FB71929A99FB /* SecurityService.swift in Sources */,
 				B30AB1C864F19196DE4030F2 /* SetupCode.swift in Sources */,
 				003A0304ECE1936EA724E7BD /* SiriShortcutsService.swift in Sources */,
 				F50C1203DD4D521A9BCEA33B /* UnifiedDevice.swift in Sources */,
 				9BE48AAF110E040C36BE63CD /* UnifiedScene.swift in Sources */,
+				BDC60FBCB5A9DC11F54A6CCE /* UsageReportService.swift in Sources */,
+				77CEFCD67DC0EF02CB9325B3 /* VoiceControlService.swift in Sources */,
 				2D62037EA2DC09BFA80C9A54 /* iOS_AIAssistantView.swift in Sources */,
+				6DCF58FB2FF06A12F6BF139F /* iOS_AdaptiveLightingView.swift in Sources */,
 				98EA766CA4D7EBCC69C9910D /* iOS_AutomationView.swift in Sources */,
 				632F756BBB4587E4AEA6EDE1 /* iOS_BackupView.swift in Sources */,
+				C314F3DB37B5C8D88E7A84DB /* iOS_ClimateView.swift in Sources */,
 				ECFF67545B87F9381B9FD2C9 /* iOS_ContentView.swift in Sources */,
+				A4A5275784D31FD1D823CD61 /* iOS_DeviceComparisonView.swift in Sources */,
 				40D6E9DD6E6A8BE279924739 /* iOS_DevicesView.swift in Sources */,
 				89013E3C5FEE06619996D877 /* iOS_EnergyView.swift in Sources */,
+				5AD9BF874D86EA2CA996D6F4 /* iOS_FirmwareView.swift in Sources */,
+				02948F456234C5D9A925040C /* iOS_FloorPlanView.swift in Sources */,
 				EAA34E8C88F59860005708A6 /* iOS_GroupsView.swift in Sources */,
 				D79DA99E025EF580B7292FA0 /* iOS_GuestModeView.swift in Sources */,
 				5D496CFA03BB53D525FA11FF /* iOS_HealthDashboardView.swift in Sources */,
+				85D969312E28349413C294C0 /* iOS_IntegrationHubView.swift in Sources */,
+				CD7AD53DFC96FD4C002B9B1B /* iOS_MaintenanceView.swift in Sources */,
+				66049A3738778EF01C1C016D /* iOS_MultiHomeView.swift in Sources */,
+				B9ABC5362459ACD97D21FFFA /* iOS_NetworkPerformanceView.swift in Sources */,
 				CA661C9AF114C8728032C1AB /* iOS_NetworkView.swift in Sources */,
 				7B91D69C9C9624516C930707 /* iOS_NotificationsView.swift in Sources */,
+				F1A8C68D0891CF663963C79C /* iOS_PresenceView.swift in Sources */,
 				90247E4E965D3E941D272435 /* iOS_ScenesView.swift in Sources */,
 				F8F31B434F2D24B99399E9D8 /* iOS_ScheduleView.swift in Sources */,
+				F0E292B954BA75F4C767283F /* iOS_SecurityView.swift in Sources */,
 				E7E4C4D1EBE8DB9C3ADDF381 /* iOS_SettingsView.swift in Sources */,
 				F9233C120DBCFCEF1D6BB6D8 /* iOS_ShortcutsView.swift in Sources */,
+				0362009630101738FDCBCF38 /* iOS_SuggestionsView.swift in Sources */,
+				0EB955015CC744106D574BFB /* iOS_UsageReportsView.swift in Sources */,
+				3AECBABAA28E90414A8037F2 /* iOS_VoiceControlView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
