@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10366BFFD3880D83C76101AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DFC5E3FF020A31274FED41 /* Assets.xcassets */; };
 		10839009CBA15C569A656195 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E2EC4980F86091E1DCB23E /* GlassCard.swift */; };
 		11AB6A410E6916CE33DD7C3F /* HomekitControl_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5AA038592F039C4E1661E9 /* HomekitControl_iOS.swift */; };
 		15604010CB2EDD260C888D36 /* UnifiedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DC03345637CB8E210A52F /* UnifiedScene.swift */; };
@@ -14,6 +15,7 @@
 		1E918CC8BD5A4C3FE0B007DE /* UnifiedDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249E44D5A998074E51A7EE /* UnifiedDevice.swift */; };
 		20EC25C8B7736BCC825257EF /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286FFA143BADE2FD65D97CB7 /* AIService.swift */; };
 		210FF9EB283671E6AD78E1E5 /* Manufacturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503841297ADFFFAED238E4F /* Manufacturer.swift */; };
+		21CE11989D4E0AFB5E7559E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DFC5E3FF020A31274FED41 /* Assets.xcassets */; };
 		2AB9688CA8CC4555D9277F4C /* HealthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE12ABFDF5025381EBCDE57 /* HealthStatus.swift */; };
 		2CBBF1DEF8B128BCDA5016F3 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E2EC4980F86091E1DCB23E /* GlassCard.swift */; };
 		2D62037EA2DC09BFA80C9A54 /* iOS_AIAssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C6D93B314DE6725B16D9E /* iOS_AIAssistantView.swift */; };
@@ -70,6 +72,7 @@
 		DB3B538D57EEB89667AD4D8C /* DeviceHealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF79BEC3849F722BEE477BC /* DeviceHealthService.swift */; };
 		E06A2EDAA4FBEC0634ED9ADC /* PlatformCapabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1BA78F6FC9CFE0F529BC0 /* PlatformCapabilities.swift */; };
 		E7E4C4D1EBE8DB9C3ADDF381 /* iOS_SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B1AC50C5A96EB35BAA4BF7 /* iOS_SettingsView.swift */; };
+		EC1D4628C878B376AF29A642 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DFC5E3FF020A31274FED41 /* Assets.xcassets */; };
 		EC3A4AC73579011A6F393E23 /* SetupCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF615C48CE28711A7F4055F /* SetupCode.swift */; };
 		ECFF67545B87F9381B9FD2C9 /* iOS_ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F833439D6E1B9A4486C93981 /* iOS_ContentView.swift */; };
 		F50C1203DD4D521A9BCEA33B /* UnifiedDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249E44D5A998074E51A7EE /* UnifiedDevice.swift */; };
@@ -98,6 +101,7 @@
 		6BE12ABFDF5025381EBCDE57 /* HealthStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStatus.swift; sourceTree = "<group>"; };
 		7F0926DC14D338FC4C21DFAA /* NetworkDiscoveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDiscoveryService.swift; sourceTree = "<group>"; };
 		7FF79BEC3849F722BEE477BC /* DeviceHealthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHealthService.swift; sourceTree = "<group>"; };
+		A7DFC5E3FF020A31274FED41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF5AA038592F039C4E1661E9 /* HomekitControl_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomekitControl_iOS.swift; sourceTree = "<group>"; };
 		B60072A353B200FD41A9AED3 /* DiscoveredDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveredDevice.swift; sourceTree = "<group>"; };
 		B6B1AC50C5A96EB35BAA4BF7 /* iOS_SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_SettingsView.swift; sourceTree = "<group>"; };
@@ -194,6 +198,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		6FF7D83FBAB27F959A08B2D8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A7DFC5E3FF020A31274FED41 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		A496722472DE6D987999A7AB /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +235,7 @@
 			children = (
 				0378505DE7212EF578EBC981 /* iOS */,
 				1270A5FA2CC52CFFE7A8A06E /* macOS */,
+				6FF7D83FBAB27F959A08B2D8 /* Resources */,
 				586F39430DA15B1062C328B1 /* Shared */,
 				F56D9AD5064DC93AFB8018A9 /* tvOS */,
 				29B69017FAFD8B5C245AC7A6 /* Products */,
@@ -270,6 +283,7 @@
 			buildConfigurationList = 0C87AEA61979F933731ACFAF /* Build configuration list for PBXNativeTarget "HomekitControl-macOS" */;
 			buildPhases = (
 				3000F5FAB7B7C83A4D8ECAB0 /* Sources */,
+				CF2D0040A4224E931678E379 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -287,6 +301,7 @@
 			buildConfigurationList = DD47FB8F02115DC87E54A52B /* Build configuration list for PBXNativeTarget "HomekitControl-tvOS" */;
 			buildPhases = (
 				70AEB4AEB589D83950CA7109 /* Sources */,
+				5605B341D2862839DCEFCA3F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -304,6 +319,7 @@
 			buildConfigurationList = A43D3C11B3AF57483A62E5FA /* Build configuration list for PBXNativeTarget "HomekitControl-iOS" */;
 			buildPhases = (
 				B8A525DDB91512783A1474A6 /* Sources */,
+				F22B53FE7BDA7737F3F62DE4 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -359,6 +375,33 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5605B341D2862839DCEFCA3F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21CE11989D4E0AFB5E7559E7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF2D0040A4224E931678E379 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC1D4628C878B376AF29A642 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F22B53FE7BDA7737F3F62DE4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10366BFFD3880D83C76101AE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3000F5FAB7B7C83A4D8ECAB0 /* Sources */ = {
@@ -523,7 +566,7 @@
 		8893F0CCD11DAAF8DA3E618D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Resources/tvOS.entitlements;
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "HomekitControl needs HomeKit access to control your smart home devices.";
@@ -673,7 +716,7 @@
 		BBF12FE39A83942FFB9BB5C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Resources/tvOS.entitlements;
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "HomekitControl needs HomeKit access to control your smart home devices.";

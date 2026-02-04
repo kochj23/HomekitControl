@@ -23,10 +23,12 @@ targets:
     sources:
       - Shared
       - iOS
+      - path: Resources/Assets.xcassets
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.kochj.HomeKitTV
         PRODUCT_NAME: HomekitControl
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         INFOPLIST_KEY_UILaunchScreen_Generation: true
         INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
@@ -41,10 +43,12 @@ targets:
     sources:
       - Shared
       - tvOS
+      - path: Resources/Assets.xcassets
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.kochj.HomeKitTV
         PRODUCT_NAME: HomekitControl
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         INFOPLIST_KEY_UILaunchScreen_Generation: true
         INFOPLIST_KEY_NSHomeKitUsageDescription: "HomekitControl needs HomeKit access to control your smart home devices."
         INFOPLIST_KEY_NSLocalNetworkUsageDescription: "HomekitControl needs local network access to discover smart home devices."
@@ -57,10 +61,12 @@ targets:
     sources:
       - Shared
       - macOS
+      - path: Resources/Assets.xcassets
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.jordankoch.HomekitControl-macOS
         PRODUCT_NAME: HomekitControl
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         INFOPLIST_KEY_NSLocalNetworkUsageDescription: "HomekitControl needs local network access to discover smart home devices."
         CODE_SIGN_ENTITLEMENTS: Resources/macOS.entitlements
 

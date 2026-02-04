@@ -27,3 +27,4 @@ Pods/
 secrets.json
 credentials.json
 .env
+build/
