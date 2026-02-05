@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		003A0304ECE1936EA724E7BD /* SiriShortcutsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9655AB57076108976C3CEFF8 /* SiriShortcutsService.swift */; };
+		01A653A2C881C6A24D2537DE /* WidgetSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C018299D797D0FD9A65E094C /* WidgetSyncService.swift */; };
 		02948F456234C5D9A925040C /* iOS_FloorPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6F8CDCD0A72DCDCA91B2FD /* iOS_FloorPlanView.swift */; };
 		0362009630101738FDCBCF38 /* iOS_SuggestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0781E8FA3B7B1B370E7D43 /* iOS_SuggestionsView.swift */; };
 		043F25F76FC3791CBA0B357B /* MultiHomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DE1799EF449E190FAFA7C /* MultiHomeService.swift */; };
@@ -19,6 +20,8 @@
 		0EB955015CC744106D574BFB /* iOS_UsageReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4220E69452AB7679CB28645F /* iOS_UsageReportsView.swift */; };
 		10366BFFD3880D83C76101AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DFC5E3FF020A31274FED41 /* Assets.xcassets */; };
 		10839009CBA15C569A656195 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E2EC4980F86091E1DCB23E /* GlassCard.swift */; };
+		1142135B31C914E9C0E32218 /* HomekitControl-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D1DB3CE42C121E6AE703DD7F /* HomekitControl-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		11522377FC47737E71B542C9 /* WidgetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF4544E13B70C2C57CC0670 /* WidgetData.swift */; };
 		11AB6A410E6916CE33DD7C3F /* HomekitControl_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5AA038592F039C4E1661E9 /* HomekitControl_iOS.swift */; };
 		1433F11BCE5B7E772CEFAB1F /* IntegrationHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B70CDE3650B309C92C574 /* IntegrationHubService.swift */; };
 		149F291C4F2DE0B19EF7AA8C /* AdaptiveLightingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E9CF7F8019B9E8EF355FEB /* AdaptiveLightingService.swift */; };
@@ -27,6 +30,7 @@
 		15A79C2987BDAE1F6F4CCAA9 /* IntegrationHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B70CDE3650B309C92C574 /* IntegrationHubService.swift */; };
 		1639A01FE9896B9576EEA9B8 /* MaintenanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8023E9BD0549810A1545CAE1 /* MaintenanceService.swift */; };
 		19C2B721C2E1391E4F4346F1 /* SceneAnalyzerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DF7982DF96652C50A2049 /* SceneAnalyzerService.swift */; };
+		1D2849B7585081724B26EB9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0E5998FB410275E2E0A6728 /* Foundation.framework */; };
 		1E918CC8BD5A4C3FE0B007DE /* UnifiedDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249E44D5A998074E51A7EE /* UnifiedDevice.swift */; };
 		1FAF26387C4F0CB5A38ED072 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4368ADAC9C15C579520248AC /* NotificationService.swift */; };
 		20EC25C8B7736BCC825257EF /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286FFA143BADE2FD65D97CB7 /* AIService.swift */; };
@@ -107,6 +111,7 @@
 		91CC431D7032EFF029847819 /* Manufacturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503841297ADFFFAED238E4F /* Manufacturer.swift */; };
 		98EA766CA4D7EBCC69C9910D /* iOS_AutomationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F8C562DC0A20A8970D5718 /* iOS_AutomationView.swift */; };
 		9955F3E87745EA54798111D4 /* VoiceControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA276E4C456B631BFE743B /* VoiceControlService.swift */; };
+		9B93A1BC0F8932569E49B978 /* HomekitControl-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D1DB3CE42C121E6AE703DD7F /* HomekitControl-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9BC9E9CD30A50DB4FBB94E40 /* ModernColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5E2688C27041778D4B6A27 /* ModernColors.swift */; };
 		9BE48AAF110E040C36BE63CD /* UnifiedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DC03345637CB8E210A52F /* UnifiedScene.swift */; };
 		9E18481C33A9BEDB02634794 /* DeviceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE664AB0BE0E305B651B4CE /* DeviceCategory.swift */; };
@@ -117,6 +122,7 @@
 		A4A5275784D31FD1D823CD61 /* iOS_DeviceComparisonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC76D470F6ADD279735C28F /* iOS_DeviceComparisonView.swift */; };
 		A535274DEC855C55B79BE61B /* DeviceGroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D8E10F9D0C1C160C27ADE /* DeviceGroupService.swift */; };
 		A6423A78B1BE6FCEA16C6BA4 /* DeviceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55145EDC6807EEEE7EEF2BBA /* DeviceProtocol.swift */; };
+		A67E6F4FA5EBE5C4500803D8 /* HomekitControlWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4298398263E793F0DE334A4B /* HomekitControlWidget.swift */; };
 		A7E3CBAA1347468BBCA69357 /* VoiceControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA276E4C456B631BFE743B /* VoiceControlService.swift */; };
 		AD6C6ADA1C5692A299FEFCBC /* NetworkPerformanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCA75115AEA7FFCBF1C981 /* NetworkPerformanceService.swift */; };
 		AE13F8C646150DB06C48C0EF /* CircularGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF0F1979F3881CAE2977BD /* CircularGauge.swift */; };
@@ -135,13 +141,16 @@
 		BDCAB8F1F4C2C4C7004BF92C /* CodeVaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6486CB8485D8FAABA6496B1 /* CodeVaultService.swift */; };
 		BE0905726E621865392D83E4 /* AutomationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BCC6AFC9A525914AF8266B /* AutomationService.swift */; };
 		BEE488C4F5142BD86CD4784F /* SceneSchedulingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1949EE7DC5F7F2E1C3860F0 /* SceneSchedulingService.swift */; };
+		C1ADFA191A4A91CA541989C0 /* SharedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F3A59924C16649D1763FA /* SharedDataManager.swift */; };
 		C2C566991516AE945CB5975F /* UnifiedDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249E44D5A998074E51A7EE /* UnifiedDevice.swift */; };
 		C314F3DB37B5C8D88E7A84DB /* iOS_ClimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFA2E78A62CE861E5C4565F /* iOS_ClimateView.swift */; };
 		C8D33F38CC280468AB4633DF /* ClimateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297BC6223A5C0E380D3C7A4 /* ClimateService.swift */; };
 		C9030E38D2AF8F676230C2AD /* NetworkPerformanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCA75115AEA7FFCBF1C981 /* NetworkPerformanceService.swift */; };
 		CA661C9AF114C8728032C1AB /* iOS_NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA430F62847D14861DC769C7 /* iOS_NetworkView.swift */; };
 		CB846EC3C43490743E7C8F8C /* ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8FC35168BA43672142476 /* ExportService.swift */; };
+		CC366C348BDD3925E0041FA4 /* WidgetSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C018299D797D0FD9A65E094C /* WidgetSyncService.swift */; };
 		CD7AD53DFC96FD4C002B9B1B /* iOS_MaintenanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4264B1C54B70F78E1CC21C0 /* iOS_MaintenanceView.swift */; };
+		CF9EF674FFD176FB0975D948 /* WidgetSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C018299D797D0FD9A65E094C /* WidgetSyncService.swift */; };
 		D0D6A94F8A340627F9F696A2 /* HomeKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615441A8A3D06D6AF29CA30 /* HomeKitService.swift */; };
 		D3C8E3C7128A5D0D354DF6CA /* FloorPlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A8C6F7DD51B730C72C02F /* FloorPlanService.swift */; };
 		D497CB9E3BE8435602ED9489 /* tvOS_RemoteControlWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03713333908ABFAAF08F6D12 /* tvOS_RemoteControlWidget.swift */; };
@@ -162,6 +171,7 @@
 		EC3A4AC73579011A6F393E23 /* SetupCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF615C48CE28711A7F4055F /* SetupCode.swift */; };
 		ECFF67545B87F9381B9FD2C9 /* iOS_ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F833439D6E1B9A4486C93981 /* iOS_ContentView.swift */; };
 		EEB7D546F220659093FBEE3A /* PresenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1CB5067313FCA45A67F06 /* PresenceService.swift */; };
+		EEDDD0919A8603858A2798A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DFC5E3FF020A31274FED41 /* Assets.xcassets */; };
 		F05B5F8E2AEA01275A69EDBE /* SiriShortcutsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9655AB57076108976C3CEFF8 /* SiriShortcutsService.swift */; };
 		F0E292B954BA75F4C767283F /* iOS_SecurityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F77D8117C87903A7969BEDC /* iOS_SecurityView.swift */; };
 		F1A8C68D0891CF663963C79C /* iOS_PresenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6661CE14D1782973F496105F /* iOS_PresenceView.swift */; };
@@ -177,6 +187,48 @@
 		FDD42E923BB55AA798C19A4D /* HomeKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615441A8A3D06D6AF29CA30 /* HomeKitService.swift */; };
 		FE977A6CEF9C2F1B5B0EE5FB /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286FFA143BADE2FD65D97CB7 /* AIService.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		972CA73CB0E68585C4AF1E18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EC9AB1FA4B433778CB4416A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B5B25AFDBC22BF0BF0AA764;
+			remoteInfo = "HomekitControl-Widget";
+		};
+		AE406E36D34F392D86482233 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EC9AB1FA4B433778CB4416A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B5B25AFDBC22BF0BF0AA764;
+			remoteInfo = "HomekitControl-Widget";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4524BEA9475A56C210341F5A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9B93A1BC0F8932569E49B978 /* HomekitControl-Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9376265506D315AA8B187D9E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1142135B31C914E9C0E32218 /* HomekitControl-Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		01813897B6CE969CBE3AF7AC /* HomekitControl_tvOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomekitControl_tvOS.swift; sourceTree = "<group>"; };
@@ -195,12 +247,15 @@
 		3297BC6223A5C0E380D3C7A4 /* ClimateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateService.swift; sourceTree = "<group>"; };
 		3BA887658AF38BC68B60B57B /* iOS_DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_DevicesView.swift; sourceTree = "<group>"; };
 		3FF615C48CE28711A7F4055F /* SetupCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCode.swift; sourceTree = "<group>"; };
+		42198C42F2FB1C0527A80A32 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4220E69452AB7679CB28645F /* iOS_UsageReportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_UsageReportsView.swift; sourceTree = "<group>"; };
+		4298398263E793F0DE334A4B /* HomekitControlWidget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HomekitControlWidget.swift; sourceTree = "<group>"; };
 		42FAF906E2D7AA678FC894F4 /* iOS_AdaptiveLightingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_AdaptiveLightingView.swift; sourceTree = "<group>"; };
 		4368ADAC9C15C579520248AC /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		43BCC6AFC9A525914AF8266B /* AutomationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationService.swift; sourceTree = "<group>"; };
 		4503841297ADFFFAED238E4F /* Manufacturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manufacturer.swift; sourceTree = "<group>"; };
 		45385B00F20B6518556DA69B /* iOS_NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_NotificationsView.swift; sourceTree = "<group>"; };
+		457F3A59924C16649D1763FA /* SharedDataManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SharedDataManager.swift; sourceTree = "<group>"; };
 		4615441A8A3D06D6AF29CA30 /* HomeKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitService.swift; sourceTree = "<group>"; };
 		482B9BC1026401D680DF7052 /* tvOS_HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOS_HealthView.swift; sourceTree = "<group>"; };
 		494C6D93B314DE6725B16D9E /* iOS_AIAssistantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_AIAssistantView.swift; sourceTree = "<group>"; };
@@ -235,13 +290,16 @@
 		B6B1AC50C5A96EB35BAA4BF7 /* iOS_SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_SettingsView.swift; sourceTree = "<group>"; };
 		BAA8FC35168BA43672142476 /* ExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportService.swift; sourceTree = "<group>"; };
 		BC5E2688C27041778D4B6A27 /* ModernColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernColors.swift; sourceTree = "<group>"; };
+		C018299D797D0FD9A65E094C /* WidgetSyncService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetSyncService.swift; sourceTree = "<group>"; };
 		C097788E85717340DC476FFB /* HomekitControl-iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "HomekitControl-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DCA75115AEA7FFCBF1C981 /* NetworkPerformanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPerformanceService.swift; sourceTree = "<group>"; };
 		C67DE1799EF449E190FAFA7C /* MultiHomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiHomeService.swift; sourceTree = "<group>"; };
 		C6A3D4F709DD5ADB106FA5D6 /* FirmwareTrackerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirmwareTrackerService.swift; sourceTree = "<group>"; };
+		C8C78E6E43ACEE9AE3010E96 /* HomekitControl_Widget.entitlements */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.entitlements; path = HomekitControl_Widget.entitlements; sourceTree = "<group>"; };
 		CEDF0C454C02679AC64CD0EE /* iOS_ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ScheduleView.swift; sourceTree = "<group>"; };
 		CFC76D470F6ADD279735C28F /* iOS_DeviceComparisonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_DeviceComparisonView.swift; sourceTree = "<group>"; };
 		D19D8E10F9D0C1C160C27ADE /* DeviceGroupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceGroupService.swift; sourceTree = "<group>"; };
+		D1DB3CE42C121E6AE703DD7F /* HomekitControl-Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "HomekitControl-Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F8C562DC0A20A8970D5718 /* iOS_AutomationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_AutomationView.swift; sourceTree = "<group>"; };
 		D5F1BA78F6FC9CFE0F529BC0 /* PlatformCapabilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformCapabilities.swift; sourceTree = "<group>"; };
 		D8E2EC4980F86091E1DCB23E /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
@@ -249,6 +307,7 @@
 		DA1DC03345637CB8E210A52F /* UnifiedScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifiedScene.swift; sourceTree = "<group>"; };
 		DA430F62847D14861DC769C7 /* iOS_NetworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_NetworkView.swift; sourceTree = "<group>"; };
 		DCE664AB0BE0E305B651B4CE /* DeviceCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCategory.swift; sourceTree = "<group>"; };
+		DDF4544E13B70C2C57CC0670 /* WidgetData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetData.swift; sourceTree = "<group>"; };
 		DE05C876C992F86A203C41A5 /* iOS_GuestModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_GuestModeView.swift; sourceTree = "<group>"; };
 		E1949EE7DC5F7F2E1C3860F0 /* SceneSchedulingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneSchedulingService.swift; sourceTree = "<group>"; };
 		E56E9A3D070E38E8D245F060 /* SecurityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityService.swift; sourceTree = "<group>"; };
@@ -258,6 +317,7 @@
 		EC138105D6A04BF969948039 /* iOS_MultiHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_MultiHomeView.swift; sourceTree = "<group>"; };
 		ED6AFC1460856E3CDC684E44 /* macOS_ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = macOS_ContentView.swift; sourceTree = "<group>"; };
 		EF6F8CDCD0A72DCDCA91B2FD /* iOS_FloorPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_FloorPlanView.swift; sourceTree = "<group>"; };
+		F0E5998FB410275E2E0A6728 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		F59ECA8CD23685AFF2EB1E10 /* iOS_IntegrationHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_IntegrationHubView.swift; sourceTree = "<group>"; };
 		F62B5272BB4F5A51878F6C08 /* tvOS_ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOS_ContentView.swift; sourceTree = "<group>"; };
 		F833439D6E1B9A4486C93981 /* iOS_ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ContentView.swift; sourceTree = "<group>"; };
@@ -266,6 +326,17 @@
 		FBE5D348536A52EE8A1C6131 /* HomekitControl-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HomekitControl-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7E4745455C7D12ED97CF28 /* tvOS_AutomationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOS_AutomationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45C0116F483597CFFE43CDEE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D2849B7585081724B26EB9B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		0378505DE7212EF578EBC981 /* iOS */ = {
@@ -303,6 +374,7 @@
 				C097788E85717340DC476FFB /* HomekitControl-iOS.app */,
 				FBE5D348536A52EE8A1C6131 /* HomekitControl-macOS.app */,
 				E99D7C21375178ECAF13DD27 /* HomekitControl-tvOS.app */,
+				D1DB3CE42C121E6AE703DD7F /* HomekitControl-Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -339,6 +411,7 @@
 				9655AB57076108976C3CEFF8 /* SiriShortcutsService.swift */,
 				0506056D37347E9333FCFE80 /* UsageReportService.swift */,
 				71EA276E4C456B631BFE743B /* VoiceControlService.swift */,
+				C018299D797D0FD9A65E094C /* WidgetSyncService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -430,6 +503,8 @@
 				586F39430DA15B1062C328B1 /* Shared */,
 				F56D9AD5064DC93AFB8018A9 /* tvOS */,
 				29B69017FAFD8B5C245AC7A6 /* Products */,
+				C437534E67B1F82AA4E0BD5A /* Frameworks */,
+				C2D7261C27DE8BB7F77854B4 /* HomekitControl Widget */,
 			);
 			sourceTree = "<group>";
 		};
@@ -453,6 +528,35 @@
 				D5F1BA78F6FC9CFE0F529BC0 /* PlatformCapabilities.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C2D7261C27DE8BB7F77854B4 /* HomekitControl Widget */ = {
+			isa = PBXGroup;
+			children = (
+				4298398263E793F0DE334A4B /* HomekitControlWidget.swift */,
+				DDF4544E13B70C2C57CC0670 /* WidgetData.swift */,
+				457F3A59924C16649D1763FA /* SharedDataManager.swift */,
+				42198C42F2FB1C0527A80A32 /* Info.plist */,
+				C8C78E6E43ACEE9AE3010E96 /* HomekitControl_Widget.entitlements */,
+			);
+			name = "HomekitControl Widget";
+			path = "HomekitControl Widget";
+			sourceTree = "<group>";
+		};
+		C437534E67B1F82AA4E0BD5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECAFB51BC8F7FE605ECAA8B7 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ECAFB51BC8F7FE605ECAA8B7 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F0E5998FB410275E2E0A6728 /* Foundation.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		F56D9AD5064DC93AFB8018A9 /* tvOS */ = {
@@ -481,14 +585,14 @@
 			buildPhases = (
 				3000F5FAB7B7C83A4D8ECAB0 /* Sources */,
 				CF2D0040A4224E931678E379 /* Resources */,
+				9376265506D315AA8B187D9E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				02F8362ACB2C4D48EFC1762A /* PBXTargetDependency */,
 			);
 			name = "HomekitControl-macOS";
-			packageProductDependencies = (
-			);
 			productName = "HomekitControl-macOS";
 			productReference = FBE5D348536A52EE8A1C6131 /* HomekitControl-macOS.app */;
 			productType = "com.apple.product-type.application";
@@ -505,8 +609,6 @@
 			dependencies = (
 			);
 			name = "HomekitControl-tvOS";
-			packageProductDependencies = (
-			);
 			productName = "HomekitControl-tvOS";
 			productReference = E99D7C21375178ECAF13DD27 /* HomekitControl-tvOS.app */;
 			productType = "com.apple.product-type.application";
@@ -517,17 +619,34 @@
 			buildPhases = (
 				B8A525DDB91512783A1474A6 /* Sources */,
 				F22B53FE7BDA7737F3F62DE4 /* Resources */,
+				4524BEA9475A56C210341F5A /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77F22A152AFC727889897A83 /* PBXTargetDependency */,
+			);
+			name = "HomekitControl-iOS";
+			productName = "HomekitControl-iOS";
+			productReference = C097788E85717340DC476FFB /* HomekitControl-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9B5B25AFDBC22BF0BF0AA764 /* HomekitControl-Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A4FD2839FA92E4358CC23D1B /* Build configuration list for PBXNativeTarget "HomekitControl-Widget" */;
+			buildPhases = (
+				97C38204472A5A65B096EEDA /* Sources */,
+				45C0116F483597CFFE43CDEE /* Frameworks */,
+				63BEB5ECBFDF1AD8F7D92123 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "HomekitControl-iOS";
-			packageProductDependencies = (
-			);
-			productName = "HomekitControl-iOS";
-			productReference = C097788E85717340DC476FFB /* HomekitControl-iOS.app */;
-			productType = "com.apple.product-type.application";
+			name = "HomekitControl-Widget";
+			productName = HomekitControlWidgetExtension;
+			productReference = D1DB3CE42C121E6AE703DD7F /* HomekitControl-Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -563,12 +682,14 @@
 			mainGroup = BA5D1A4683B6DB6DACE1EF8A;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
+			productRefGroup = 29B69017FAFD8B5C245AC7A6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				722708BC69014078F1964884 /* HomekitControl-iOS */,
 				2CE95FFC0100A32CDEFEECF1 /* HomekitControl-macOS */,
 				422FBF8167444668044072BA /* HomekitControl-tvOS */,
+				9B5B25AFDBC22BF0BF0AA764 /* HomekitControl-Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -579,6 +700,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				21CE11989D4E0AFB5E7559E7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63BEB5ECBFDF1AD8F7D92123 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEDDD0919A8603858A2798A3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,6 +778,7 @@
 				2AC2186B78607E6EB002D409 /* UsageReportService.swift in Sources */,
 				A7E3CBAA1347468BBCA69357 /* VoiceControlService.swift in Sources */,
 				588D807933F96CD7BBD2176B /* macOS_ContentView.swift in Sources */,
+				CF9EF674FFD176FB0975D948 /* WidgetSyncService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,6 +836,17 @@
 				0E151A83083D2DFED0B05E12 /* tvOS_HealthView.swift in Sources */,
 				D497CB9E3BE8435602ED9489 /* tvOS_RemoteControlWidget.swift in Sources */,
 				3176E544B97682E7136AE067 /* tvOS_ScheduleView.swift in Sources */,
+				01A653A2C881C6A24D2537DE /* WidgetSyncService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		97C38204472A5A65B096EEDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A67E6F4FA5EBE5C4500803D8 /* HomekitControlWidget.swift in Sources */,
+				11522377FC47737E71B542C9 /* WidgetData.swift in Sources */,
+				C1ADFA191A4A91CA541989C0 /* SharedDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -785,10 +926,26 @@
 				0362009630101738FDCBCF38 /* iOS_SuggestionsView.swift in Sources */,
 				0EB955015CC744106D574BFB /* iOS_UsageReportsView.swift in Sources */,
 				3AECBABAA28E90414A8037F2 /* iOS_VoiceControlView.swift in Sources */,
+				CC366C348BDD3925E0041FA4 /* WidgetSyncService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		02F8362ACB2C4D48EFC1762A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "HomekitControl-Widget";
+			target = 9B5B25AFDBC22BF0BF0AA764 /* HomekitControl-Widget */;
+			targetProxy = AE406E36D34F392D86482233 /* PBXContainerItemProxy */;
+		};
+		77F22A152AFC727889897A83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "HomekitControl-Widget";
+			target = 9B5B25AFDBC22BF0BF0AA764 /* HomekitControl-Widget */;
+			targetProxy = 972CA73CB0E68585C4AF1E18 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D1149E539180D529ED5246E /* Debug */ = {
@@ -796,7 +953,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Resources/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = QRRCB8HB3W;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "HomekitControl needs local network access to discover smart home devices.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -814,7 +974,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Resources/iOS.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QRRCB8HB3W;
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "HomekitControl needs HomeKit access to control your smart home devices.";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "HomekitControl needs local network access to discover smart home devices.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -837,7 +999,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Resources/iOS.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QRRCB8HB3W;
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "HomekitControl needs HomeKit access to control your smart home devices.";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "HomekitControl needs local network access to discover smart home devices.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -861,6 +1025,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Resources/tvOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QRRCB8HB3W;
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "HomekitControl needs HomeKit access to control your smart home devices.";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "HomekitControl needs local network access to discover smart home devices.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1005,12 +1172,82 @@
 			};
 			name = Release;
 		};
+		B4416768DCDC4A6A269F2CFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = "HomekitControl Widget/HomekitControl_Widget.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = QRRCB8HB3W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "HomekitControl Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "HomekitControl Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2026 Jordan Koch. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jordankoch.HomekitControl-macOS.widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BBCBA5B3DA34781FA4404434 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_ENTITLEMENTS = "HomekitControl Widget/HomekitControl_Widget.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = QRRCB8HB3W;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "HomekitControl Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "HomekitControl Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright 2026 Jordan Koch. All rights reserved.";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jordankoch.HomekitControl-macOS.widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
 		BBF12FE39A83942FFB9BB5C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = Resources/tvOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QRRCB8HB3W;
 				INFOPLIST_KEY_NSHomeKitUsageDescription = "HomekitControl needs HomeKit access to control your smart home devices.";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "HomekitControl needs local network access to discover smart home devices.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1031,7 +1268,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Resources/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = QRRCB8HB3W;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "HomekitControl needs local network access to discover smart home devices.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1073,6 +1313,15 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
+		};
+		A4FD2839FA92E4358CC23D1B /* Build configuration list for PBXNativeTarget "HomekitControl-Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B4416768DCDC4A6A269F2CFC /* Release */,
+				BBCBA5B3DA34781FA4404434 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD47FB8F02115DC87E54A52B /* Build configuration list for PBXNativeTarget "HomekitControl-tvOS" */ = {
 			isa = XCConfigurationList;
