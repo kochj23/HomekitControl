@@ -85,3 +85,17 @@ MIT License - See LICENSE file for details.
 Jordan Koch
 
 Copyright 2026 Jordan Koch. All rights reserved.
+
+---
+
+## More Apps by Jordan Koch
+
+| App | Description |
+|-----|-------------|
+| [StreamRotator](https://github.com/kochj23/StreamRotator) | Video stream rotation and display management |
+| [rtsp-rotator](https://github.com/kochj23/rtsp-rotator) | RTSP camera stream rotation and monitoring |
+| [TopGUI](https://github.com/kochj23/TopGUI) | macOS system monitor with real-time metrics |
+| [NMAPScanner](https://github.com/kochj23/NMAPScanner) | Network security scanner with AI threat detection |
+| [MLXCode](https://github.com/kochj23/MLXCode) | Local AI coding assistant for Apple Silicon |
+
+> **[View all projects](https://github.com/kochj23?tab=repositories)**
