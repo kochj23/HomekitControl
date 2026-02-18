@@ -12,6 +12,7 @@
 		02948F456234C5D9A925040C /* iOS_FloorPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6F8CDCD0A72DCDCA91B2FD /* iOS_FloorPlanView.swift */; };
 		0362009630101738FDCBCF38 /* iOS_SuggestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0781E8FA3B7B1B370E7D43 /* iOS_SuggestionsView.swift */; };
 		043F25F76FC3791CBA0B357B /* MultiHomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DE1799EF449E190FAFA7C /* MultiHomeService.swift */; };
+		05DF305E92955A8A388CD9A4 /* AIBackendManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0128DF0171F4A9AAEE58D9E4 /* AIBackendManager.swift */; };
 		08F430E34466ECA54D0C2AAB /* MultiHomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DE1799EF449E190FAFA7C /* MultiHomeService.swift */; };
 		0BF2EB61D8528334D5FC7566 /* ClimateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297BC6223A5C0E380D3C7A4 /* ClimateService.swift */; };
 		0C0F2A681381053753303F44 /* AutomationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BCC6AFC9A525914AF8266B /* AutomationService.swift */; };
@@ -111,7 +112,6 @@
 		91CC431D7032EFF029847819 /* Manufacturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503841297ADFFFAED238E4F /* Manufacturer.swift */; };
 		98EA766CA4D7EBCC69C9910D /* iOS_AutomationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F8C562DC0A20A8970D5718 /* iOS_AutomationView.swift */; };
 		9955F3E87745EA54798111D4 /* VoiceControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA276E4C456B631BFE743B /* VoiceControlService.swift */; };
-		9B93A1BC0F8932569E49B978 /* HomekitControl-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D1DB3CE42C121E6AE703DD7F /* HomekitControl-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9BC9E9CD30A50DB4FBB94E40 /* ModernColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5E2688C27041778D4B6A27 /* ModernColors.swift */; };
 		9BE48AAF110E040C36BE63CD /* UnifiedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DC03345637CB8E210A52F /* UnifiedScene.swift */; };
 		9E18481C33A9BEDB02634794 /* DeviceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE664AB0BE0E305B651B4CE /* DeviceCategory.swift */; };
@@ -141,6 +141,7 @@
 		BDCAB8F1F4C2C4C7004BF92C /* CodeVaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6486CB8485D8FAABA6496B1 /* CodeVaultService.swift */; };
 		BE0905726E621865392D83E4 /* AutomationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BCC6AFC9A525914AF8266B /* AutomationService.swift */; };
 		BEE488C4F5142BD86CD4784F /* SceneSchedulingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1949EE7DC5F7F2E1C3860F0 /* SceneSchedulingService.swift */; };
+		C1310470688AD3FBC3D99C02 /* AIBackendManager+Generation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4612A1142AA510E75CAA6542 /* AIBackendManager+Generation.swift */; };
 		C1ADFA191A4A91CA541989C0 /* SharedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457F3A59924C16649D1763FA /* SharedDataManager.swift */; };
 		C2C566991516AE945CB5975F /* UnifiedDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249E44D5A998074E51A7EE /* UnifiedDevice.swift */; };
 		C314F3DB37B5C8D88E7A84DB /* iOS_ClimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFA2E78A62CE861E5C4565F /* iOS_ClimateView.swift */; };
@@ -160,6 +161,7 @@
 		D88615101DA772880538348F /* DeviceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55145EDC6807EEEE7EEF2BBA /* DeviceProtocol.swift */; };
 		DB3B538D57EEB89667AD4D8C /* DeviceHealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF79BEC3849F722BEE477BC /* DeviceHealthService.swift */; };
 		DBC2AB171BBFA1D4F3265906 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4368ADAC9C15C579520248AC /* NotificationService.swift */; };
+		DCC25B2EBEE2583C07E1EE68 /* AIBackendManager+Enhanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73332C203B04324D8BAB4FCD /* AIBackendManager+Enhanced.swift */; };
 		E06A2EDAA4FBEC0634ED9ADC /* PlatformCapabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1BA78F6FC9CFE0F529BC0 /* PlatformCapabilities.swift */; };
 		E47E56EB31C6955476B33337 /* NetworkPerformanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCA75115AEA7FFCBF1C981 /* NetworkPerformanceService.swift */; };
 		E624EA2C364D40E9A61AB2C1 /* FloorPlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A8C6F7DD51B730C72C02F /* FloorPlanService.swift */; };
@@ -186,16 +188,10 @@
 		FC2004E864A2F0824EC55614 /* SceneAnalyzerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DF7982DF96652C50A2049 /* SceneAnalyzerService.swift */; };
 		FDD42E923BB55AA798C19A4D /* HomeKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615441A8A3D06D6AF29CA30 /* HomeKitService.swift */; };
 		FE977A6CEF9C2F1B5B0EE5FB /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286FFA143BADE2FD65D97CB7 /* AIService.swift */; };
+		FF5AEFAAD0F4F128D28853CD /* AIBackendStatusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AA65D4054EB3E6A61759F2 /* AIBackendStatusMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		972CA73CB0E68585C4AF1E18 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3EC9AB1FA4B433778CB4416A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9B5B25AFDBC22BF0BF0AA764;
-			remoteInfo = "HomekitControl-Widget";
-		};
 		AE406E36D34F392D86482233 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3EC9AB1FA4B433778CB4416A /* Project object */;
@@ -212,7 +208,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				9B93A1BC0F8932569E49B978 /* HomekitControl-Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +226,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0128DF0171F4A9AAEE58D9E4 /* AIBackendManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AIBackendManager.swift; path = macOS/AIBackendManager.swift; sourceTree = "<group>"; };
 		01813897B6CE969CBE3AF7AC /* HomekitControl_tvOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomekitControl_tvOS.swift; sourceTree = "<group>"; };
 		01DE23DBB69058A92DAC75DE /* iOS_ScenesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ScenesView.swift; sourceTree = "<group>"; };
 		031DF7982DF96652C50A2049 /* SceneAnalyzerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneAnalyzerService.swift; sourceTree = "<group>"; };
@@ -256,7 +252,9 @@
 		4503841297ADFFFAED238E4F /* Manufacturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manufacturer.swift; sourceTree = "<group>"; };
 		45385B00F20B6518556DA69B /* iOS_NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_NotificationsView.swift; sourceTree = "<group>"; };
 		457F3A59924C16649D1763FA /* SharedDataManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SharedDataManager.swift; sourceTree = "<group>"; };
+		4612A1142AA510E75CAA6542 /* AIBackendManager+Generation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AIBackendManager+Generation.swift"; path = "macOS/AIBackendManager+Generation.swift"; sourceTree = "<group>"; };
 		4615441A8A3D06D6AF29CA30 /* HomeKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitService.swift; sourceTree = "<group>"; };
+		47AA65D4054EB3E6A61759F2 /* AIBackendStatusMenu.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AIBackendStatusMenu.swift; path = macOS/AIBackendStatusMenu.swift; sourceTree = "<group>"; };
 		482B9BC1026401D680DF7052 /* tvOS_HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOS_HealthView.swift; sourceTree = "<group>"; };
 		494C6D93B314DE6725B16D9E /* iOS_AIAssistantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_AIAssistantView.swift; sourceTree = "<group>"; };
 		4F118A270A52A7BFE4725262 /* DeviceComparisonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceComparisonService.swift; sourceTree = "<group>"; };
@@ -275,6 +273,7 @@
 		6F77D8117C87903A7969BEDC /* iOS_SecurityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_SecurityView.swift; sourceTree = "<group>"; };
 		71B1CB5067313FCA45A67F06 /* PresenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenceService.swift; sourceTree = "<group>"; };
 		71EA276E4C456B631BFE743B /* VoiceControlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControlService.swift; sourceTree = "<group>"; };
+		73332C203B04324D8BAB4FCD /* AIBackendManager+Enhanced.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "AIBackendManager+Enhanced.swift"; path = "macOS/AIBackendManager+Enhanced.swift"; sourceTree = "<group>"; };
 		7F0926DC14D338FC4C21DFAA /* NetworkDiscoveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDiscoveryService.swift; sourceTree = "<group>"; };
 		7FF79BEC3849F722BEE477BC /* DeviceHealthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHealthService.swift; sourceTree = "<group>"; };
 		8023E9BD0549810A1545CAE1 /* MaintenanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceService.swift; sourceTree = "<group>"; };
@@ -483,6 +482,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B188928EF1054AB731B83B44 /* AIBackend */ = {
+			isa = PBXGroup;
+			children = (
+				0128DF0171F4A9AAEE58D9E4 /* AIBackendManager.swift */,
+				4612A1142AA510E75CAA6542 /* AIBackendManager+Generation.swift */,
+				73332C203B04324D8BAB4FCD /* AIBackendManager+Enhanced.swift */,
+				47AA65D4054EB3E6A61759F2 /* AIBackendStatusMenu.swift */,
+			);
+			name = AIBackend;
+			sourceTree = "<group>";
+		};
 		B69D85474EDE088C43C15C7F /* Design */ = {
 			isa = PBXGroup;
 			children = (
@@ -505,6 +515,7 @@
 				29B69017FAFD8B5C245AC7A6 /* Products */,
 				C437534E67B1F82AA4E0BD5A /* Frameworks */,
 				C2D7261C27DE8BB7F77854B4 /* HomekitControl Widget */,
+				B188928EF1054AB731B83B44 /* AIBackend */,
 			);
 			sourceTree = "<group>";
 		};
@@ -624,7 +635,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				77F22A152AFC727889897A83 /* PBXTargetDependency */,
 			);
 			name = "HomekitControl-iOS";
 			productName = "HomekitControl-iOS";
@@ -927,6 +937,10 @@
 				0EB955015CC744106D574BFB /* iOS_UsageReportsView.swift in Sources */,
 				3AECBABAA28E90414A8037F2 /* iOS_VoiceControlView.swift in Sources */,
 				CC366C348BDD3925E0041FA4 /* WidgetSyncService.swift in Sources */,
+				05DF305E92955A8A388CD9A4 /* AIBackendManager.swift in Sources */,
+				C1310470688AD3FBC3D99C02 /* AIBackendManager+Generation.swift in Sources */,
+				DCC25B2EBEE2583C07E1EE68 /* AIBackendManager+Enhanced.swift in Sources */,
+				FF5AEFAAD0F4F128D28853CD /* AIBackendStatusMenu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -938,12 +952,6 @@
 			name = "HomekitControl-Widget";
 			target = 9B5B25AFDBC22BF0BF0AA764 /* HomekitControl-Widget */;
 			targetProxy = AE406E36D34F392D86482233 /* PBXContainerItemProxy */;
-		};
-		77F22A152AFC727889897A83 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "HomekitControl-Widget";
-			target = 9B5B25AFDBC22BF0BF0AA764 /* HomekitControl-Widget */;
-			targetProxy = 972CA73CB0E68585C4AF1E18 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

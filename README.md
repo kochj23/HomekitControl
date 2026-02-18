@@ -25,6 +25,28 @@ HomekitControl combines the functionality of 5 previous HomeKit projects into a 
 - AI assistant for smart home insights
 - Setup code vault with Keychain storage
 - Export data (CSV/JSON)
+- **Home Screen Widget** with device health and quick scenes
+
+### iOS Widget
+The HomekitControl Widget provides at-a-glance smart home information directly on your home screen:
+
+- **Small Widget**: Shows unreachable device count and overall health status
+- **Medium Widget**: Device health summary + quick scene buttons
+- **Large Widget**: Full dashboard with health details, device counts, and favorite scenes
+
+#### Widget Features
+- Real-time device health monitoring
+- Unreachable device alerts
+- Quick scene execution (tap to run)
+- Favorite scene management
+- Deep links into the main app
+
+#### Setting Up the Widget
+1. Long-press on your home screen
+2. Tap the "+" button to add a widget
+3. Search for "HomekitControl"
+4. Choose your preferred size (Small, Medium, or Large)
+5. Mark scenes as favorites in the app to see them in the widget
 
 ### tvOS
 - 10-foot optimized UI with focus navigation
@@ -42,13 +64,14 @@ HomekitControl combines the functionality of 5 previous HomeKit projects into a 
 
 | Feature | iOS | tvOS | macOS |
 |---------|-----|------|-------|
-| Device Control | ✅ | ✅ | ❌ Manual only |
-| Scene Execution | ✅ | ✅ | ❌ |
-| Scene Repair | ✅ | ❌ | ❌ |
-| Network Discovery | ✅ | ✅ | ✅ |
-| AI Assistant | ✅ | ✅ | ✅ |
-| Setup Code Vault | ✅ | ❌ | ✅ |
-| Export | ✅ | ❌ | ✅ |
+| Device Control | Yes | Yes | Manual only |
+| Scene Execution | Yes | Yes | No |
+| Scene Repair | Yes | No | No |
+| Network Discovery | Yes | Yes | Yes |
+| AI Assistant | Yes | Yes | Yes |
+| Setup Code Vault | Yes | No | Yes |
+| Export | Yes | No | Yes |
+| Home Screen Widget | Yes | No | No |
 
 ## Requirements
 
@@ -69,14 +92,30 @@ HomekitControl combines the functionality of 5 previous HomeKit projects into a 
 ```
 HomekitControl/
 ├── Shared/
-│   ├── Models/          # Unified data models
-│   ├── Services/        # Core services (HomeKit, Network, AI)
-│   ├── Design/          # Glassmorphic design system
-│   └── Utilities/       # Platform capabilities
-├── iOS/                 # iOS-specific views
-├── tvOS/                # tvOS-specific views
-└── macOS/               # macOS-specific views
+│   ├── Models/              # Unified data models
+│   ├── Services/            # Core services (HomeKit, Network, AI)
+│   ├── Design/              # Glassmorphic design system
+│   └── Utilities/           # Platform capabilities
+├── iOS/                     # iOS-specific views
+├── tvOS/                    # tvOS-specific views
+├── macOS/                   # macOS-specific views
+├── HomekitControl Widget/   # WidgetKit extension
+│   ├── HomekitControlWidget.swift    # Main widget (Small, Medium, Large)
+│   ├── WidgetData.swift              # Widget data models
+│   ├── SharedDataManager.swift       # App Group data sharing
+│   ├── Info.plist                    # Widget Info.plist
+│   └── HomekitControl_Widget.entitlements
+└── Resources/
+    ├── Assets.xcassets      # Shared assets
+    └── *.entitlements       # Platform entitlements
 ```
+
+## App Groups
+
+The widget uses App Groups to share data with the main app:
+- **Identifier**: `group.com.jkoch.homekitcontrol`
+
+This allows the widget to display real-time device health and scene information synced from the main app.
 
 ## License
 
