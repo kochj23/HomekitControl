@@ -1,0 +1,3 @@
+theme: jekyll-theme-cayman
+title: "HomekitControl"
+description: "Multi-platform HomeKit controller for iOS, tvOS, and macOS — unified smart home management across all Apple devices. Built with Swift and SwiftUI."
