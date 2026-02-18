@@ -2,6 +2,8 @@
 
 A unified multi-platform smart home control app for iOS, tvOS, and macOS.
 
+![HomekitControl](Screenshots/main-window.png)
+
 ## Overview
 
 HomekitControl combines the functionality of 5 previous HomeKit projects into a single, unified app:
