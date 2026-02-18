@@ -1,5 +1,7 @@
 # HomekitControl
 
+![Build](https://github.com/kochj23/HomekitControl/actions/workflows/build.yml/badge.svg)
+
 A unified multi-platform smart home control app for iOS, tvOS, and macOS.
 
 ![HomekitControl](Screenshots/main-window.png)
