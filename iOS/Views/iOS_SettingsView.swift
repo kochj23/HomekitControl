@@ -11,7 +11,7 @@ import SwiftUI
 
 struct iOS_SettingsView: View {
     @StateObject private var aiService = AIService.shared
-    @AppStorage("ollamaEndpoint") private var ollamaEndpoint = "http://192.168.1.100:11434"
+    @AppStorage("ollamaEndpoint") private var ollamaEndpoint = "http://localhost:11434"
     @AppStorage("ollamaModel") private var ollamaModel = "llama3.1"
     @State private var showingAbout = false
 

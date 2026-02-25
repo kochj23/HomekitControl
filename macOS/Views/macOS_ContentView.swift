@@ -419,7 +419,7 @@ struct macOS_ExportView: View {
 
 struct macOS_SettingsView: View {
     @StateObject private var aiService = AIService.shared
-    @AppStorage("ollamaEndpoint") private var ollamaEndpoint = "http://192.168.1.100:11434"
+    @AppStorage("ollamaEndpoint") private var ollamaEndpoint = "http://localhost:11434"
     @AppStorage("ollamaModel") private var ollamaModel = "llama3.1"
 
     var body: some View {

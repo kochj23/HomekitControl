@@ -36,7 +36,7 @@ final class AIService: ObservableObject {
 
     // MARK: - Configuration
 
-    var ollamaEndpoint = "http://192.168.1.100:11434"
+    var ollamaEndpoint = "http://localhost:11434"
     var ollamaModel = "llama3.1"
     var tinyLLMEndpoint = "http://localhost:8000"
     var tinyChatEndpoint = "http://localhost:8000"
