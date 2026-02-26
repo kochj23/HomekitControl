@@ -21,10 +21,10 @@ HomekitControl combines the functionality of 5 previous HomeKit projects into a 
 ### iOS
 - Full device control (toggle, brightness, color)
 - Scene execution and repair
-- Network discovery (Bonjour/mDNS)
+- Network discovery (Bonjour/mDNS (Multicast Domain Name System))
 - AI assistant for smart home insights
 - Setup code vault with Keychain storage
-- Export data (CSV/JSON)
+- Export data (CSV (Comma-Separated Values)/JSON)
 - **Home Screen Widget** with device health and quick scenes
 
 ### iOS Widget
@@ -134,7 +134,7 @@ Copyright 2026 Jordan Koch. All rights reserved.
 | App | Description |
 |-----|-------------|
 | [StreamRotator](https://github.com/kochj23/StreamRotator) | Video stream rotation and display management |
-| [rtsp-rotator](https://github.com/kochj23/rtsp-rotator) | RTSP camera stream rotation and monitoring |
+| [rtsp-rotator](https://github.com/kochj23/rtsp-rotator) | RTSP (Real Time Streaming Protocol) camera stream rotation and monitoring |
 | [TopGUI](https://github.com/kochj23/TopGUI) | macOS system monitor with real-time metrics |
 | [NMAPScanner](https://github.com/kochj23/NMAPScanner) | Network security scanner with AI threat detection |
 | [MLXCode](https://github.com/kochj23/MLXCode) | Local AI coding assistant for Apple Silicon |
