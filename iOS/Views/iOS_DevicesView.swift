@@ -77,7 +77,7 @@ struct iOS_DevicesView: View {
 
     private var roomFilterSection: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 12) {
+            HStack(spacing: 8) {
                 FilterChip(title: "All", isSelected: selectedRoom == nil) {
                     selectedRoom = nil
                 }
@@ -96,9 +96,9 @@ struct iOS_DevicesView: View {
 
     private var devicesGrid: some View {
         LazyVGrid(columns: [
-            GridItem(.flexible(), spacing: 16),
-            GridItem(.flexible(), spacing: 16)
-        ], spacing: 16) {
+            GridItem(.flexible(), spacing: 12),
+            GridItem(.flexible(), spacing: 12)
+        ], spacing: 12) {
             ForEach(filteredAccessories, id: \.uniqueIdentifier) { accessory in
                 DeviceCard(
                     accessory: accessory,
@@ -141,11 +141,11 @@ struct FilterChip: View {
     var body: some View {
         Button(action: action) {
             Text(title)
-                .font(.subheadline)
+                .font(.caption)
                 .fontWeight(isSelected ? .semibold : .regular)
                 .foregroundStyle(isSelected ? .white : .secondary)
-                .padding(.horizontal, 16)
-                .padding(.vertical, 8)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
                 .background {
                     Capsule()
                         .fill(isSelected ? ModernColors.accent : Color.white.opacity(0.1))
@@ -165,11 +165,11 @@ struct DeviceCard: View {
     @State private var isOn = false
 
     var body: some View {
-        GlassCard {
-            VStack(alignment: .leading, spacing: 12) {
+        GlassCard(cornerRadius: 16, padding: 12) {
+            VStack(alignment: .leading, spacing: 6) {
                 HStack {
                     Image(systemName: iconForAccessory)
-                        .font(.title2)
+                        .font(.title3)
                         .foregroundStyle(isOn ? ModernColors.accent : .secondary)
 
                     Spacer()
@@ -180,36 +180,36 @@ struct DeviceCard: View {
                 }
 
                 Text(accessory.name)
-                    .font(.headline)
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
                     .foregroundStyle(.white)
                     .lineLimit(2)
+                    .minimumScaleFactor(0.8)
 
                 if let room = accessory.room {
                     Text(room.name)
-                        .font(.caption)
+                        .font(.caption2)
                         .foregroundStyle(.secondary)
                 }
 
-                Spacer()
-
                 HStack {
                     Text(isOn ? "On" : "Off")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
+                        .font(.caption)
+                        .foregroundStyle(isOn ? ModernColors.accent : .secondary)
 
                     Spacer()
 
                     Toggle("", isOn: $isOn)
                         .labelsHidden()
                         .tint(ModernColors.accent)
+                        .scaleEffect(0.8)
                         .onChange(of: isOn) { _, _ in
                             onToggle()
                         }
                 }
             }
-            .padding()
         }
-        .frame(height: 160)
+        .frame(height: 115)
         .onAppear {
             updateState()
         }

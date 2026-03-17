@@ -13,6 +13,10 @@ import SwiftUI
 struct HomekitControl_tvOS: App {
     @StateObject private var homeKitService = HomeKitService.shared
 
+    init() {
+        NovaAPIServer.shared.start()
+    }
+
     var body: some Scene {
         WindowGroup {
             tvOS_ContentView()

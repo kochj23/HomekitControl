@@ -8,7 +8,10 @@
 //
 
 import Foundation
+
+#if canImport(WidgetKit)
 import WidgetKit
+#endif
 
 #if canImport(HomeKit)
 import HomeKit
@@ -335,7 +338,9 @@ final class WidgetSyncService: ObservableObject {
     // MARK: - Widget Refresh
 
     private func refreshWidgets() {
+        #if canImport(WidgetKit)
         WidgetCenter.shared.reloadAllTimelines()
+        #endif
     }
 
     // MARK: - Helpers

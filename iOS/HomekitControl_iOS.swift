@@ -13,6 +13,10 @@ import SwiftUI
 struct HomekitControl_iOS: App {
     @StateObject private var homeKitService = HomeKitService.shared
 
+    init() {
+        NovaAPIServer.shared.start()
+    }
+
     var body: some Scene {
         WindowGroup {
             iOS_ContentView()
