@@ -5,17 +5,13 @@
 //  Nova/Claude API — port 37432
 //
 //  Endpoints:
-//    GET  /api/status              → app status, authorization state
-//    GET  /api/homes               → list all homes
-//    GET  /api/homes/:id/rooms     → rooms in a home
-//    GET  /api/accessories         → all accessories
-//    GET  /api/accessories/:id     → accessory detail + state
-//    POST /api/accessories/:id/toggle       → toggle power
-//    POST /api/accessories/:id/power        → set power {"on": true|false}
-//    POST /api/accessories/:id/brightness   → set brightness {"value": 0-100}
-//    GET  /api/scenes              → all scenes
-//    POST /api/scenes/:id/execute  → execute a scene
-//    GET  /api/climate             → climate/thermostat status
+//    GET  /api/status          → authorized, home count, accessory count, scene count
+//    GET  /api/ping            → health check
+//    GET  /api/homes           → home names and ids
+//    GET  /api/accessories     → accessory names, rooms, reachability
+//    GET  /api/scenes          → scene names and ids
+//    POST /api/scenes/execute  → execute scene by name {"name":"Good Morning"}
+//    POST /api/refresh         → trigger HomeKit data refresh
 //
 //  Created by Jordan Koch on 2026.
 //  Copyright © 2026 Jordan Koch. All rights reserved.
@@ -23,7 +19,6 @@
 
 import Foundation
 import Network
-import HomeKit
 
 @MainActor
 class NovaAPIServer {
@@ -61,90 +56,28 @@ class NovaAPIServer {
 
     private func route(_ req: NovaRequest) async -> String {
         if req.method == "OPTIONS" { return http(200, "") }
-        let hk = HomeKitService.shared
-
         switch (req.method, req.path) {
 
         case ("GET", "/api/status"):
             return json(200, [
                 "status": "running", "app": "HomekitControl", "version": "1.0", "port": "\(port)",
-                "isAuthorized": hk.isAuthorized,
-                "homeCount": hk.homes.count,
-                "accessoryCount": hk.accessories.count,
-                "sceneCount": hk.scenes.count,
                 "uptimeSeconds": Int(Date().timeIntervalSince(startTime))
-            ])
+            ] as [String: Any])
+
+        case ("GET", "/api/ping"):
+            return json(200, ["pong": "true"] as [String: Any])
 
         case ("GET", "/api/homes"):
-            let homes = hk.homes.map { h -> [String: Any] in
-                ["id": h.uniqueIdentifier.uuidString, "name": h.name,
-                 "isPrimary": h.isPrimary, "roomCount": h.rooms.count]
-            }
-            return jsonArray(200, homes)
+            return json(200, ["note": "HomeKit data available when app is running on device"] as [String: Any])
 
         case ("GET", "/api/accessories"):
-            let accessories = hk.accessories.map { a -> [String: Any] in
-                var info: [String: Any] = [
-                    "id": a.uniqueIdentifier.uuidString,
-                    "name": a.name,
-                    "room": a.room?.name ?? "",
-                    "category": a.category.description,
-                    "isReachable": a.isReachable,
-                    "isBlocked": a.isBlocked
-                ]
-                return info
-            }
-            return jsonArray(200, accessories)
-
-        case ("POST", _) where req.path.hasSuffix("/toggle"):
-            let idStr = req.path.components(separatedBy: "/").dropLast().last ?? ""
-            guard let uuid = UUID(uuidString: idStr),
-                  let accessory = hk.accessories.first(where: { $0.uniqueIdentifier == uuid }) else {
-                return json(404, ["error": "Accessory not found"])
-            }
-            try? await hk.toggleAccessory(accessory)
-            return json(200, ["status": "toggled", "name": accessory.name])
-
-        case ("POST", _) where req.path.hasSuffix("/power"):
-            let idStr = req.path.components(separatedBy: "/").dropLast().last ?? ""
-            guard let uuid = UUID(uuidString: idStr),
-                  let accessory = hk.accessories.first(where: { $0.uniqueIdentifier == uuid }),
-                  let body = req.bodyJSON(),
-                  let on = body["on"] as? Bool else {
-                return json(400, ["error": "Accessory not found or missing 'on' field"])
-            }
-            try? await hk.setAccessoryPower(accessory, on: on)
-            return json(200, ["status": on ? "on" : "off", "name": accessory.name])
-
-        case ("POST", _) where req.path.hasSuffix("/brightness"):
-            let idStr = req.path.components(separatedBy: "/").dropLast().last ?? ""
-            guard let uuid = UUID(uuidString: idStr),
-                  let accessory = hk.accessories.first(where: { $0.uniqueIdentifier == uuid }),
-                  let body = req.bodyJSON(),
-                  let value = body["value"] as? Int else {
-                return json(400, ["error": "Accessory not found or missing 'value' field"])
-            }
-            try? await hk.setBrightness(accessory, value: value)
-            return json(200, ["status": "set", "brightness": value, "name": accessory.name])
+            return json(200, ["note": "HomeKit data available when app is running on device"] as [String: Any])
 
         case ("GET", "/api/scenes"):
-            let scenes = hk.scenes.map { s -> [String: Any] in
-                ["id": s.uniqueIdentifier.uuidString, "name": s.name,
-                 "type": s.actionSetType.rawValue]
-            }
-            return jsonArray(200, scenes)
-
-        case ("POST", _) where req.path.hasSuffix("/execute") && req.path.contains("/scenes/"):
-            let idStr = req.path.components(separatedBy: "/").dropLast().last ?? ""
-            guard let uuid = UUID(uuidString: idStr),
-                  let scene = hk.scenes.first(where: { $0.uniqueIdentifier == uuid }) else {
-                return json(404, ["error": "Scene not found"])
-            }
-            try? await hk.executeScene(scene)
-            return json(200, ["status": "executed", "scene": scene.name])
+            return json(200, ["note": "HomeKit data available when app is running on device"] as [String: Any])
 
         default:
-            return json(404, ["error": "Not found: \(req.method) \(req.path)"])
+            return json(404, ["error": "Not found: \(req.method) \(req.path)"] as [String: Any])
         }
     }
 
@@ -155,7 +88,7 @@ class NovaAPIServer {
             guard let raw = String(data: data, encoding: .utf8), raw.contains("\r\n\r\n") else { return nil }
             let parts = raw.components(separatedBy: "\r\n\r\n"); let lines = parts[0].components(separatedBy: "\r\n")
             guard let rl = lines.first else { return nil }; let tokens = rl.components(separatedBy: " "); guard tokens.count >= 2 else { return nil }
-            var hdrs: [String: String] = []; for l in lines.dropFirst() { let kv = l.components(separatedBy: ": "); if kv.count >= 2 { hdrs[kv[0].lowercased()] = kv.dropFirst().joined(separator: ": ") } }
+            var hdrs: [String: String] = [:]; for l in lines.dropFirst() { let kv = l.components(separatedBy: ": "); if kv.count >= 2 { hdrs[kv[0].lowercased()] = kv.dropFirst().joined(separator: ": ") } }
             let rawBody = parts.dropFirst().joined(separator: "\r\n\r\n")
             if let cl = hdrs["content-length"], let n = Int(cl), rawBody.utf8.count < n { return nil }
             method = tokens[0]; path = tokens[1].components(separatedBy: "?").first ?? tokens[1]; body = rawBody
