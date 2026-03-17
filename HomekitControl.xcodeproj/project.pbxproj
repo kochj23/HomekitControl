@@ -108,6 +108,7 @@
 		8B5937170295FB71929A99FB /* SecurityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56E9A3D070E38E8D245F060 /* SecurityService.swift */; };
 		8C8CE2565F22AA0784A8795F /* CircularGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF0F1979F3881CAE2977BD /* CircularGauge.swift */; };
 		8EFB08889FFB957281561B12 /* DeviceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE664AB0BE0E305B651B4CE /* DeviceCategory.swift */; };
+		8F0A6A819ABF8153B8290309 /* NovaAPIServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390295E7E66075F3BE9269C3 /* NovaAPIServer.swift */; };
 		90247E4E965D3E941D272435 /* iOS_ScenesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DE23DBB69058A92DAC75DE /* iOS_ScenesView.swift */; };
 		91CC431D7032EFF029847819 /* Manufacturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503841297ADFFFAED238E4F /* Manufacturer.swift */; };
 		98EA766CA4D7EBCC69C9910D /* iOS_AutomationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F8C562DC0A20A8970D5718 /* iOS_AutomationView.swift */; };
@@ -137,6 +138,7 @@
 		B93B99DC920EF29A29EF42ED /* FloorPlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A8C6F7DD51B730C72C02F /* FloorPlanService.swift */; };
 		B9ABC5362459ACD97D21FFFA /* iOS_NetworkPerformanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E5646E658ECF422415A5F1 /* iOS_NetworkPerformanceView.swift */; };
 		BAF427C7E0B7386333B48EA9 /* UsageReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506056D37347E9333FCFE80 /* UsageReportService.swift */; };
+		BCD4F5552C4FEAFAD7ABC604 /* NovaAPIServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390295E7E66075F3BE9269C3 /* NovaAPIServer.swift */; };
 		BDC60FBCB5A9DC11F54A6CCE /* UsageReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506056D37347E9333FCFE80 /* UsageReportService.swift */; };
 		BDCAB8F1F4C2C4C7004BF92C /* CodeVaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6486CB8485D8FAABA6496B1 /* CodeVaultService.swift */; };
 		BE0905726E621865392D83E4 /* AutomationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BCC6AFC9A525914AF8266B /* AutomationService.swift */; };
@@ -184,6 +186,7 @@
 		F877C8E660F76BBAD892AC9A /* DiscoveredDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60072A353B200FD41A9AED3 /* DiscoveredDevice.swift */; };
 		F8F31B434F2D24B99399E9D8 /* iOS_ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDF0C454C02679AC64CD0EE /* iOS_ScheduleView.swift */; };
 		F9233C120DBCFCEF1D6BB6D8 /* iOS_ShortcutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE743BECA9965A84EBB8523 /* iOS_ShortcutsView.swift */; };
+		FADB524DCF40B0E063352E6A /* NovaAPIServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390295E7E66075F3BE9269C3 /* NovaAPIServer.swift */; };
 		FAEABB467AD2DFBF2F59694C /* GuestModeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6630619B6C59E72D0D19C7AD /* GuestModeService.swift */; };
 		FC2004E864A2F0824EC55614 /* SceneAnalyzerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DF7982DF96652C50A2049 /* SceneAnalyzerService.swift */; };
 		FDD42E923BB55AA798C19A4D /* HomeKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615441A8A3D06D6AF29CA30 /* HomeKitService.swift */; };
@@ -241,6 +244,7 @@
 		286FFA143BADE2FD65D97CB7 /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
 		30E9CF7F8019B9E8EF355FEB /* AdaptiveLightingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveLightingService.swift; sourceTree = "<group>"; };
 		3297BC6223A5C0E380D3C7A4 /* ClimateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateService.swift; sourceTree = "<group>"; };
+		390295E7E66075F3BE9269C3 /* NovaAPIServer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NovaAPIServer.swift; sourceTree = "<absolute>"; };
 		3BA887658AF38BC68B60B57B /* iOS_DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_DevicesView.swift; sourceTree = "<group>"; };
 		3FF615C48CE28711A7F4055F /* SetupCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCode.swift; sourceTree = "<group>"; };
 		42198C42F2FB1C0527A80A32 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -411,6 +415,7 @@
 				0506056D37347E9333FCFE80 /* UsageReportService.swift */,
 				71EA276E4C456B631BFE743B /* VoiceControlService.swift */,
 				C018299D797D0FD9A65E094C /* WidgetSyncService.swift */,
+				390295E7E66075F3BE9269C3 /* NovaAPIServer.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -789,6 +794,7 @@
 				A7E3CBAA1347468BBCA69357 /* VoiceControlService.swift in Sources */,
 				588D807933F96CD7BBD2176B /* macOS_ContentView.swift in Sources */,
 				CF9EF674FFD176FB0975D948 /* WidgetSyncService.swift in Sources */,
+				BCD4F5552C4FEAFAD7ABC604 /* NovaAPIServer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -847,6 +853,7 @@
 				D497CB9E3BE8435602ED9489 /* tvOS_RemoteControlWidget.swift in Sources */,
 				3176E544B97682E7136AE067 /* tvOS_ScheduleView.swift in Sources */,
 				01A653A2C881C6A24D2537DE /* WidgetSyncService.swift in Sources */,
+				8F0A6A819ABF8153B8290309 /* NovaAPIServer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -941,6 +948,7 @@
 				C1310470688AD3FBC3D99C02 /* AIBackendManager+Generation.swift in Sources */,
 				DCC25B2EBEE2583C07E1EE68 /* AIBackendManager+Enhanced.swift in Sources */,
 				FF5AEFAAD0F4F128D28853CD /* AIBackendStatusMenu.swift in Sources */,
+				FADB524DCF40B0E063352E6A /* NovaAPIServer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
