@@ -11,6 +11,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Performance improvements
 - Additional features based on community feedback
 
+## [1.2.0] - 2026-04-11
+
+### Changed
+- **macOS build is now Mac Catalyst** — iOS target with `SUPPORTS_MACCATALYST = YES`
+- Native `HomeKit.framework` access on macOS via Catalyst (no Shortcuts proxy needed)
+- Full device discovery, scene execution, and accessory control on macOS — same as iOS
+- API status endpoint now reports `"backend": "HomeKit.framework"` and `"platform": "native"` on macOS
+- Requires HomeKit permission in System Settings > Privacy & Security > HomeKit
+
+### Notes
+- The v1.1 Shortcuts CLI proxy (in the native macOS target) is still available as a fallback
+- Mac Catalyst uses the iOS UI on macOS — all iOS features available
+
 ## [1.1.0] - 2026-04-11
 
 ### Added

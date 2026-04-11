@@ -159,9 +159,9 @@ This app exposes a local HTTP API on port **37432** for integration with [Nova](
 | Platform | Backend | How it works |
 |----------|---------|--------------|
 | iOS / tvOS | Native `HomeKit.framework` | Direct HMHomeManager access |
-| macOS | Shortcuts CLI proxy | Calls macOS Shortcuts app via `shortcuts run` CLI |
+| macOS (Catalyst) | Native `HomeKit.framework` | Mac Catalyst build — iOS HomeKit runs natively on macOS |
 
-On macOS, `HomeKit.framework` is not available for native apps (only Mac Catalyst). The API server proxies requests through macOS Shortcuts, which can access HomeKit natively.
+As of v1.2, the macOS build uses **Mac Catalyst** (iOS target with `SUPPORTS_MACCATALYST = YES`), which provides full native HomeKit.framework access. No Shortcuts proxy needed.
 
 ### Endpoints
 
@@ -182,13 +182,11 @@ curl -X POST http://127.0.0.1:37432/api/scenes/execute \
 curl -X POST http://127.0.0.1:37432/api/refresh  # Trigger data refresh
 ```
 
-### macOS Shortcuts Setup
+### macOS Setup
 
-The macOS Shortcuts proxy requires these Shortcuts to be created in the Shortcuts app:
-
-1. **"Nova HomeKit Status"** — Queries all Home accessories, outputs JSON array with name, room, type, reachable, services, and characteristics
-2. **"List HomeKit Scenes"** — Lists all Home scene names as a JSON array
-3. **"Execute HomeKit Scene"** — Receives a scene name as text input and executes it
+The Mac Catalyst build requires HomeKit permission:
+1. Open **System Settings > Privacy & Security > HomeKit**
+2. Toggle **HomekitControl** to ON
 
 ### Auto-Launch
 
