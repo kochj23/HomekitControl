@@ -13,12 +13,21 @@
 //    POST /api/scenes/execute  → execute scene by name {"name":"Good Morning"}
 //    POST /api/refresh         → trigger HomeKit data refresh
 //
+//  On macOS (no native HomeKit.framework), endpoints proxy through
+//  the macOS Shortcuts CLI. Requires these Shortcuts in Shortcuts.app:
+//    - "Nova HomeKit Status"    → outputs JSON array of accessories
+//    - "List HomeKit Scenes"    → outputs JSON array of scene names
+//    - "Execute HomeKit Scene"  → takes scene name as input, executes it
+//
 //  Created by Jordan Koch on 2026.
 //  Copyright © 2026 Jordan Koch. All rights reserved.
 //
 
 import Foundation
 import Network
+#if canImport(HomeKit)
+import HomeKit
+#endif
 
 @MainActor
 class NovaAPIServer {
@@ -59,27 +68,192 @@ class NovaAPIServer {
         switch (req.method, req.path) {
 
         case ("GET", "/api/status"):
+            #if canImport(HomeKit)
+            let hk = HomeKitService.shared
             return json(200, [
-                "status": "running", "app": "HomekitControl", "version": "1.0", "port": "\(port)",
+                "status": "running", "app": "HomekitControl", "version": "1.1", "port": "\(port)",
+                "platform": "native", "backend": "HomeKit.framework",
+                "uptimeSeconds": Int(Date().timeIntervalSince(startTime)),
+                "homes": hk.homes.count, "accessories": hk.accessories.count, "scenes": hk.scenes.count
+            ] as [String: Any])
+            #elseif os(macOS)
+            return json(200, [
+                "status": "running", "app": "HomekitControl", "version": "1.1", "port": "\(port)",
+                "platform": "macOS", "backend": "Shortcuts CLI proxy",
                 "uptimeSeconds": Int(Date().timeIntervalSince(startTime))
             ] as [String: Any])
+            #else
+            return json(200, [
+                "status": "running", "app": "HomekitControl", "version": "1.1", "port": "\(port)",
+                "uptimeSeconds": Int(Date().timeIntervalSince(startTime))
+            ] as [String: Any])
+            #endif
 
         case ("GET", "/api/ping"):
             return json(200, ["pong": "true"] as [String: Any])
 
         case ("GET", "/api/homes"):
-            return json(200, ["note": "HomeKit data available when app is running on device"] as [String: Any])
+            #if canImport(HomeKit)
+            let hk = HomeKitService.shared
+            if hk.homes.isEmpty {
+                return json(200, ["homes": [], "note": "No homes loaded yet — HomeKit may still be initializing"] as [String: Any])
+            }
+            let homes = hk.homes.map { ["id": $0.uniqueIdentifier.uuidString, "name": $0.name] as [String: Any] }
+            return jsonArray(200, homes)
+            #elseif os(macOS)
+            return json(200, ["note": "Home listing not available via Shortcuts proxy — use /api/accessories"] as [String: Any])
+            #else
+            return json(200, ["note": "HomeKit not available on this platform"] as [String: Any])
+            #endif
 
         case ("GET", "/api/accessories"):
-            return json(200, ["note": "HomeKit data available when app is running on device"] as [String: Any])
+            #if canImport(HomeKit)
+            let hk = HomeKitService.shared
+            if hk.accessories.isEmpty {
+                return json(200, ["accessories": [], "note": "No accessories loaded — HomeKit may still be initializing"] as [String: Any])
+            }
+            let home = hk.currentHome
+            let roomMap: [UUID: String] = {
+                var m: [UUID: String] = [:]
+                guard let h = home else { return m }
+                for room in h.rooms {
+                    for acc in room.accessories { m[acc.uniqueIdentifier] = room.name }
+                }
+                return m
+            }()
+            let accessories = hk.accessories.map { acc -> [String: Any] in
+                let services = acc.services.map { svc -> [String: Any] in
+                    let chars = svc.characteristics.map { c -> [String: Any] in
+                        var entry: [String: Any] = ["type": c.localizedDescription, "uuid": c.characteristicType]
+                        if let v = c.value { entry["value"] = v }
+                        return entry
+                    }
+                    return ["type": svc.serviceType, "name": svc.name, "characteristics": chars] as [String: Any]
+                }
+                return [
+                    "name": acc.name,
+                    "room": roomMap[acc.uniqueIdentifier] ?? "Unknown",
+                    "reachable": acc.isReachable,
+                    "services": services
+                ] as [String: Any]
+            }
+            return jsonArray(200, accessories)
+            #elseif os(macOS)
+            let output = await runShortcut("Nova HomeKit Status")
+            if let data = output.data(using: .utf8),
+               let parsed = try? JSONSerialization.jsonObject(with: data) {
+                if let array = parsed as? [[String: Any]] {
+                    return jsonArray(200, array)
+                } else if let dict = parsed as? [String: Any], let accs = dict["accessories"] as? [[String: Any]] {
+                    return jsonArray(200, accs)
+                }
+            }
+            return json(200, ["accessories": [], "note": "Shortcuts query returned no data — ensure 'Nova HomeKit Status' Shortcut exists"] as [String: Any])
+            #else
+            return json(200, ["note": "HomeKit not available on this platform"] as [String: Any])
+            #endif
 
         case ("GET", "/api/scenes"):
-            return json(200, ["note": "HomeKit data available when app is running on device"] as [String: Any])
+            #if canImport(HomeKit)
+            let hk = HomeKitService.shared
+            let scenes = hk.scenes.map { ["id": $0.uniqueIdentifier.uuidString, "name": $0.name] as [String: Any] }
+            return jsonArray(200, scenes)
+            #elseif os(macOS)
+            let output = await runShortcut("List HomeKit Scenes")
+            if let data = output.data(using: .utf8),
+               let parsed = try? JSONSerialization.jsonObject(with: data) {
+                if let array = parsed as? [[String: Any]] {
+                    return jsonArray(200, array)
+                } else if let names = parsed as? [String] {
+                    let scenes = names.map { ["name": $0] as [String: Any] }
+                    return jsonArray(200, scenes)
+                }
+            }
+            return json(200, ["scenes": [], "note": "Shortcuts query returned no data — ensure 'List HomeKit Scenes' Shortcut exists"] as [String: Any])
+            #else
+            return json(200, ["note": "HomeKit not available on this platform"] as [String: Any])
+            #endif
+
+        case ("POST", "/api/scenes/execute"):
+            guard let body = req.bodyJSON(), let sceneName = body["name"] as? String else {
+                return json(400, ["error": "Missing 'name' in request body. Usage: {\"name\": \"Good Morning\"}"] as [String: Any])
+            }
+            #if canImport(HomeKit)
+            let hk = HomeKitService.shared
+            guard let scene = hk.scenes.first(where: { $0.name.lowercased() == sceneName.lowercased() }) else {
+                let available = hk.scenes.map { $0.name }
+                return json(404, ["error": "Scene '\(sceneName)' not found", "available_scenes": available] as [String: Any])
+            }
+            do {
+                try await hk.executeScene(scene)
+                return json(200, ["status": "executed", "scene": scene.name] as [String: Any])
+            } catch {
+                return json(500, ["error": "Failed to execute scene '\(scene.name)': \(error.localizedDescription)"] as [String: Any])
+            }
+            #elseif os(macOS)
+            let output = await runShortcut("Execute HomeKit Scene", input: sceneName)
+            let trimmed = output.trimmingCharacters(in: .whitespacesAndNewlines)
+            if trimmed.isEmpty || trimmed.lowercased().contains("error") || trimmed.lowercased().contains("not found") {
+                return json(500, ["error": "Scene execution failed", "scene": sceneName, "output": trimmed] as [String: Any])
+            }
+            return json(200, ["status": "executed", "scene": sceneName, "backend": "Shortcuts CLI"] as [String: Any])
+            #else
+            return json(200, ["note": "HomeKit not available on this platform"] as [String: Any])
+            #endif
+
+        case ("POST", "/api/refresh"):
+            #if canImport(HomeKit)
+            Task { await HomeKitService.shared.refreshAll() }
+            #endif
+            return json(200, ["status": "refresh triggered"] as [String: Any])
 
         default:
             return json(404, ["error": "Not found: \(req.method) \(req.path)"] as [String: Any])
         }
     }
+
+    // MARK: - macOS Shortcuts CLI Bridge
+
+    #if os(macOS)
+    /// Run a macOS Shortcut via the `shortcuts` CLI and return its stdout output.
+    private func runShortcut(_ name: String, input: String? = nil) async -> String {
+        await withCheckedContinuation { continuation in
+            DispatchQueue.global(qos: .userInitiated).async {
+                let proc = Process()
+                proc.executableURL = URL(fileURLWithPath: "/usr/bin/shortcuts")
+                var args = ["run", name, "--output-type", "public.plain-text"]
+
+                let outPipe = Pipe()
+                let errPipe = Pipe()
+                proc.standardOutput = outPipe
+                proc.standardError = errPipe
+
+                if let input = input {
+                    let inPipe = Pipe()
+                    inPipe.fileHandleForWriting.write(input.data(using: .utf8) ?? Data())
+                    inPipe.fileHandleForWriting.closeFile()
+                    proc.standardInput = inPipe
+                    args += ["--input-type", "public.plain-text"]
+                }
+
+                proc.arguments = args
+
+                do {
+                    try proc.run()
+                    proc.waitUntilExit()
+                    let data = outPipe.fileHandleForReading.readDataToEndOfFile()
+                    let output = String(data: data, encoding: .utf8) ?? ""
+                    continuation.resume(returning: output)
+                } catch {
+                    NSLog("[NovaAPI] Shortcut '\(name)' failed: \(error)")
+                    continuation.resume(returning: "")
+                }
+            }
+        }
+    }
+    #endif
+
+    // MARK: - HTTP Helpers
 
     private struct NovaRequest {
         let method: String; let path: String; let body: String

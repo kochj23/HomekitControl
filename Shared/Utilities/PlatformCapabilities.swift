@@ -32,14 +32,14 @@ struct PlatformCapabilities {
     static let hasNativeHomeKit = true
     static let platformName = "tvOS"
     #elseif os(macOS)
-    static let canControlDevices = false  // No native HomeKit on macOS
-    static let canModifyScenes = false
+    static let canControlDevices = true   // Via Shortcuts CLI proxy
+    static let canModifyScenes = true     // Scene execution via Shortcuts CLI
     static let canRemoveDevices = false
     static let canUseKeychain = true
     static let canAccessFileSystem = true
     static let supportsQRScanning = false
     static let supportsSceneRepair = false
-    static let hasNativeHomeKit = false
+    static let hasNativeHomeKit = false   // No native HomeKit.framework on macOS
     static let platformName = "macOS"
     #endif
 

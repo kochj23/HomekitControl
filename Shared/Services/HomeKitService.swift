@@ -26,7 +26,7 @@ final class HomeKitService: NSObject, ObservableObject {
     @Published var isLoading = false
     @Published var statusMessage = ""
 
-    #if canImport(HomeKit) && !os(macOS)
+    #if canImport(HomeKit)
     @Published var homes: [HMHome] = []
     @Published var currentHome: HMHome?
     @Published var rooms: [HMRoom] = []
@@ -35,7 +35,7 @@ final class HomeKitService: NSObject, ObservableObject {
 
     private var homeManager: HMHomeManager?
     #else
-    // macOS uses manual inventory
+    // Fallback: manual inventory (non-HomeKit platforms)
     @Published var manualDevices: [UnifiedDevice] = []
     #endif
 
@@ -43,7 +43,7 @@ final class HomeKitService: NSObject, ObservableObject {
 
     private override init() {
         super.init()
-        #if canImport(HomeKit) && !os(macOS)
+        #if canImport(HomeKit)
         setupHomeKit()
         #else
         loadManualInventory()
@@ -58,7 +58,7 @@ final class HomeKitService: NSObject, ObservableObject {
 
     // MARK: - HomeKit Setup
 
-    #if canImport(HomeKit) && !os(macOS)
+    #if canImport(HomeKit)
     private func setupHomeKit() {
         homeManager = HMHomeManager()
         homeManager?.delegate = self
@@ -101,7 +101,7 @@ final class HomeKitService: NSObject, ObservableObject {
 
     // MARK: - macOS Manual Inventory
 
-    #if os(macOS)
+    #if !canImport(HomeKit)
     private func loadManualInventory() {
         // Load from UserDefaults on macOS
         if let data = UserDefaults.standard.data(forKey: "manualDevices"),
@@ -135,7 +135,7 @@ final class HomeKitService: NSObject, ObservableObject {
         isLoading = true
         statusMessage = "Refreshing..."
 
-        #if canImport(HomeKit) && !os(macOS)
+        #if canImport(HomeKit)
         loadHomeData()
         #else
         loadManualInventory()
@@ -147,7 +147,7 @@ final class HomeKitService: NSObject, ObservableObject {
 
     // MARK: - Device Control
 
-    #if canImport(HomeKit) && !os(macOS)
+    #if canImport(HomeKit)
     func toggleAccessory(_ accessory: HMAccessory) async throws {
         guard let service = accessory.services.first(where: { $0.serviceType == HMServiceTypeLightbulb || $0.serviceType == HMServiceTypeSwitch || $0.serviceType == HMServiceTypeOutlet }),
               let powerChar = service.characteristics.first(where: { $0.characteristicType == HMCharacteristicTypePowerState }) else {
@@ -222,7 +222,7 @@ final class HomeKitService: NSObject, ObservableObject {
 
 // MARK: - HomeKit Delegates
 
-#if canImport(HomeKit) && !os(macOS)
+#if canImport(HomeKit)
 extension HomeKitService: HMHomeManagerDelegate {
     nonisolated func homeManagerDidUpdateHomes(_ manager: HMHomeManager) {
         Task { @MainActor in

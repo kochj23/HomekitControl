@@ -978,7 +978,15 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+								FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/System/Library/Frameworks",
+				);
+				INFOPLIST_KEY_NSHomeKitUsageDescription = "HomekitControl needs HomeKit access to monitor and control your smart home devices.";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+				);
+MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jordankoch.HomekitControl-macOS";
 				PRODUCT_NAME = HomekitControl;
 				SDKROOT = macosx;
@@ -1264,7 +1272,9 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QRRCB8HB3W;
-				INFOPLIST_KEY_NSHomeKitUsageDescription = "HomekitControl needs HomeKit access to control your smart home devices.";
+								SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MACCATALYST = YES;
+INFOPLIST_KEY_NSHomeKitUsageDescription = "HomekitControl needs HomeKit access to control your smart home devices.";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "HomekitControl needs local network access to discover smart home devices.";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1293,7 +1303,15 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+								FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/System/Library/Frameworks",
+				);
+				INFOPLIST_KEY_NSHomeKitUsageDescription = "HomekitControl needs HomeKit access to monitor and control your smart home devices.";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+				);
+MACOSX_DEPLOYMENT_TARGET = 14.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jordankoch.HomekitControl-macOS";
 				PRODUCT_NAME = HomekitControl;
 				SDKROOT = macosx;

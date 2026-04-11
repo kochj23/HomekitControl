@@ -55,7 +55,9 @@ The HomekitControl Widget provides at-a-glance smart home information directly o
 - Network discovery
 
 ### macOS
-- Manual device inventory (no native HomeKit framework)
+- HomeKit integration via macOS Shortcuts CLI proxy (v1.1+)
+- Scene listing and execution through API or Shortcuts
+- Device status monitoring via Shortcuts bridge
 - Setup code vault with Keychain and photo storage
 - Network scanner
 - Full export functionality
@@ -64,8 +66,8 @@ The HomekitControl Widget provides at-a-glance smart home information directly o
 
 | Feature | iOS | tvOS | macOS |
 |---------|-----|------|-------|
-| Device Control | Yes | Yes | Manual only |
-| Scene Execution | Yes | Yes | No |
+| Device Control | Yes | Yes | Via Shortcuts proxy |
+| Scene Execution | Yes | Yes | Yes (Shortcuts proxy) |
 | Scene Repair | Yes | No | No |
 | Network Discovery | Yes | Yes | Yes |
 | AI Assistant | Yes | Yes | Yes |
@@ -150,35 +152,45 @@ Copyright 2026 Jordan Koch. All rights reserved.
 This app exposes a local HTTP API on port **37432** for integration with [Nova](https://github.com/kochj23) (OpenClaw AI) and Claude Code.
 
 **Platform:** macOS / iOS / tvOS  
-**Auth:** `X-Nova-Token` header required for iOS requests.
+**Auth:** Loopback only (127.0.0.1) — no external network exposure.
 
-### Standard Endpoints
+### Architecture
 
-```bash
-curl http://127.0.0.1:37432/api/status   # App status + uptime
-curl http://127.0.0.1:37432/api/ping     # Health check
-```
+| Platform | Backend | How it works |
+|----------|---------|--------------|
+| iOS / tvOS | Native `HomeKit.framework` | Direct HMHomeManager access |
+| macOS | Shortcuts CLI proxy | Calls macOS Shortcuts app via `shortcuts run` CLI |
 
-### App-Specific Endpoints
+On macOS, `HomeKit.framework` is not available for native apps (only Mac Catalyst). The API server proxies requests through macOS Shortcuts, which can access HomeKit natively.
 
-```
-/api/homes
-/api/accessories
-/api/scenes
-/api/accessories/:id/power (POST)
-/api/accessories/:id/brightness (POST)
-/api/scenes/:id/execute (POST)
-```
-
-### Usage Example
+### Endpoints
 
 ```bash
-# Check if running
-curl -s http://127.0.0.1:37432/api/status | python3 -m json.tool
+# Health
+curl http://127.0.0.1:37432/api/status       # App status, uptime, backend type
+curl http://127.0.0.1:37432/api/ping         # Health check
 
-# From Nova (OpenClaw TUI)
-# Nova has this pre-authorized and will use these endpoints automatically
+# HomeKit Data
+curl http://127.0.0.1:37432/api/homes        # Home names and IDs
+curl http://127.0.0.1:37432/api/accessories  # All accessories with services/characteristics
+curl http://127.0.0.1:37432/api/scenes       # Scene names and IDs
+
+# Actions
+curl -X POST http://127.0.0.1:37432/api/scenes/execute \
+  -H "Content-Type: application/json" \
+  -d '{"name": "Good Morning"}'              # Execute a scene by name
+curl -X POST http://127.0.0.1:37432/api/refresh  # Trigger data refresh
 ```
 
-The API server starts automatically when the app launches and binds to loopback only — no external network exposure.
+### macOS Shortcuts Setup
+
+The macOS Shortcuts proxy requires these Shortcuts to be created in the Shortcuts app:
+
+1. **"Nova HomeKit Status"** — Queries all Home accessories, outputs JSON array with name, room, type, reachable, services, and characteristics
+2. **"List HomeKit Scenes"** — Lists all Home scene names as a JSON array
+3. **"Execute HomeKit Scene"** — Receives a scene name as text input and executes it
+
+### Auto-Launch
+
+A launchd agent (`com.jordankoch.homekitcontrol`) keeps the app running and restarts it if it crashes. The API server starts automatically when the app launches.
 
