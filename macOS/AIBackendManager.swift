@@ -1,4 +1,5 @@
 import Foundation
+import Security
 import SwiftUI
 
 //
@@ -54,7 +55,7 @@ class AIBackendManager: ObservableObject {
     @Published var activeBackend: AIBackend = .ollama
     @Published var lastRefreshDate: Date?
 
-    // Cloud AI Services - API Keys (WARNING: Use Keychain in production!)
+    // Cloud AI Services - API Keys (persisted in macOS Keychain)
     @Published var openAIAPIKey: String = ""
     @Published var googleCloudAPIKey: String = ""
     @Published var azureAPIKey: String = ""
@@ -368,6 +369,47 @@ class AIBackendManager: ObservableObject {
         }
     }
 
+    // MARK: - Keychain Helpers
+
+    private let keychainService = "com.digitalnoise.HomekitControl"
+
+    private func saveToKeychain(key: String, value: String) {
+        guard let data = value.data(using: .utf8) else { return }
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: key,
+            kSecAttrService as String: keychainService
+        ]
+        SecItemDelete(query as CFDictionary)
+        guard !value.isEmpty else { return }
+        var addQuery = query
+        addQuery[kSecValueData as String] = data
+        SecItemAdd(addQuery as CFDictionary, nil)
+    }
+
+    private func loadFromKeychain(key: String) -> String? {
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: key,
+            kSecAttrService as String: keychainService,
+            kSecReturnData as String: true,
+            kSecMatchLimit as String: kSecMatchLimitOne
+        ]
+        var result: AnyObject?
+        let status = SecItemCopyMatching(query as CFDictionary, &result)
+        guard status == errSecSuccess, let data = result as? Data else { return nil }
+        return String(data: data, encoding: .utf8)
+    }
+
+    private func deleteFromKeychain(key: String) {
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: key,
+            kSecAttrService as String: keychainService
+        ]
+        SecItemDelete(query as CFDictionary)
+    }
+
     // MARK: - Configuration Persistence
 
     private func loadConfiguration() {
@@ -382,16 +424,29 @@ class AIBackendManager: ObservableObject {
         swarmUIServerURL = defaults.string(forKey: "AIBackend_SwarmUIURL") ?? "http://localhost:7801"
         selectedOllamaModel = defaults.string(forKey: "AIBackend_OllamaModel") ?? "mistral:latest"
 
-        // Cloud API Keys (WARNING: These should be in Keychain in production!)
-        openAIAPIKey = defaults.string(forKey: "AIBackend_OpenAI_Key") ?? ""
-        googleCloudAPIKey = defaults.string(forKey: "AIBackend_GoogleCloud_Key") ?? ""
-        azureAPIKey = defaults.string(forKey: "AIBackend_Azure_Key") ?? ""
-        azureEndpoint = defaults.string(forKey: "AIBackend_Azure_Endpoint") ?? ""
-        awsAccessKey = defaults.string(forKey: "AIBackend_AWS_AccessKey") ?? ""
-        awsSecretKey = defaults.string(forKey: "AIBackend_AWS_SecretKey") ?? ""
+        // Cloud API Keys - loaded from macOS Keychain
+        openAIAPIKey = loadFromKeychain(key: "AIBackend_OpenAI_Key") ?? ""
+        googleCloudAPIKey = loadFromKeychain(key: "AIBackend_GoogleCloud_Key") ?? ""
+        azureAPIKey = loadFromKeychain(key: "AIBackend_Azure_Key") ?? ""
+        azureEndpoint = loadFromKeychain(key: "AIBackend_Azure_Endpoint") ?? ""
+        awsAccessKey = loadFromKeychain(key: "AIBackend_AWS_AccessKey") ?? ""
+        awsSecretKey = loadFromKeychain(key: "AIBackend_AWS_SecretKey") ?? ""
         awsRegion = defaults.string(forKey: "AIBackend_AWS_Region") ?? "us-east-1"
-        ibmWatsonAPIKey = defaults.string(forKey: "AIBackend_IBM_Key") ?? ""
-        ibmWatsonURL = defaults.string(forKey: "AIBackend_IBM_URL") ?? ""
+        ibmWatsonAPIKey = loadFromKeychain(key: "AIBackend_IBM_Key") ?? ""
+        ibmWatsonURL = loadFromKeychain(key: "AIBackend_IBM_URL") ?? ""
+
+        // Migrate any keys left in UserDefaults to Keychain, then remove from UserDefaults
+        let keysToMigrate = ["AIBackend_OpenAI_Key", "AIBackend_GoogleCloud_Key", "AIBackend_Azure_Key",
+                             "AIBackend_Azure_Endpoint", "AIBackend_AWS_AccessKey", "AIBackend_AWS_SecretKey",
+                             "AIBackend_IBM_Key", "AIBackend_IBM_URL"]
+        for key in keysToMigrate {
+            if let oldValue = defaults.string(forKey: key), !oldValue.isEmpty {
+                if loadFromKeychain(key: key) == nil {
+                    saveToKeychain(key: key, value: oldValue)
+                }
+                defaults.removeObject(forKey: key)
+            }
+        }
 
         if let backendRaw = defaults.string(forKey: "AIBackend_Active"),
            let backend = AIBackend(rawValue: backendRaw) {
@@ -411,16 +466,16 @@ class AIBackendManager: ObservableObject {
         defaults.set(swarmUIServerURL, forKey: "AIBackend_SwarmUIURL")
         defaults.set(selectedOllamaModel, forKey: "AIBackend_OllamaModel")
 
-        // Cloud API Keys (WARNING: These should be in Keychain in production!)
-        defaults.set(openAIAPIKey, forKey: "AIBackend_OpenAI_Key")
-        defaults.set(googleCloudAPIKey, forKey: "AIBackend_GoogleCloud_Key")
-        defaults.set(azureAPIKey, forKey: "AIBackend_Azure_Key")
-        defaults.set(azureEndpoint, forKey: "AIBackend_Azure_Endpoint")
-        defaults.set(awsAccessKey, forKey: "AIBackend_AWS_AccessKey")
-        defaults.set(awsSecretKey, forKey: "AIBackend_AWS_SecretKey")
+        // Cloud API Keys - stored in macOS Keychain
+        saveToKeychain(key: "AIBackend_OpenAI_Key", value: openAIAPIKey)
+        saveToKeychain(key: "AIBackend_GoogleCloud_Key", value: googleCloudAPIKey)
+        saveToKeychain(key: "AIBackend_Azure_Key", value: azureAPIKey)
+        saveToKeychain(key: "AIBackend_Azure_Endpoint", value: azureEndpoint)
+        saveToKeychain(key: "AIBackend_AWS_AccessKey", value: awsAccessKey)
+        saveToKeychain(key: "AIBackend_AWS_SecretKey", value: awsSecretKey)
         defaults.set(awsRegion, forKey: "AIBackend_AWS_Region")
-        defaults.set(ibmWatsonAPIKey, forKey: "AIBackend_IBM_Key")
-        defaults.set(ibmWatsonURL, forKey: "AIBackend_IBM_URL")
+        saveToKeychain(key: "AIBackend_IBM_Key", value: ibmWatsonAPIKey)
+        saveToKeychain(key: "AIBackend_IBM_URL", value: ibmWatsonURL)
 
         defaults.set(activeBackend.rawValue, forKey: "AIBackend_Active")
     }
