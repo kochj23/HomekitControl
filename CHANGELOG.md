@@ -11,6 +11,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Performance improvements
 - Additional features based on community feedback
 
+## [1.3.0] - 2026-05-01
+
+### Added
+- **Comprehensive XCTest suite** -- 329 tests across 25 test files
+- Unit tests for all data models: UnifiedDevice, UnifiedScene, SetupCode, DiscoveredDevice
+- Unit tests for all enums: DeviceCategory, Manufacturer, HealthStatus, DeviceProtocol
+- Service tests: ExportService (CSV escaping, JSON roundtrip), SceneAnalyzer, ClimateService
+- NovaAPIServer HTTP parser tests: request parsing, body JSON, edge cases
+- Functional tests: scene execution flow, lookup, health assessment, dangerous device classification
+- Security audit tests: credential scanning, Keychain verification, loopback binding, entitlements
+- Live API integration tests against port 37432 (skip gracefully if not running)
+- Test documentation section in README with run instructions
+
+### Fixed
+- Widget extension CFBundleVersion mismatch with parent app (was 2, now aligned to 1)
+- Unused variable warning in DeviceHealthRecordTests causing build failure with SWIFT_TREAT_WARNINGS_AS_ERRORS
+
+### Changed
+- Version bump to 1.3.0 across all targets (macOS app, widget extension)
+
 ## [1.2.0] - 2026-04-11
 
 ### Changed

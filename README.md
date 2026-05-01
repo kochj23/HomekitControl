@@ -1,9 +1,10 @@
 # HomekitControl
 
 ![Build](https://github.com/kochj23/HomekitControl/actions/workflows/build.yml/badge.svg)
+![Tests](https://img.shields.io/badge/tests-329%20passed-brightgreen)
 ![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20tvOS%20%7C%20macOS-blue)
 ![Swift](https://img.shields.io/badge/Swift-5.9-orange)
-![License](https://img.shields.io/badge/license-MIT-green)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
 A unified multi-platform smart home control application for iOS, tvOS, and macOS. HomekitControl consolidates five previous HomeKit projects into a single app with native HomeKit.framework access, a local REST API for AI integration, network discovery, device health monitoring, energy tracking, security dashboards, and more.
 
@@ -13,63 +14,74 @@ Written by Jordan Koch.
 
 ## Architecture
 
-```
-+------------------------------------------------------------------+
-|                       HomekitControl                             |
-|                                                                  |
-|   +------------------+  +----------------+  +----------------+   |
-|   |     iOS App      |  |   tvOS App     |  |   macOS App    |   |
-|   | (Full features)  |  | (10-ft UI)     |  | (Mac Catalyst) |   |
-|   | + WidgetKit ext  |  |                |  |                |   |
-|   +--------+---------+  +-------+--------+  +-------+--------+   |
-|            |                    |                    |            |
-|            +--------------------+--------------------+            |
-|                                 |                                |
-|                    +------------+------------+                    |
-|                    |     Shared Layer        |                    |
-|                    |                         |                    |
-|  +-----------------+-------------------------+-----------------+  |
-|  |                                                             |  |
-|  |  HomeKitService         - HMHomeManager delegate            |  |
-|  |  NovaAPIServer          - REST API on port 37432            |  |
-|  |  NetworkDiscoveryService - Bonjour/mDNS scanner             |  |
-|  |  SecurityService        - Locks, sensors, zones, alerts     |  |
-|  |  AIService              - Multi-backend AI assistant        |  |
-|  |  ClimateService         - Thermostat zones + scheduling     |  |
-|  |  EnergyMonitoringService - Watt/kWh tracking + cost         |  |
-|  |  AutomationService      - Visual trigger/action builder     |  |
-|  |  SceneAnalyzerService   - Scene diagnostics + repair        |  |
-|  |  CodeVaultService       - Setup codes in Keychain           |  |
-|  |  DeviceHealthService    - Reachability + reliability scores |  |
-|  |  BackupService          - Full config backup/restore        |  |
-|  |  FirmwareTrackerService - Version tracking + updates        |  |
-|  |  FloorPlanService       - Device placement visualization    |  |
-|  |  PresenceService        - Geofencing + occupancy            |  |
-|  |  GuestModeService       - Temporary limited access          |  |
-|  |  IntegrationHubService  - Matter / Thread / Zigbee / Z-Wave |  |
-|  |  AdaptiveLightingService - Circadian rhythm automation      |  |
-|  |  ExportService          - CSV / JSON export                 |  |
-|  |  NotificationService    - Push alerts for security events   |  |
-|  |  VoiceControlService    - Siri + voice commands             |  |
-|  |  SiriShortcutsService   - Shortcuts integration             |  |
-|  |  WidgetSyncService      - App Group data for WidgetKit      |  |
-|  |                                                             |  |
-|  +-----------------------+---------+---------------------------+  |
-|                          |         |                              |
-|                +---------+--+  +---+---------+                    |
-|                |  Models    |  |  Design     |                    |
-|                | UnifiedDev |  | Glassmorphic|                    |
-|                | UnifiedScn |  | GlassCard   |                    |
-|                | SetupCode  |  | CircGauge   |                    |
-|                | DiscDevice |  | ModernColor |                    |
-|                +------------+  +-------------+                    |
-+------------------------------------------------------------------+
-                          |
-              +-----------+-----------+
-              | Nova / Claude Code    |
-              | REST client on        |
-              | 127.0.0.1:37432       |
-              +-----------------------+
+```mermaid
+graph TB
+    subgraph Clients["External Clients"]
+        Nova["Nova / OpenClaw<br/>AI Familiar"]
+        Claude["Claude Code"]
+        Curl["curl / scripts"]
+    end
+
+    subgraph API["REST API (port 37432)"]
+        Server["NovaAPIServer<br/>NWListener, 127.0.0.1 only"]
+    end
+
+    subgraph App["HomekitControl"]
+        subgraph Platforms["Platform Targets"]
+            iOS["iOS App<br/>Full features + WidgetKit"]
+            tvOS["tvOS App<br/>10-ft optimized UI"]
+            macOS["macOS App<br/>Mac Catalyst + API Server"]
+        end
+
+        subgraph Shared["Shared Layer"]
+            HK["HomeKitService<br/>HMHomeManager delegate"]
+            AI["AIService<br/>Ollama, TinyLLM, Claude"]
+            Net["NetworkDiscoveryService<br/>Bonjour/mDNS scanner"]
+            Sec["SecurityService<br/>Locks, sensors, zones"]
+            Climate["ClimateService<br/>Thermostat zones"]
+            Energy["EnergyMonitoringService<br/>Watt/kWh tracking"]
+            Auto["AutomationService<br/>Trigger/action builder"]
+            Scene["SceneAnalyzerService<br/>Diagnostics + repair"]
+            Vault["CodeVaultService<br/>Keychain storage"]
+            Health["DeviceHealthService<br/>Reliability scores"]
+            Backup["BackupService<br/>Config snapshots"]
+            Export["ExportService<br/>CSV + JSON export"]
+        end
+
+        subgraph Models["Data Models"]
+            UD["UnifiedDevice"]
+            US["UnifiedScene"]
+            SC["SetupCode"]
+            DD["DiscoveredDevice"]
+        end
+
+        subgraph Design["Design System"]
+            Glass["Glassmorphic UI"]
+            Gauge["CircularGauge"]
+            Colors["ModernColors"]
+        end
+    end
+
+    subgraph Framework["Apple Frameworks"]
+        HomeKit["HomeKit.framework<br/>HMHomeManager"]
+        Network["Network.framework<br/>NWListener, NWBrowser"]
+        Security["Security.framework<br/>Keychain"]
+    end
+
+    Nova --> Server
+    Claude --> Server
+    Curl --> Server
+    Server --> HK
+    iOS --> Shared
+    tvOS --> Shared
+    macOS --> Shared
+    macOS --> Server
+    HK --> HomeKit
+    Net --> Network
+    Server --> Network
+    Vault --> Security
+    Shared --> Models
+    Platforms --> Design
 ```
 
 ---
@@ -272,7 +284,7 @@ curl -X POST http://127.0.0.1:37432/api/refresh
 {
   "status": "running",
   "app": "HomekitControl",
-  "version": "1.1",
+  "version": "1.3.0",
   "port": "37432",
   "platform": "native",
   "backend": "HomeKit.framework",
@@ -471,9 +483,50 @@ See [CHANGELOG.md](CHANGELOG.md) for version history.
 
 ### Recent Versions
 
+- **v1.3.0** -- Comprehensive XCTest suite (329 tests), security audit, API integration tests
 - **v1.2.0** -- Mac Catalyst build with native HomeKit.framework on macOS
 - **v1.1.0** -- macOS Shortcuts CLI proxy, scene execution endpoint, launchd agent
 - **v1.0.0** -- Initial release with iOS, tvOS, and macOS support
+
+---
+
+## Testing
+
+HomekitControl includes a comprehensive XCTest suite with 329 tests across 25 test files. Tests are organized by category:
+
+### Test Categories
+
+| Category | Tests | Coverage |
+|---|---|---|
+| **Unit: Models** | 55 | UnifiedDevice, UnifiedScene, SetupCode, DiscoveredDevice, DeviceHealthRecord |
+| **Unit: Enums** | 53 | DeviceCategory, Manufacturer, HealthStatus, DeviceProtocol, SceneType |
+| **Unit: Services** | 72 | ExportService (CSV/JSON), SceneAnalyzer, ClimateService, SecurityService |
+| **Functional: Scene Flow** | 19 | Scene lookup, health assessment, execution tracking, API contract |
+| **API Server** | 14 | HTTP parser, body JSON, edge cases, response formatting |
+| **Security Audit** | 12 | Credential scan, Keychain verification, loopback binding, entitlements |
+| **Integration: Live API** | 10 | Endpoints on port 37432 (skip gracefully if server not running) |
+| **Other** | 94 | Widget data, automation, energy, guest access, backup, notifications |
+
+### Running Tests
+
+```bash
+# Run all tests (macOS target)
+xcodebuild test -scheme HomekitControl-macOS -destination 'platform=macOS'
+
+# Run a specific test class
+xcodebuild test -scheme HomekitControl-macOS -destination 'platform=macOS' \
+  -only-testing:HomekitControlTests/NovaRequestParsingTests
+```
+
+### Security Tests
+
+The security audit tests automatically scan source files for:
+- Hardcoded API keys (OpenAI, AWS, GitHub, Slack patterns)
+- Hardcoded passwords and secrets
+- Bearer tokens in source
+- Setup codes outside Keychain storage
+- API server binding to non-loopback addresses
+- Sandbox and HomeKit entitlement configuration
 
 ---
 

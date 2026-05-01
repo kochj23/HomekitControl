@@ -149,7 +149,7 @@ class ClimateService: ObservableObject {
 
         monitoringTask = Task {
             while !Task.isCancelled && isMonitoring {
-                await refreshThermostats()
+                refreshThermostats()
                 await checkSchedules()
                 try? await Task.sleep(nanoseconds: 60_000_000_000) // Every minute
             }

@@ -157,7 +157,7 @@ class SecurityService: ObservableObject {
 
         monitoringTask = Task {
             while !Task.isCancelled && isMonitoring {
-                await refreshDevices()
+                refreshDevices()
                 try? await Task.sleep(nanoseconds: 30_000_000_000) // Every 30 seconds
             }
         }

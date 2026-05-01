@@ -155,7 +155,7 @@ class AutomationService: ObservableObject {
     // MARK: - CRUD Operations
 
     func createAutomation(name: String) -> CustomAutomation {
-        var automation = CustomAutomation(name: name)
+        let automation = CustomAutomation(name: name)
         automations.append(automation)
         saveAutomations()
         return automation

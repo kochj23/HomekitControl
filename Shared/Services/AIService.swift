@@ -625,7 +625,7 @@ struct AISettingsView: View {
                         .tag(provider)
                     }
                 }
-                .onChange(of: aiService.selectedProvider) { _ in
+                .onChange(of: aiService.selectedProvider) {
                     aiService.saveConfiguration()
                 }
 
@@ -652,19 +652,19 @@ struct AISettingsView: View {
 
             Section(header: Text("Local Servers")) {
                 TextField("Ollama URL", text: $aiService.ollamaEndpoint)
-                    .onChange(of: aiService.ollamaEndpoint) { _ in aiService.saveConfiguration() }
+                    .onChange(of: aiService.ollamaEndpoint) { aiService.saveConfiguration() }
 
                 TextField("Ollama Model", text: $aiService.ollamaModel)
-                    .onChange(of: aiService.ollamaModel) { _ in aiService.saveConfiguration() }
+                    .onChange(of: aiService.ollamaModel) { aiService.saveConfiguration() }
 
                 TextField("TinyLLM URL", text: $aiService.tinyLLMEndpoint)
-                    .onChange(of: aiService.tinyLLMEndpoint) { _ in aiService.saveConfiguration() }
+                    .onChange(of: aiService.tinyLLMEndpoint) { aiService.saveConfiguration() }
 
                 TextField("TinyChat URL", text: $aiService.tinyChatEndpoint)
-                    .onChange(of: aiService.tinyChatEndpoint) { _ in aiService.saveConfiguration() }
+                    .onChange(of: aiService.tinyChatEndpoint) { aiService.saveConfiguration() }
 
                 TextField("OpenWebUI URL", text: $aiService.openWebUIEndpoint)
-                    .onChange(of: aiService.openWebUIEndpoint) { _ in aiService.saveConfiguration() }
+                    .onChange(of: aiService.openWebUIEndpoint) { aiService.saveConfiguration() }
             }
 
             Section(header: Text("Credits")) {

@@ -92,20 +92,20 @@ class NovaAPIServer {
             #if canImport(HomeKit)
             let hk = HomeKitService.shared
             return json(200, [
-                "status": "running", "app": "HomekitControl", "version": "1.1", "port": "\(port)",
+                "status": "running", "app": "HomekitControl", "version": "1.3.0", "port": "\(port)",
                 "platform": "native", "backend": "HomeKit.framework",
                 "uptimeSeconds": Int(Date().timeIntervalSince(startTime)),
                 "homes": hk.homes.count, "accessories": hk.accessories.count, "scenes": hk.scenes.count
             ] as [String: Any])
             #elseif os(macOS)
             return json(200, [
-                "status": "running", "app": "HomekitControl", "version": "1.1", "port": "\(port)",
+                "status": "running", "app": "HomekitControl", "version": "1.3.0", "port": "\(port)",
                 "platform": "macOS", "backend": "Shortcuts CLI proxy",
                 "uptimeSeconds": Int(Date().timeIntervalSince(startTime))
             ] as [String: Any])
             #else
             return json(200, [
-                "status": "running", "app": "HomekitControl", "version": "1.1", "port": "\(port)",
+                "status": "running", "app": "HomekitControl", "version": "1.3.0", "port": "\(port)",
                 "uptimeSeconds": Int(Date().timeIntervalSince(startTime))
             ] as [String: Any])
             #endif
@@ -289,7 +289,30 @@ class NovaAPIServer {
             method = tokens[0]; path = tokens[1].components(separatedBy: "?").first ?? tokens[1]; body = rawBody; headers = hdrs
         }
     }
-    private func json(_ s: Int, _ d: [String: Any]) -> String { guard let data = try? JSONSerialization.data(withJSONObject: d, options: .prettyPrinted), let body = String(data: data, encoding: .utf8) else { return http(500, "") }; return http(s, body, "application/json") }
-    private func jsonArray(_ s: Int, _ a: [[String: Any]]) -> String { guard let data = try? JSONSerialization.data(withJSONObject: a, options: .prettyPrinted), let body = String(data: data, encoding: .utf8) else { return http(500, "") }; return http(s, body, "application/json") }
+    private func json(_ s: Int, _ d: [String: Any]) -> String {
+        let safe = sanitizeForJSON(d) as? [String: Any] ?? [:]
+        guard JSONSerialization.isValidJSONObject(safe),
+              let data = try? JSONSerialization.data(withJSONObject: safe, options: .prettyPrinted),
+              let body = String(data: data, encoding: .utf8) else { return http(500, "{\"error\":\"JSON serialization failed\"}") }
+        return http(s, body, "application/json")
+    }
+    private func jsonArray(_ s: Int, _ a: [[String: Any]]) -> String {
+        let safe = a.map { sanitizeForJSON($0) as? [String: Any] ?? [:] }
+        guard JSONSerialization.isValidJSONObject(safe),
+              let data = try? JSONSerialization.data(withJSONObject: safe, options: .prettyPrinted),
+              let body = String(data: data, encoding: .utf8) else { return http(500, "{\"error\":\"JSON serialization failed\"}") }
+        return http(s, body, "application/json")
+    }
+    private func sanitizeForJSON(_ value: Any) -> Any {
+        switch value {
+        case let str as String: return str
+        case let num as NSNumber: return num
+        case let bool as Bool: return bool
+        case let dict as [String: Any]: return dict.mapValues { sanitizeForJSON($0) }
+        case let arr as [Any]: return arr.map { sanitizeForJSON($0) }
+        case is NSNull: return NSNull()
+        default: return String(describing: value)
+        }
+    }
     private func http(_ s: Int, _ body: String, _ ct: String = "text/plain") -> String { let st = [200:"OK",201:"Created",400:"Bad Request",401:"Unauthorized",404:"Not Found",500:"Internal Server Error"][s] ?? "Unknown"; return "HTTP/1.1 \(s) \(st)\r\nContent-Type: \(ct); charset=utf-8\r\nContent-Length: \(body.utf8.count)\r\nConnection: close\r\n\r\n\(body)" }
 }

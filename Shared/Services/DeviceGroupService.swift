@@ -162,57 +162,72 @@ class DeviceGroupService: ObservableObject {
 
     func turnOnGroup(_ group: DeviceGroup) async throws {
         isProcessing = true
-        defer { isProcessing = false }
-
-        #if canImport(HomeKit)
-        for deviceId in group.deviceIds {
-            if let accessory = HomeKitService.shared.accessories.first(where: { $0.uniqueIdentifier == deviceId }) {
-                try await HomeKitService.shared.setAccessoryPower(accessory, on: true)
+        do {
+            #if canImport(HomeKit)
+            for deviceId in group.deviceIds {
+                if let accessory = HomeKitService.shared.accessories.first(where: { $0.uniqueIdentifier == deviceId }) {
+                    try await HomeKitService.shared.setAccessoryPower(accessory, on: true)
+                }
             }
+            #endif
+            isProcessing = false
+        } catch {
+            isProcessing = false
+            throw error
         }
-        #endif
     }
 
     func turnOffGroup(_ group: DeviceGroup) async throws {
         isProcessing = true
-        defer { isProcessing = false }
-
-        #if canImport(HomeKit)
-        for deviceId in group.deviceIds {
-            if let accessory = HomeKitService.shared.accessories.first(where: { $0.uniqueIdentifier == deviceId }) {
-                try await HomeKitService.shared.setAccessoryPower(accessory, on: false)
+        do {
+            #if canImport(HomeKit)
+            for deviceId in group.deviceIds {
+                if let accessory = HomeKitService.shared.accessories.first(where: { $0.uniqueIdentifier == deviceId }) {
+                    try await HomeKitService.shared.setAccessoryPower(accessory, on: false)
+                }
             }
+            #endif
+            isProcessing = false
+        } catch {
+            isProcessing = false
+            throw error
         }
-        #endif
     }
 
     func setGroupBrightness(_ group: DeviceGroup, brightness: Int) async throws {
         isProcessing = true
-        defer { isProcessing = false }
-
-        #if canImport(HomeKit)
-        for deviceId in group.deviceIds {
-            if let accessory = HomeKitService.shared.accessories.first(where: { $0.uniqueIdentifier == deviceId }) {
-                try await HomeKitService.shared.setBrightness(accessory, value: brightness)
+        do {
+            #if canImport(HomeKit)
+            for deviceId in group.deviceIds {
+                if let accessory = HomeKitService.shared.accessories.first(where: { $0.uniqueIdentifier == deviceId }) {
+                    try await HomeKitService.shared.setBrightness(accessory, value: brightness)
+                }
             }
+            #endif
+            isProcessing = false
+        } catch {
+            isProcessing = false
+            throw error
         }
-        #endif
     }
 
     func setGroupRelativeBrightness(_ group: DeviceGroup, delta: Int) async throws {
         isProcessing = true
-        defer { isProcessing = false }
-
-        #if canImport(HomeKit)
-        for deviceId in group.deviceIds {
-            if let accessory = HomeKitService.shared.accessories.first(where: { $0.uniqueIdentifier == deviceId }) {
-                // Get current brightness and adjust
-                let currentBrightness = HomeKitService.shared.getBrightness(accessory) ?? 50
-                let newBrightness = max(0, min(100, currentBrightness + delta))
-                try await HomeKitService.shared.setBrightness(accessory, value: newBrightness)
+        do {
+            #if canImport(HomeKit)
+            for deviceId in group.deviceIds {
+                if let accessory = HomeKitService.shared.accessories.first(where: { $0.uniqueIdentifier == deviceId }) {
+                    let currentBrightness = HomeKitService.shared.getBrightness(accessory) ?? 50
+                    let newBrightness = max(0, min(100, currentBrightness + delta))
+                    try await HomeKitService.shared.setBrightness(accessory, value: newBrightness)
+                }
             }
+            #endif
+            isProcessing = false
+        } catch {
+            isProcessing = false
+            throw error
         }
-        #endif
     }
 
     // MARK: - Helpers

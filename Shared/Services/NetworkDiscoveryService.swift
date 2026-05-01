@@ -61,7 +61,7 @@ final class NetworkDiscoveryService: ObservableObject {
         // Auto-stop after 30 seconds
         scanTask = Task {
             try? await Task.sleep(nanoseconds: 30_000_000_000)
-            await stopDiscovery()
+            stopDiscovery()
         }
     }
 

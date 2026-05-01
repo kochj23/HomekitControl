@@ -37,6 +37,16 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "211201108E9BDC8424E0DAD3"
+               BuildableName = "HomekitControlTests.xctest"
+               BlueprintName = "HomekitControlTests"
+               ReferencedContainer = "container:HomekitControl.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

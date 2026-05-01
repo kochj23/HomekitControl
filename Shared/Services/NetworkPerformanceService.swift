@@ -121,8 +121,8 @@ class NetworkPerformanceService: ObservableObject {
 
         monitoringTask = Task {
             while !Task.isCancelled && isMonitoring {
-                await refreshStatuses()
-                await checkForIssues()
+                refreshStatuses()
+                checkForIssues()
                 try? await Task.sleep(nanoseconds: 30_000_000_000) // Every 30 seconds
             }
         }
