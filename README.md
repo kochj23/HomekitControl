@@ -1,5 +1,7 @@
 # HomekitControl
 
+> **Note:** The Nova API functionality of this app (port 37432) has been retired. All HomeKit API access for Nova is now handled by [NovaControl](https://github.com/kochj23/NovaControl) on port 37400. This app is no longer required to be running for Nova to control HomeKit scenes.
+
 ![Build](https://github.com/kochj23/HomekitControl/actions/workflows/build.yml/badge.svg)
 ![Tests](https://img.shields.io/badge/tests-329%20passed-brightgreen)
 ![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20tvOS%20%7C%20macOS-blue)
