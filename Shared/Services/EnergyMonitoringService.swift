@@ -22,14 +22,17 @@ struct EnergyReading: Codable, Identifiable {
     let watts: Double
     let voltage: Double?
     let amperage: Double?
+    /// True if this reading is estimated from device type, false if from actual power meter hardware
+    let isEstimated: Bool
 
-    init(deviceId: UUID, watts: Double, voltage: Double? = nil, amperage: Double? = nil) {
+    init(deviceId: UUID, watts: Double, voltage: Double? = nil, amperage: Double? = nil, isEstimated: Bool = true) {
         self.id = UUID()
         self.deviceId = deviceId
         self.timestamp = Date()
         self.watts = watts
         self.voltage = voltage
         self.amperage = amperage
+        self.isEstimated = isEstimated
     }
 }
 
@@ -60,14 +63,17 @@ struct DevicePowerUsage: Codable, Identifiable {
     let currentWatts: Double
     let todayKWh: Double
     let estimatedMonthlyCost: Double
+    /// True if power data is estimated (no real power meter on device), false if from actual hardware measurement
+    let isEstimated: Bool
 
-    init(deviceId: UUID, deviceName: String, currentWatts: Double, todayKWh: Double, utilityRate: Double) {
+    init(deviceId: UUID, deviceName: String, currentWatts: Double, todayKWh: Double, utilityRate: Double, isEstimated: Bool = true) {
         self.id = UUID()
         self.deviceId = deviceId
         self.deviceName = deviceName
         self.currentWatts = currentWatts
         self.todayKWh = todayKWh
         self.estimatedMonthlyCost = todayKWh * 30 * utilityRate
+        self.isEstimated = isEstimated
     }
 }
 
@@ -141,21 +147,51 @@ class EnergyMonitoringService: ObservableObject {
     private func collectReadings() async {
         #if canImport(HomeKit)
         for accessory in HomeKitService.shared.accessories {
-            // Check for power monitoring characteristics
+            var foundRealPowerData = false
+
+            // First: try to read REAL power consumption data from energy-capable devices
             for service in accessory.services {
+                // Look for actual energy/power characteristics (Eve Energy, Kasa, etc.)
+                // "000000E8" = Current Power in Watts (Eve custom)
+                // Apple's HMCharacteristicTypeCurrentE is not standard, check for outlet with power meter
                 for characteristic in service.characteristics {
-                    // Check for power-related characteristics
-                    // Note: Power consumption monitoring requires devices that support energy monitoring
-                    if characteristic.characteristicType == HMCharacteristicTypePowerState {
-                        // For power state, estimate watts based on device type
-                        if let isOn = characteristic.value as? Bool, isOn {
-                            let estimatedWatts = estimatePowerUsage(for: accessory)
-                            let reading = EnergyReading(
-                                deviceId: accessory.uniqueIdentifier,
-                                watts: estimatedWatts
-                            )
-                            readings.append(reading)
-                            checkForAlerts(reading: reading, deviceName: accessory.name)
+                    // Try reading real-time wattage if available
+                    if characteristic.characteristicType.contains("E863F10D") || // Eve Energy watts
+                       characteristic.characteristicType.contains("000000E8") {  // Power consumption
+                        do {
+                            try await characteristic.readValue()
+                            if let watts = characteristic.value as? Double, watts > 0 {
+                                let reading = EnergyReading(
+                                    deviceId: accessory.uniqueIdentifier,
+                                    watts: watts,
+                                    isEstimated: false
+                                )
+                                readings.append(reading)
+                                checkForAlerts(reading: reading, deviceName: accessory.name)
+                                foundRealPowerData = true
+                            }
+                        } catch {
+                            // Device doesn't support real power reading
+                        }
+                    }
+                }
+            }
+
+            // Fallback: estimate watts based on device type (clearly marked as estimated)
+            if !foundRealPowerData {
+                for service in accessory.services {
+                    for characteristic in service.characteristics {
+                        if characteristic.characteristicType == HMCharacteristicTypePowerState {
+                            if let isOn = characteristic.value as? Bool, isOn {
+                                let estimatedWatts = estimatePowerUsage(for: accessory)
+                                let reading = EnergyReading(
+                                    deviceId: accessory.uniqueIdentifier,
+                                    watts: estimatedWatts,
+                                    isEstimated: true
+                                )
+                                readings.append(reading)
+                                checkForAlerts(reading: reading, deviceName: accessory.name)
+                            }
                         }
                     }
                 }
@@ -294,16 +330,16 @@ class EnergyMonitoringService: ObservableObject {
     }
 
     func getTopConsumers() -> [DevicePowerUsage] {
-        var deviceUsages: [UUID: (watts: Double, count: Int, name: String)] = [:]
+        var deviceUsages: [UUID: (watts: Double, count: Int, name: String, hasRealData: Bool)] = [:]
 
         #if canImport(HomeKit)
         // Group readings by device
         for reading in readings {
             if let existing = deviceUsages[reading.deviceId] {
-                deviceUsages[reading.deviceId] = (existing.watts + reading.watts, existing.count + 1, existing.name)
+                deviceUsages[reading.deviceId] = (existing.watts + reading.watts, existing.count + 1, existing.name, existing.hasRealData || !reading.isEstimated)
             } else {
                 let name = HomeKitService.shared.accessories.first { $0.uniqueIdentifier == reading.deviceId }?.name ?? "Unknown"
-                deviceUsages[reading.deviceId] = (reading.watts, 1, name)
+                deviceUsages[reading.deviceId] = (reading.watts, 1, name, !reading.isEstimated)
             }
         }
         #endif
@@ -314,10 +350,11 @@ class EnergyMonitoringService: ObservableObject {
             let kWh = (avgWatts * hours) / 1000.0
             return DevicePowerUsage(
                 deviceId: deviceId,
-                deviceName: data.name,
+                deviceName: data.hasRealData ? data.name : "\(data.name) (est.)",
                 currentWatts: avgWatts,
                 todayKWh: kWh,
-                utilityRate: utilityRate
+                utilityRate: utilityRate,
+                isEstimated: !data.hasRealData
             )
         }
         .sorted { $0.currentWatts > $1.currentWatts }

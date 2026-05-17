@@ -174,13 +174,83 @@ class NetworkPerformanceService: ObservableObject {
     }
 
     #if canImport(HomeKit)
+    /// Measure real network latency using NWConnection TCP handshake timing.
+    /// Falls back to characteristic read timing if no IP is discoverable.
     private func measureLatency(for accessory: HMAccessory) -> Double {
-        // Simulate latency measurement
-        // In a real implementation, this would ping the device
         guard accessory.isReachable else { return Double.infinity }
 
-        // Simulate reasonable latency values
-        return Double.random(in: 10...200)
+        // Use characteristic read as timing proxy — this measures actual round-trip to device
+        let semaphore = DispatchSemaphore(value: 0)
+        var measuredLatency: Double = 0
+
+        let startTime = CFAbsoluteTimeGetCurrent()
+
+        // Find a readable characteristic on the device
+        if let service = accessory.services.first(where: { $0.serviceType == HMServiceTypeLightbulb || $0.serviceType == HMServiceTypeSwitch || $0.serviceType == HMServiceTypeOutlet || $0.serviceType == HMServiceTypeThermostat }),
+           let characteristic = service.characteristics.first(where: { $0.properties.contains(HMCharacteristicPropertyReadable) }) {
+            characteristic.readValue { error in
+                let endTime = CFAbsoluteTimeGetCurrent()
+                if error == nil {
+                    measuredLatency = (endTime - startTime) * 1000.0 // Convert to ms
+                } else {
+                    measuredLatency = Double.infinity
+                }
+                semaphore.signal()
+            }
+
+            // Wait up to 5 seconds
+            let result = semaphore.wait(timeout: .now() + 5.0)
+            if result == .timedOut {
+                return 5000.0 // 5 second timeout
+            }
+        } else {
+            // No readable characteristic — use NWConnection TCP handshake
+            measuredLatency = measureTCPLatency(for: accessory)
+        }
+
+        return measuredLatency
+    }
+
+    /// Measure latency via TCP connection establishment timing to a HomeKit accessory's HAP port
+    private func measureTCPLatency(for accessory: HMAccessory) -> Double {
+        let semaphore = DispatchSemaphore(value: 0)
+        var latency: Double = Double.infinity
+
+        // HomeKit accessories typically listen on port 80 or their HAP port
+        // Use the accessory name for mDNS-style resolution
+        let endpoint = NWEndpoint.service(
+            name: accessory.name,
+            type: "_hap._tcp",
+            domain: "local.",
+            interface: nil
+        )
+
+        let connection = NWConnection(to: endpoint, using: .tcp)
+        let startTime = CFAbsoluteTimeGetCurrent()
+
+        connection.stateUpdateHandler = { state in
+            switch state {
+            case .ready:
+                let endTime = CFAbsoluteTimeGetCurrent()
+                latency = (endTime - startTime) * 1000.0
+                connection.cancel()
+                semaphore.signal()
+            case .failed, .cancelled:
+                semaphore.signal()
+            default:
+                break
+            }
+        }
+
+        connection.start(queue: self.pingQueue)
+
+        let result = semaphore.wait(timeout: .now() + 3.0)
+        if result == .timedOut {
+            connection.cancel()
+            return 3000.0
+        }
+
+        return latency
     }
     #endif
 

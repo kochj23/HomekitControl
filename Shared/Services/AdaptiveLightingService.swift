@@ -180,20 +180,25 @@ class AdaptiveLightingService: ObservableObject {
 
         let sortedSchedule = schedule.sorted { ($0.hour * 60 + $0.minute) < ($1.hour * 60 + $1.minute) }
 
+        // Safe access — return defaults if schedule has no usable points
+        guard let lastPoint = sortedSchedule.last, let firstPoint = sortedSchedule.first else {
+            return (100, 4000)
+        }
+
         // Find the two schedule points we're between
-        var previousPoint = sortedSchedule.last!
-        var nextPoint = sortedSchedule.first!
+        var previousPoint = lastPoint
+        var nextPoint = firstPoint
 
         for i in 0..<sortedSchedule.count {
             let pointMinutes = sortedSchedule[i].hour * 60 + sortedSchedule[i].minute
             if pointMinutes > currentTimeMinutes {
                 nextPoint = sortedSchedule[i]
-                previousPoint = i > 0 ? sortedSchedule[i - 1] : sortedSchedule.last!
+                previousPoint = i > 0 ? sortedSchedule[i - 1] : lastPoint
                 break
             }
             if i == sortedSchedule.count - 1 {
                 previousPoint = sortedSchedule[i]
-                nextPoint = sortedSchedule.first!
+                nextPoint = firstPoint
             }
         }
 

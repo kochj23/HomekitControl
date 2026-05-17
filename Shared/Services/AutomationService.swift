@@ -64,6 +64,12 @@ struct AutomationTrigger: Codable, Identifiable {
     }
 }
 
+/// Logic group for compound condition evaluation
+enum ConditionGroupLogic: String, Codable, CaseIterable {
+    case and = "AND"
+    case or = "OR"
+}
+
 struct AutomationCondition: Codable, Identifiable {
     let id: UUID
     var deviceId: UUID?
@@ -71,13 +77,27 @@ struct AutomationCondition: Codable, Identifiable {
     var operatorType: ConditionOperator
     var value: String
     var isEnabled: Bool
+    /// Group index for compound AND/OR grouping (conditions in same group share logic)
+    var groupIndex: Int
+    /// Logic to apply between this condition's group and the next
+    var groupLogic: ConditionGroupLogic
+    /// Optional time window: condition only active between these hours (24h format)
+    var timeWindowStart: Int? // Hour (0-23), nil = always active
+    var timeWindowEnd: Int? // Hour (0-23), nil = always active
+    /// Minimum duration the condition must be true (seconds)
+    var minimumDuration: TimeInterval?
 
-    init(characteristic: String = "power", operatorType: ConditionOperator = .equals, value: String = "on") {
+    init(characteristic: String = "power", operatorType: ConditionOperator = .equals, value: String = "on", groupIndex: Int = 0, groupLogic: ConditionGroupLogic = .and) {
         self.id = UUID()
         self.characteristic = characteristic
         self.operatorType = operatorType
         self.value = value
         self.isEnabled = true
+        self.groupIndex = groupIndex
+        self.groupLogic = groupLogic
+        self.timeWindowStart = nil
+        self.timeWindowEnd = nil
+        self.minimumDuration = nil
     }
 }
 
@@ -188,11 +208,12 @@ class AutomationService: ObservableObject {
         isProcessing = true
         defer { isProcessing = false }
 
-        // Check conditions
-        for condition in automation.conditions where condition.isEnabled {
-            let conditionMet = await evaluateCondition(condition)
-            if !conditionMet {
-                print("Automation '\(automation.name)' condition not met")
+        // Check conditions using compound AND/OR group logic
+        let enabledConditions = automation.conditions.filter { $0.isEnabled }
+        if !enabledConditions.isEmpty {
+            let conditionsMet = await evaluateConditionGroups(enabledConditions)
+            if !conditionsMet {
+                print("Automation '\(automation.name)' conditions not met")
                 return
             }
         }
@@ -214,20 +235,174 @@ class AutomationService: ObservableObject {
         }
     }
 
+    /// Evaluate conditions using compound AND/OR group logic
+    private func evaluateConditionGroups(_ conditions: [AutomationCondition]) async -> Bool {
+        // Group conditions by their groupIndex
+        let grouped = Dictionary(grouping: conditions, by: { $0.groupIndex })
+        let sortedGroupKeys = grouped.keys.sorted()
+
+        var groupResults: [(result: Bool, logic: ConditionGroupLogic)] = []
+
+        for groupKey in sortedGroupKeys {
+            guard let groupConditions = grouped[groupKey] else { continue }
+            let logic = groupConditions.first?.groupLogic ?? .and
+
+            // Within a group, all conditions must be true (AND within group)
+            var groupPassed = true
+            for condition in groupConditions {
+                // Check time window
+                if !isWithinTimeWindow(condition) {
+                    groupPassed = false
+                    break
+                }
+
+                let result = await evaluateCondition(condition)
+                if !result {
+                    groupPassed = false
+                    break
+                }
+            }
+
+            groupResults.append((result: groupPassed, logic: logic))
+        }
+
+        // Combine groups using their logic operators
+        guard let first = groupResults.first else { return true }
+        var finalResult = first.result
+
+        for i in 1..<groupResults.count {
+            let current = groupResults[i]
+            // Use the logic from the PREVIOUS group to combine with current
+            let combineLogic = groupResults[i - 1].logic
+
+            switch combineLogic {
+            case .and:
+                finalResult = finalResult && current.result
+            case .or:
+                finalResult = finalResult || current.result
+            }
+        }
+
+        return finalResult
+    }
+
+    /// Check if current time falls within condition's active time window
+    private func isWithinTimeWindow(_ condition: AutomationCondition) -> Bool {
+        guard let start = condition.timeWindowStart, let end = condition.timeWindowEnd else {
+            return true // No time window restriction
+        }
+
+        let currentHour = Calendar.current.component(.hour, from: Date())
+
+        if start <= end {
+            return currentHour >= start && currentHour < end
+        } else {
+            // Spans midnight (e.g., 22:00 - 06:00)
+            return currentHour >= start || currentHour < end
+        }
+    }
+
     private func evaluateCondition(_ condition: AutomationCondition) async -> Bool {
-        // Evaluate condition against device state
         #if canImport(HomeKit)
         guard let deviceId = condition.deviceId,
               let accessory = HomeKitService.shared.accessories.first(where: { $0.uniqueIdentifier == deviceId }) else {
             return true // No device specified, condition passes
         }
 
-        // Get characteristic value and compare
-        // Simplified - in production would check actual characteristic
-        return true
+        // Find the characteristic matching the condition
+        for service in accessory.services {
+            for characteristic in service.characteristics {
+                let charDescription = characteristic.localizedDescription.lowercased()
+                let conditionChar = condition.characteristic.lowercased()
+
+                guard charDescription.contains(conditionChar) || characteristic.characteristicType.lowercased().contains(conditionChar) else {
+                    continue
+                }
+
+                // Read current value from the device
+                do {
+                    try await characteristic.readValue()
+                } catch {
+                    NSLog("[AutomationService] Failed to read characteristic for condition: \(error.localizedDescription)")
+                    return false
+                }
+
+                guard let currentValue = characteristic.value else { return false }
+
+                // Compare based on operator type
+                return evaluateComparison(
+                    currentValue: currentValue,
+                    conditionValue: condition.value,
+                    operatorType: condition.operatorType
+                )
+            }
+        }
+
+        // No matching characteristic found
+        return false
         #else
         return true
         #endif
+    }
+
+    private func evaluateComparison(currentValue: Any, conditionValue: String, operatorType: ConditionOperator) -> Bool {
+        // Numeric comparison
+        if let numericCurrent = numericValue(from: currentValue),
+           let numericCondition = Double(conditionValue) {
+            switch operatorType {
+            case .equals:
+                return abs(numericCurrent - numericCondition) < 0.01
+            case .notEquals:
+                return abs(numericCurrent - numericCondition) >= 0.01
+            case .greaterThan:
+                return numericCurrent > numericCondition
+            case .lessThan:
+                return numericCurrent < numericCondition
+            case .contains:
+                return String(describing: currentValue).lowercased().contains(conditionValue.lowercased())
+            }
+        }
+
+        // Boolean comparison
+        if let boolCurrent = currentValue as? Bool {
+            let boolCondition = conditionValue.lowercased() == "true" || conditionValue == "1" || conditionValue.lowercased() == "on"
+            switch operatorType {
+            case .equals:
+                return boolCurrent == boolCondition
+            case .notEquals:
+                return boolCurrent != boolCondition
+            default:
+                return boolCurrent == boolCondition
+            }
+        }
+
+        // String comparison
+        let stringCurrent = String(describing: currentValue).lowercased()
+        let stringCondition = conditionValue.lowercased()
+
+        switch operatorType {
+        case .equals:
+            return stringCurrent == stringCondition
+        case .notEquals:
+            return stringCurrent != stringCondition
+        case .contains:
+            return stringCurrent.contains(stringCondition)
+        case .greaterThan:
+            return stringCurrent > stringCondition
+        case .lessThan:
+            return stringCurrent < stringCondition
+        }
+    }
+
+    private func numericValue(from value: Any) -> Double? {
+        switch value {
+        case let intVal as Int: return Double(intVal)
+        case let doubleVal as Double: return doubleVal
+        case let floatVal as Float: return Double(floatVal)
+        case let boolVal as Bool: return boolVal ? 1.0 : 0.0
+        case let nsNumber as NSNumber: return nsNumber.doubleValue
+        default: return nil
+        }
     }
 
     private func executeAction(_ action: AutomationAction) async throws {
@@ -271,9 +446,13 @@ class AutomationService: ObservableObject {
     }
 
     func importAutomation(from data: Data) throws -> CustomAutomation {
-        let automation = try JSONDecoder().decode(CustomAutomation.self, from: data)
-        var imported = automation
-        imported = CustomAutomation(name: automation.name + " (Imported)")
+        let decoded = try JSONDecoder().decode(CustomAutomation.self, from: data)
+        // Preserve all decoded data (triggers, conditions, actions) while giving it a new identity
+        var imported = CustomAutomation(name: decoded.name + " (Imported)")
+        imported.triggers = decoded.triggers
+        imported.conditions = decoded.conditions
+        imported.actions = decoded.actions
+        imported.isEnabled = decoded.isEnabled
         automations.append(imported)
         saveAutomations()
         return imported

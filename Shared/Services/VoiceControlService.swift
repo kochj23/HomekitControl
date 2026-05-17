@@ -314,12 +314,15 @@ class VoiceControlService: NSObject, ObservableObject {
                 speak("Scene activated")
 
             case .setThermostat(let temperature):
+                await setThermostatTemperature(temperature)
                 speak("Setting temperature to \(Int(temperature)) degrees")
 
-            case .lockDoor:
+            case .lockDoor(let lockId):
+                await SecurityService.shared.lockDoor(lockId)
                 speak("Door locked")
 
-            case .unlockDoor:
+            case .unlockDoor(let lockId):
+                await SecurityService.shared.unlockDoor(lockId)
                 speak("Door unlocked")
 
             case .custom(let customCommand):
@@ -350,6 +353,13 @@ class VoiceControlService: NSObject, ObservableObject {
             try? await HomeKitService.shared.executeScene(scene)
         }
         #endif
+    }
+
+    private func setThermostatTemperature(_ temperature: Double) async {
+        // Set temperature on the first available thermostat via ClimateService
+        if let thermostat = ClimateService.shared.thermostats.first {
+            await ClimateService.shared.setTemperature(temperature, for: thermostat.id)
+        }
     }
 
     // MARK: - Voice Feedback

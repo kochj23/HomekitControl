@@ -36,14 +36,13 @@ class NovaAPIServer {
     private var listener: NWListener?
     private let startTime = Date()
 
-    /// Local-only anti-CSRF bearer token (not a secret — just prevents drive-by POST from browser JS)
+    /// Local-only anti-CSRF bearer token stored in Keychain (prevents drive-by POST from browser JS)
     private let apiToken: String = {
-        let key = "NovaAPIToken"
-        if let existing = UserDefaults.standard.string(forKey: key), !existing.isEmpty {
+        if let existing = KeychainService.shared.load(key: KeychainService.Keys.novaAPIToken), !existing.isEmpty {
             return existing
         }
         let token = UUID().uuidString
-        UserDefaults.standard.set(token, forKey: key)
+        KeychainService.shared.save(key: KeychainService.Keys.novaAPIToken, value: token)
         return token
     }()
 

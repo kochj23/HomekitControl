@@ -41,8 +41,30 @@ final class AIService: ObservableObject {
     var tinyLLMEndpoint = "http://localhost:8000"
     var tinyChatEndpoint = "http://localhost:8000"
     var openWebUIEndpoint = "http://localhost:8080"
-    var openAIKey: String?
-    var claudeKey: String?
+
+    /// OpenAI API key — stored in macOS Keychain, loaded on demand.
+    var openAIKey: String? {
+        get { KeychainService.shared.load(key: KeychainService.Keys.openAIKey) }
+        set {
+            if let value = newValue {
+                KeychainService.shared.save(key: KeychainService.Keys.openAIKey, value: value)
+            } else {
+                KeychainService.shared.delete(key: KeychainService.Keys.openAIKey)
+            }
+        }
+    }
+
+    /// Claude API key — stored in macOS Keychain, loaded on demand.
+    var claudeKey: String? {
+        get { KeychainService.shared.load(key: KeychainService.Keys.claudeKey) }
+        set {
+            if let value = newValue {
+                KeychainService.shared.save(key: KeychainService.Keys.claudeKey, value: value)
+            } else {
+                KeychainService.shared.delete(key: KeychainService.Keys.claudeKey)
+            }
+        }
+    }
 
     // MARK: - Initialization
 

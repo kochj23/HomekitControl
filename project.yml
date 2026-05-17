@@ -11,7 +11,6 @@ settings:
   base:
     SWIFT_VERSION: "5.9"
     ENABLE_USER_SCRIPT_SANDBOXING: false
-    GENERATE_INFOPLIST_FILE: true
     DEVELOPMENT_TEAM: QRRCB8HB3W
     CODE_SIGN_STYLE: Automatic
 
@@ -26,6 +25,7 @@ targets:
       - path: Resources/Assets.xcassets
     settings:
       base:
+        GENERATE_INFOPLIST_FILE: true
         PRODUCT_BUNDLE_IDENTIFIER: com.kochj.HomeKitTV
         PRODUCT_NAME: HomekitControl
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
@@ -34,7 +34,12 @@ targets:
         INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
         INFOPLIST_KEY_NSHomeKitUsageDescription: "HomekitControl needs HomeKit access to control your smart home devices."
         INFOPLIST_KEY_NSLocalNetworkUsageDescription: "HomekitControl needs local network access to discover smart home devices."
+        INFOPLIST_KEY_NSMicrophoneUsageDescription: "HomekitControl uses the microphone for voice commands to control your smart home."
+        INFOPLIST_KEY_NSSpeechRecognitionUsageDescription: "HomekitControl uses speech recognition to process voice commands for device control."
+        INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription: "HomekitControl uses your location for presence-based automations and geofencing triggers."
+        INFOPLIST_KEY_NSLocationWhenInUseUsageDescription: "HomekitControl uses your location for presence-based automations."
         CODE_SIGN_ENTITLEMENTS: Resources/iOS.entitlements
+        INFOPLIST_FILE: Resources/iOS-Info.plist
 
   HomekitControl-tvOS:
     type: application
@@ -46,6 +51,7 @@ targets:
       - path: Resources/Assets.xcassets
     settings:
       base:
+        GENERATE_INFOPLIST_FILE: true
         PRODUCT_BUNDLE_IDENTIFIER: com.kochj.HomeKitTV
         PRODUCT_NAME: HomekitControl
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
@@ -53,6 +59,7 @@ targets:
         INFOPLIST_KEY_NSHomeKitUsageDescription: "HomekitControl needs HomeKit access to control your smart home devices."
         INFOPLIST_KEY_NSLocalNetworkUsageDescription: "HomekitControl needs local network access to discover smart home devices."
         CODE_SIGN_ENTITLEMENTS: Resources/tvOS.entitlements
+        INFOPLIST_FILE: Resources/tvOS-Info.plist
 
   HomekitControl-macOS:
     type: application
@@ -64,6 +71,7 @@ targets:
       - path: Resources/Assets.xcassets
     settings:
       base:
+        GENERATE_INFOPLIST_FILE: true
         PRODUCT_BUNDLE_IDENTIFIER: com.jordankoch.HomekitControl-macOS
         PRODUCT_NAME: HomekitControl
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
