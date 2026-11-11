@@ -7,9 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Planned
-- Performance improvements
-- Additional features based on community feedback
+## [1.4.0] - 2026-11-11
+
+### Changed
+- AI: migrated to NovaAIKit 1.0.0 on iOS, macOS and tvOS (AI on/off, Auto failover across Ollama, MLX, TinyLLM,
+  TinyChat, OpenWebUI, Nova Gateway, OpenRouter and OpenAI, model picker and editable URLs, Keychain-only keys under
+  com.jkoch.homekitcontrol.*, https-only keys, status indicator, timeouts/retries, validated replies).
+- The assistant sends a home summary with each request and answers from home data when AI is off or offline;
+  every answer shows its source.
+
+### Added
+- macOS AI Assistant sidebar tab; tvOS AI Settings card; NovaAISettingsView in every platform's settings.
+- macOS test target (HomekitControlTests) restored in project.yml; 25 AI tests in 7 categories (354 tests total).
+
+### Removed
+- AIService (own Ollama/TinyLLM/TinyChat/OpenWebUI/OpenAI/Claude clients), macOS AIBackendManager and
+  AIBackendStatusMenu. Claude, Google Cloud, Azure, AWS and IBM Watson backends dropped.
+
+### Security
+- One-time migration: the OpenAI key moves to the new Keychain item (old items deleted after a verified copy);
+  the Claude key and Google/Azure/AWS/IBM Keychain items are deleted; plaintext AI keys in UserDefaults are removed.
+
+### Fixed
+- Unused-result warnings in EncryptedCloudKitSync; hard-coded version strings in Settings/About.
 
 ## [1.3.0] - 2026-05-01
 

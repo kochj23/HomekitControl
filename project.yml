@@ -7,9 +7,16 @@ options:
     macOS: "14.0"
   xcodeVersion: "16.0"
 
+packages:
+  NovaAIKit:
+    url: https://github.com/kochj23/NovaAIKit.git
+    from: 1.0.0
+
 settings:
   base:
     SWIFT_VERSION: "5.9"
+    MARKETING_VERSION: "1.4.0"
+    CURRENT_PROJECT_VERSION: "2"
     ENABLE_USER_SCRIPT_SANDBOXING: false
     DEVELOPMENT_TEAM: QRRCB8HB3W
     CODE_SIGN_STYLE: Automatic
@@ -23,6 +30,9 @@ targets:
       - Shared
       - iOS
       - path: Resources/Assets.xcassets
+    dependencies:
+      - package: NovaAIKit
+        product: NovaAIKit
     settings:
       base:
         GENERATE_INFOPLIST_FILE: true
@@ -49,6 +59,9 @@ targets:
       - Shared
       - tvOS
       - path: Resources/Assets.xcassets
+    dependencies:
+      - package: NovaAIKit
+        product: NovaAIKit
     settings:
       base:
         GENERATE_INFOPLIST_FILE: true
@@ -69,6 +82,9 @@ targets:
       - Shared
       - macOS
       - path: Resources/Assets.xcassets
+    dependencies:
+      - package: NovaAIKit
+        product: NovaAIKit
     settings:
       base:
         GENERATE_INFOPLIST_FILE: true
@@ -77,6 +93,24 @@ targets:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         INFOPLIST_KEY_NSLocalNetworkUsageDescription: "HomekitControl needs local network access to discover smart home devices."
         CODE_SIGN_ENTITLEMENTS: Resources/macOS.entitlements
+
+  HomekitControlTests:
+    type: bundle.unit-test
+    platform: macOS
+    deploymentTarget: "14.0"
+    sources:
+      - Tests/HomekitControlTests
+    dependencies:
+      - target: HomekitControl-macOS
+      - package: NovaAIKit
+        product: NovaAIKit
+        link: false
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: true
+        PRODUCT_BUNDLE_IDENTIFIER: com.jordankoch.HomekitControlTests
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/HomekitControl.app/Contents/MacOS/HomekitControl"
+        BUNDLE_LOADER: "$(TEST_HOST)"
 
 schemes:
   HomekitControl-iOS:
@@ -103,5 +137,9 @@ schemes:
         HomekitControl-macOS: all
     run:
       config: Debug
+    test:
+      config: Debug
+      targets:
+        - HomekitControlTests
     archive:
       config: Release

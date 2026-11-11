@@ -3,12 +3,13 @@
 > **Note:** The Nova API functionality of this app (port 37432) has been retired from active use. All HomeKit API access for Nova is now handled by [NovaControl](https://github.com/kochj23/NovaControl) on port 37400. This app is no longer required to be running for Nova to control HomeKit scenes. The local API remains functional for development, diagnostics, and direct scripting.
 
 ![Build](https://github.com/kochj23/HomekitControl/actions/workflows/build.yml/badge.svg)
-![Tests](https://img.shields.io/badge/tests-329%20passed-brightgreen)
+![Version](https://img.shields.io/badge/version-1.4.0-brightgreen)
+![Tests](https://img.shields.io/badge/tests-354%20passed-brightgreen)
 ![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20tvOS%20%7C%20macOS-blue)
 ![Swift](https://img.shields.io/badge/Swift-5.9-orange)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-A unified multi-platform smart home control application for iOS, tvOS, and macOS. HomekitControl consolidates five previous HomeKit projects into a single app with native HomeKit.framework access (iOS/tvOS), a Shortcuts CLI proxy (macOS), a local REST API, a real-time WebSocket API, network discovery, device health monitoring, energy tracking, security dashboards, encrypted CloudKit sync, tamper-evident audit logging, and more.
+A unified multi-platform smart home control application for iOS, tvOS, and macOS. HomekitControl consolidates five previous HomeKit projects into a single app with native HomeKit.framework access (iOS/tvOS), a Shortcuts CLI proxy (macOS), a local REST API, a real-time WebSocket API, network discovery, device health monitoring, energy tracking, security dashboards, encrypted CloudKit sync, tamper-evident audit logging, and an optional AI Assistant on all three platforms built on [NovaAIKit](https://github.com/kochj23/NovaAIKit) (9 backends with Auto failover, Keychain-only keys, built-in answers when AI is off or offline).
 
 Written by Jordan Koch.
 
@@ -51,7 +52,7 @@ graph TB
 
         subgraph Shared["Shared Layer (36 services)"]
             HK["HomeKitService<br/>HMHomeManager delegate"]
-            AI["AIService<br/>Ollama, TinyLLM, Claude"]
+            AI["HomeAIAssistant + AppAI<br/>NovaAIKit, home-data fallback"]
             Net["NetworkDiscoveryService<br/>Bonjour/mDNS scanner"]
             NetTopo["NetworkTopologyService<br/>Force-directed graph"]
             NetPerf["NetworkPerformanceService<br/>Latency monitoring"]
@@ -88,6 +89,12 @@ graph TB
         end
     end
 
+    subgraph Kit["NovaAIKit 1.0.0 (SPM)"]
+        NovaAI["NovaAI engine<br/>Auto failover, retries, timeouts"]
+        AIKeys["Keychain<br/>com.jkoch.homekitcontrol.*"]
+        AIBackends["Ollama / MLX / TinyLLM / TinyChat /<br/>OpenWebUI / Nova Gateway / OpenRouter / OpenAI"]
+    end
+
     subgraph Framework["Apple Frameworks"]
         HomeKit["HomeKit.framework<br/>HMHomeManager"]
         Network["Network.framework<br/>NWListener, NWBrowser"]
@@ -116,6 +123,9 @@ graph TB
     CloudSync --> CryptoKit
     Audit --> CryptoKit
     Shared --> Models
+    AI --> NovaAI
+    NovaAI --> AIKeys
+    NovaAI --> AIBackends
     Platforms --> Design
 ```
 
@@ -234,14 +244,14 @@ HomekitControl unifies the functionality of five earlier projects:
 - Photo attachment for physical code labels
 - Search and organize codes by device name
 
-### AI Assistant
-- Multi-backend support: Ollama, TinyLLM, TinyChat, OpenWebUI, OpenAI, Claude
-- Dynamic model discovery for Ollama and MLX backends
-- Device analysis: performance insights and recommendations per accessory
-- Scene analysis: reliability assessment and repair suggestions
-- Network analysis: security considerations and protocol diversity review
-- Smart home Q&A chat interface
-- Backend health checks with auto-discovery
+### AI Assistant (iOS, macOS, tvOS)
+- **iOS**: chat (AI Assistant tab) with quick prompts; **macOS**: new *AI Assistant* sidebar tab with chat and quick prompts; **tvOS**: quick questions in More > AI Assistant
+- Every request carries a summary of your home (devices, rooms, reachability, scenes; no setup codes or credentials)
+- Works with AI off or offline: built-in answers from the same home data (unreachable devices, devices online, scenes, devices by room, security checklist, home summary)
+- Each answer shows its source: `AI · <backend> (<model>)` or `Built-in`
+- Status indicator (green online / orange offline / grey off) wherever the assistant appears; AI on/off toggle
+- Settings: NovaAISettingsView (macOS Settings tab, iOS Settings > AI Settings, tvOS More > AI Settings) with backend picker (Auto, Ollama, MLX, TinyLLM, TinyChat, OpenWebUI, Nova Gateway, OpenRouter, OpenAI), model picker, editable URLs, connection test, keys
+- Replies validated (non-empty, control characters stripped, capped); input sanitized and capped; Auto failover, timeouts and retries from NovaAIKit
 
 ### Data Export
 - Export device inventory to CSV or JSON
@@ -306,7 +316,7 @@ HomekitControl unifies the functionality of five earlier projects:
 | Data Export (CSV/JSON) | Yes | -- | Yes |
 | Encrypted CloudKit Sync | Yes | -- | Yes |
 | Audit Log | Yes | Yes | Yes |
-| Home Screen Widget | Yes | -- | -- |
+| Home Screen Widget | Sources only (target not in project.yml) | -- | -- |
 | Siri / Shortcuts | Yes | -- | Yes |
 | REST API Server | Yes | Yes | Yes |
 | WebSocket API | Yes | Yes | Yes |
@@ -417,7 +427,8 @@ A launchd agent (`com.jordankoch.homekitcontrol`) keeps the app running on macOS
 ### Build Dependencies
 
 - [XcodeGen](https://github.com/yonaskolb/XcodeGen) -- generates the Xcode project from `project.yml`
-- No SPM dependencies -- all frameworks are Apple-provided (HomeKit, Network, Security, CloudKit, CryptoKit, SQLite3, LocalAuthentication)
+- [NovaAIKit](https://github.com/kochj23/NovaAIKit) from 1.0.0 (Swift package, resolved by Xcode) -- the only package dependency
+- Apple frameworks: HomeKit, Network, Security, CloudKit, CryptoKit, SQLite3, LocalAuthentication
 
 ---
 
@@ -462,6 +473,10 @@ Select the desired scheme (`HomekitControl-iOS`, `HomekitControl-tvOS`, or `Home
 HomekitControl/
 |-- project.yml                         # XcodeGen project definition
 |-- Shared/
+|   |-- AI/
+|   |   |-- AppAI.swift                 # NovaAIKit instance + one-time legacy migration
+|   |   |-- HomeAIAssistant.swift       # Assistant logic, HomeSnapshot, built-in answers
+|   |   +-- AIChatViews.swift           # MessageBubble, AISourceBadge
 |   |-- Models/
 |   |   |-- UnifiedDevice.swift         # Core device model
 |   |   |-- UnifiedScene.swift          # Core scene model
@@ -476,7 +491,6 @@ HomekitControl/
 |   |   |-- HomeKitService.swift        # HMHomeManager delegate, device/scene CRUD
 |   |   |-- NovaAPIServer.swift         # REST API server (port 37432)
 |   |   |-- WebSocketDeviceAPI.swift    # Real-time WebSocket API (port 37433)
-|   |   |-- AIService.swift             # Multi-backend AI chat + analysis
 |   |   |-- NetworkDiscoveryService.swift  # Bonjour/mDNS browser
 |   |   |-- NetworkTopologyService.swift   # Force-directed topology graph
 |   |   |-- NetworkPerformanceService.swift # Latency + signal monitoring
@@ -524,16 +538,14 @@ HomekitControl/
 |   +-- Views/                          # 7 tvOS-specific views (10-ft optimized)
 |-- macOS/
 |   |-- HomekitControl_macOS.swift      # macOS app entry point (starts NovaAPIServer)
-|   |-- AIBackendManager.swift          # macOS AI backend management + generation
-|   |-- AIBackendStatusMenu.swift       # AI backend status menu bar item
 |   +-- Views/
-|       +-- macOS_ContentView.swift     # macOS main view
-|-- HomekitControl Widget/
+|       +-- macOS_ContentView.swift     # macOS main view (sidebar incl. AI Assistant + Settings)
+|-- HomekitControl Widget/              # WidgetKit sources (not a target in project.yml yet)
 |   |-- HomekitControlWidget.swift      # WidgetKit (Small, Medium, Large)
 |   |-- WidgetData.swift                # Widget data models
 |   +-- SharedDataManager.swift         # App Group data bridge
 |-- Tests/
-|   +-- HomekitControlTests/            # 25 test files, 329 tests
+|   +-- HomekitControlTests/            # 26 test files, 354 tests (macOS test target)
 |-- Resources/
 |   |-- Assets.xcassets                 # Shared assets and app icons
 |   |-- iOS.entitlements
@@ -559,20 +571,38 @@ The `HomeKitService` singleton manages the `HMHomeManager` lifecycle (where avai
 
 `NetworkTopologyService` builds a force-directed graph of the network using `NWConnection`-based latency probes, showing bridge-to-device relationships with measured response times.
 
-### AI Service
+### AI (NovaAIKit)
 
-The AI assistant supports six backends with automatic availability detection:
+```mermaid
+sequenceDiagram
+    participant V as Assistant view (iOS / macOS / tvOS)
+    participant H as HomeAIAssistant
+    participant K as NovaAI (AppAI.shared)
+    participant B as Backends (Auto order)
+    V->>H: sendMessage / answer(question)
+    H->>H: HomeSnapshot.current() (devices, rooms, scenes)
+    H->>K: text(system + home data + history, validate, fallback)
+    alt AI off
+        K-->>H: built-in answer (Built-in)
+    else AI on
+        K->>B: chat request (timeouts, retries, failover)
+        B-->>K: reply
+        K->>K: validate (non-empty, sanitized, capped)
+        K-->>H: AI reply, or built-in answer if invalid / all backends down
+    end
+    H-->>V: message + source label
+```
 
-| Backend | Protocol | Default Endpoint |
-|---|---|---|
-| Ollama | `/api/generate` | `localhost:11434` |
-| TinyLLM | OpenAI-compatible `/v1/chat/completions` | `localhost:8000` |
-| TinyChat | `/api/chat/stream` | `localhost:8000` |
-| OpenWebUI | `/api/chat/completions` | `localhost:8080` |
-| OpenAI | OpenAI API | `api.openai.com` |
-| Claude | Anthropic Messages API | `api.anthropic.com` |
-
-All endpoints are configurable. Local backends are checked at startup with a 5-second timeout. The macOS `AIBackendManager` provides dynamic model discovery for Ollama and MLX backends. API keys for cloud providers are stored in Keychain via `KeychainService`.
+- One `NovaAI` instance per app (`AppAI.shared`, appID `homekitcontrol`), shared by all three targets.
+- Settings (backend, URLs, models, on/off, timeout) live in UserDefaults; **API keys only in the Keychain** under
+  `com.jkoch.homekitcontrol.<backend>` and are only ever sent over https.
+- Backends: Auto, Ollama, MLX (hidden on tvOS/iOS where unsupported), TinyLLM, TinyChat, OpenWebUI, Nova Gateway,
+  OpenRouter, OpenAI. The former Claude provider and the macOS-only Google/Azure/AWS/IBM options were removed.
+- **One-time migration (1.4.0)**: the old AIService settings (`aiProvider`, `ollamaEndpoint`, `ollamaModel`,
+  TinyLLM/TinyChat/OpenWebUI URLs) and the old macOS backend manager settings are imported; the OpenAI key moves from
+  `com.jordankoch.HomekitControl` / `com.digitalnoise.HomekitControl` to the new Keychain item (old item deleted after
+  a verified copy); the Claude key and Google/Azure/AWS/IBM Keychain items are deleted; any plaintext keys in
+  UserDefaults are removed.
 
 ### Security
 
@@ -593,7 +623,9 @@ The UI uses a glassmorphic design system with translucent cards, circular gauges
 
 ## Testing
 
-HomekitControl includes a comprehensive XCTest suite with 329 tests across 25 test files. Tests are organized by category:
+354 tests (macOS test target `HomekitControlTests`, hosted by the macOS app); 344 pass and 10 live-API tests skip
+when the server on port 37432 is not running. AI tests use in-memory settings/keys and a stub `URLProtocol`: no real
+Keychain or network.
 
 ### Test Categories
 
@@ -607,12 +639,14 @@ HomekitControl includes a comprehensive XCTest suite with 329 tests across 25 te
 | **Security Audit** | 12 | Credential scan, Keychain verification, loopback binding, entitlements |
 | **Integration: Live API** | 10 | Endpoints on port 37432 (skip gracefully if server not running) |
 | **Other** | 94 | Widget data, automation, energy, guest access, backup, notifications |
+| **AI (NovaAIKit)** | 25 | Security 6, Performance 3, Retry 3, Unit 4, Integration 3, Functional 3, Frame/UI state 3 |
 
 ### Running Tests
 
 ```bash
 # Run all tests (macOS target)
-xcodebuild test -scheme HomekitControl-macOS -destination 'platform=macOS'
+xcodebuild test -project HomekitControl.xcodeproj -scheme HomekitControl-macOS -destination 'platform=macOS' \
+  -derivedDataPath ./dd CODE_SIGNING_ALLOWED=NO
 
 # Run a specific test class
 xcodebuild test -scheme HomekitControl-macOS -destination 'platform=macOS' \
@@ -637,6 +671,7 @@ See [CHANGELOG.md](CHANGELOG.md) for version history.
 
 ### Recent Versions
 
+- **v1.4.0** -- AI migrated to NovaAIKit 1.0.0 on iOS, macOS and tvOS; macOS AI Assistant tab; built-in answers; Keychain migration; test target restored (354 tests)
 - **v1.3.0** -- Comprehensive XCTest suite (329 tests), security audit, API integration tests
 - **v1.2.0** -- Mac Catalyst build with native HomeKit.framework on macOS
 - **v1.1.0** -- macOS Shortcuts CLI proxy, scene execution endpoint, launchd agent

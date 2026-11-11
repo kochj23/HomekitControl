@@ -8,12 +8,14 @@
 //
 
 import SwiftUI
+import NovaAIKit
 
 enum MacOSSidebarTab: String, CaseIterable, Identifiable {
     case devices = "Devices"
     case codeVault = "Code Vault"
     case network = "Network Scanner"
     case export = "Export"
+    case assistant = "AI Assistant"
     case settings = "Settings"
 
     var id: String { rawValue }
@@ -24,6 +26,7 @@ enum MacOSSidebarTab: String, CaseIterable, Identifiable {
         case .codeVault: return "key.fill"
         case .network: return "network"
         case .export: return "square.and.arrow.up"
+        case .assistant: return "sparkles"
         case .settings: return "gearshape.fill"
         }
     }
@@ -34,6 +37,7 @@ enum MacOSSidebarTab: String, CaseIterable, Identifiable {
         case .codeVault: return ModernColors.purple
         case .network: return ModernColors.orange
         case .export: return ModernColors.accentGreen
+        case .assistant: return ModernColors.accent
         case .settings: return ModernColors.textSecondary
         }
     }
@@ -80,6 +84,8 @@ struct macOS_ContentView: View {
             macOS_NetworkView()
         case .export:
             macOS_ExportView()
+        case .assistant:
+            macOS_AIAssistantView()
         case .settings:
             macOS_SettingsView()
         }
@@ -418,9 +424,7 @@ struct macOS_ExportView: View {
 // MARK: - Settings View
 
 struct macOS_SettingsView: View {
-    @StateObject private var aiService = AIService.shared
-    @AppStorage("ollamaEndpoint") private var ollamaEndpoint = "http://localhost:11434"
-    @AppStorage("ollamaModel") private var ollamaModel = "llama3.1"
+    @ObservedObject private var ai = AppAI.shared
 
     var body: some View {
         VStack(spacing: 0) {
@@ -430,33 +434,121 @@ struct macOS_SettingsView: View {
                     .fontWeight(.semibold)
                     .foregroundStyle(.white)
                 Spacer()
+                NovaAIStatusIndicator(ai: ai)
             }
             .padding()
             .background(Color.black.opacity(0.2))
 
+            NovaAISettingsView(ai: ai, footer: AppAI.settingsFooter)
+                .scrollContentBackground(.hidden)
+
             Form {
-                Section("AI Assistant") {
-                    Picker("Provider", selection: $aiService.selectedProvider) {
-                        ForEach(AIProvider.allCases, id: \.self) { provider in
-                            Text(provider.rawValue).tag(provider)
-                        }
-                    }
-
-                    if aiService.selectedProvider == .ollama {
-                        TextField("Ollama Endpoint", text: $ollamaEndpoint)
-                        TextField("Model Name", text: $ollamaModel)
-                    }
-                }
-
                 Section("About") {
-                    LabeledContent("Version", value: "1.0.0")
-                    LabeledContent("Build", value: "1")
+                    LabeledContent("Version", value: Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "")
+                    LabeledContent("Build", value: Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "")
                     LabeledContent("Author", value: "Jordan Koch")
                 }
             }
             .formStyle(.grouped)
             .scrollContentBackground(.hidden)
+            .frame(height: 170)
         }
+    }
+}
+
+// MARK: - AI Assistant View
+
+struct macOS_AIAssistantView: View {
+    @StateObject private var assistant = HomeAIAssistant.shared
+    @ObservedObject private var ai = AppAI.shared
+    @State private var inputText = ""
+
+    private let quickPrompts = [
+        "Any device issues?",
+        "How many devices are online?",
+        "Devices by room",
+        "Network security tips",
+    ]
+
+    var body: some View {
+        VStack(spacing: 0) {
+            HStack {
+                Text("AI Assistant")
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.white)
+                Spacer()
+                Toggle("Use AI", isOn: $ai.isEnabled)
+                    .toggleStyle(.switch)
+                NovaAIStatusIndicator(ai: ai)
+                Button("Clear") { assistant.clearChat() }
+                    .disabled(assistant.messages.isEmpty)
+            }
+            .padding()
+            .background(Color.black.opacity(0.2))
+
+            ScrollViewReader { proxy in
+                ScrollView {
+                    LazyVStack(spacing: 16) {
+                        if assistant.messages.isEmpty {
+                            VStack(spacing: 12) {
+                                Image(systemName: "sparkles")
+                                    .font(.system(size: 44))
+                                    .foregroundStyle(ModernColors.accent)
+                                Text("Ask about your devices, rooms and network.")
+                                    .foregroundStyle(.secondary)
+                                HStack {
+                                    ForEach(quickPrompts, id: \.self) { prompt in
+                                        Button(prompt) { send(prompt) }
+                                            .buttonStyle(.bordered)
+                                    }
+                                }
+                            }
+                            .padding(.top, 40)
+                        }
+                        ForEach(assistant.messages) { message in
+                            MessageBubble(message: message)
+                                .id(message.id)
+                        }
+                        if assistant.isProcessing {
+                            HStack {
+                                ProgressView().controlSize(.small)
+                                Text("Thinking...").foregroundStyle(.secondary)
+                                Spacer()
+                            }
+                        }
+                    }
+                    .padding()
+                }
+                .onChange(of: assistant.messages.count) {
+                    if let last = assistant.messages.last {
+                        withAnimation { proxy.scrollTo(last.id, anchor: .bottom) }
+                    }
+                }
+            }
+
+            HStack(spacing: 12) {
+                TextField("Ask about your smart home...", text: $inputText)
+                    .textFieldStyle(.roundedBorder)
+                    .onSubmit { send(inputText) }
+                Button {
+                    send(inputText)
+                } label: {
+                    Image(systemName: "arrow.up.circle.fill")
+                        .font(.title2)
+                }
+                .buttonStyle(.plain)
+                .disabled(inputText.trimmingCharacters(in: .whitespaces).isEmpty || assistant.isProcessing)
+            }
+            .padding()
+            .background(.ultraThinMaterial)
+        }
+    }
+
+    private func send(_ text: String) {
+        guard !text.trimmingCharacters(in: .whitespaces).isEmpty, !assistant.isProcessing else { return }
+        inputText = ""
+        Task { await assistant.sendMessage(text) }
     }
 }
 

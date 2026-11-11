@@ -8,6 +8,7 @@
 //
 
 import SwiftUI
+import NovaAIKit
 #if canImport(HomeKit)
 import HomeKit
 #endif
@@ -259,7 +260,6 @@ struct tvOS_NetworkView: View {
 // MARK: - More View
 
 struct tvOS_MoreView: View {
-    @StateObject private var aiService = AIService.shared
     @State private var showingRemoteControl = false
     @State private var showingAmbientMode = false
 
@@ -365,6 +365,18 @@ struct tvOS_MoreView: View {
                         )
                     }
                     .buttonStyle(.card)
+
+                    NavigationLink {
+                        NovaAISettingsView(ai: AppAI.shared, footer: AppAI.settingsFooter)
+                    } label: {
+                        TVMoreCard(
+                            title: "AI Settings",
+                            subtitle: "Backend, model, on/off",
+                            icon: "slider.horizontal.3",
+                            color: ModernColors.teal
+                        )
+                    }
+                    .buttonStyle(.card)
                 }
                 .padding(.horizontal, 80)
 
@@ -379,7 +391,7 @@ struct tvOS_MoreView: View {
                             .font(.system(size: 32, weight: .bold))
                             .foregroundStyle(.white)
 
-                        Text("Version 1.0.0")
+                        Text("Version \(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "")")
                             .font(.system(size: 22))
                             .foregroundStyle(.secondary)
 
@@ -477,10 +489,10 @@ struct TVMoreCard: View {
 // MARK: - TV AI Assistant View
 
 struct tvOS_AIAssistantView: View {
-    @StateObject private var aiService = AIService.shared
-    @State private var query = ""
+    @StateObject private var assistant = HomeAIAssistant.shared
+    @ObservedObject private var ai = AppAI.shared
     @State private var response = ""
-    @State private var isProcessing = false
+    @State private var responseSource: NovaAISource?
 
     var body: some View {
         VStack(spacing: 40) {
@@ -491,9 +503,8 @@ struct tvOS_AIAssistantView: View {
                         .font(.system(size: 48, weight: .bold))
                         .foregroundStyle(.white)
 
-                    Text("Powered by \(aiService.selectedProvider.rawValue)")
+                    NovaAIStatusIndicator(ai: ai)
                         .font(.system(size: 24))
-                        .foregroundStyle(.secondary)
                 }
 
                 Spacer()
@@ -507,13 +518,20 @@ struct tvOS_AIAssistantView: View {
             // Chat Display
             GlassCard {
                 VStack(alignment: .leading, spacing: 20) {
-                    if !response.isEmpty {
+                    if assistant.isProcessing {
+                        ProgressView("Thinking...")
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    } else if !response.isEmpty {
                         ScrollView {
                             Text(response)
                                 .font(.system(size: 24))
                                 .foregroundStyle(.white)
                         }
                         .frame(maxHeight: 400)
+                        if let source = responseSource {
+                            AISourceBadge(source: source)
+                                .font(.system(size: 20))
+                        }
                     } else {
                         VStack(spacing: 20) {
                             Image(systemName: "bubble.left.and.bubble.right.fill")
@@ -564,10 +582,11 @@ struct tvOS_AIAssistantView: View {
     }
 
     private func askQuestion(_ question: String) {
-        isProcessing = true
+        guard !assistant.isProcessing else { return }
         Task {
-            response = await aiService.getResponse(question)
-            isProcessing = false
+            let result = await assistant.answer(question)
+            response = result.value
+            responseSource = result.source
         }
     }
 }

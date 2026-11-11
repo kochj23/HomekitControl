@@ -14,10 +14,10 @@ struct iOS_PresenceView: View {
     @StateObject private var presenceService = PresenceService.shared
     @State private var showAddRegion = false
     @State private var showAddMember = false
-    @State private var mapRegion = MKCoordinateRegion(
+    @State private var mapPosition = MapCameraPosition.region(MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194),
         span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
-    )
+    ))
 
     var body: some View {
         ScrollView {
@@ -56,9 +56,9 @@ struct iOS_PresenceView: View {
                             .font(.headline)
                             .foregroundStyle(.white)
 
-                        Map(coordinateRegion: $mapRegion, annotationItems: presenceService.regions) { region in
-                            MapAnnotation(coordinate: region.coordinate) {
-                                VStack {
+                        Map(position: $mapPosition) {
+                            ForEach(presenceService.regions) { region in
+                                Annotation(region.name, coordinate: region.coordinate) {
                                     Circle()
                                         .fill(ModernColors.cyan.opacity(0.3))
                                         .frame(width: 40, height: 40)
@@ -66,9 +66,6 @@ struct iOS_PresenceView: View {
                                             Image(systemName: "mappin.circle.fill")
                                                 .foregroundStyle(ModernColors.cyan)
                                         }
-                                    Text(region.name)
-                                        .font(.caption)
-                                        .foregroundStyle(.white)
                                 }
                             }
                         }
@@ -228,7 +225,9 @@ struct iOS_PresenceView: View {
         .onAppear {
             presenceService.requestAuthorization()
             if let location = presenceService.currentLocation {
-                mapRegion.center = location.coordinate
+                mapPosition = .region(MKCoordinateRegion(
+                    center: location.coordinate,
+                    span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)))
             }
         }
         .sheet(isPresented: $showAddRegion) {

@@ -308,7 +308,7 @@ struct AddShortcutSheet: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Create") {
                         let targetName = getTargetName()
-                        var shortcut = shortcutsService.createShortcut(
+                        let shortcut = shortcutsService.createShortcut(
                             name: name.isEmpty ? actionType.rawValue : name,
                             actionType: actionType,
                             targetId: selectedTargetId,

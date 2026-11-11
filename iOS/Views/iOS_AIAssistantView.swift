@@ -8,9 +8,12 @@
 //
 
 import SwiftUI
+import NovaAIKit
 
 struct iOS_AIAssistantView: View {
-    @StateObject private var aiService = AIService.shared
+    @StateObject private var aiService = HomeAIAssistant.shared
+    @ObservedObject private var ai = AppAI.shared
+    @State private var showingAISettings = false
     @State private var inputText = ""
     @FocusState private var isInputFocused: Bool
 
@@ -58,20 +61,17 @@ struct iOS_AIAssistantView: View {
             }
             .navigationTitle("AI Assistant")
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    NovaAIStatusIndicator(ai: ai)
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Menu {
-                        ForEach(AIProvider.allCases, id: \.self) { provider in
-                            Button {
-                                aiService.selectedProvider = provider
-                            } label: {
-                                HStack {
-                                    Image(systemName: provider.icon)
-                                    Text(provider.rawValue)
-                                    if aiService.selectedProvider == provider {
-                                        Image(systemName: "checkmark")
-                                    }
-                                }
-                            }
+                        Toggle("Use AI", isOn: $ai.isEnabled)
+
+                        Button {
+                            showingAISettings = true
+                        } label: {
+                            Label("AI Settings", systemImage: "gearshape")
                         }
 
                         Divider()
@@ -82,6 +82,17 @@ struct iOS_AIAssistantView: View {
                     } label: {
                         Image(systemName: "ellipsis.circle")
                     }
+                }
+            }
+            .sheet(isPresented: $showingAISettings) {
+                NavigationStack {
+                    NovaAISettingsView(ai: ai, footer: AppAI.settingsFooter)
+                        .navigationTitle("AI Settings")
+                        .toolbar {
+                            ToolbarItem(placement: .confirmationAction) {
+                                Button("Done") { showingAISettings = false }
+                            }
+                        }
                 }
             }
         }
@@ -159,44 +170,6 @@ struct iOS_AIAssistantView: View {
         inputText = ""
         Task {
             await aiService.sendMessage(message)
-        }
-    }
-}
-
-// MARK: - Message Bubble
-
-struct MessageBubble: View {
-    let message: AIMessage
-
-    var body: some View {
-        HStack {
-            if message.role == .user {
-                Spacer()
-            }
-
-            VStack(alignment: message.role == .user ? .trailing : .leading, spacing: 4) {
-                Text(message.content)
-                    .font(.body)
-                    .foregroundStyle(message.role == .user ? .white : .primary)
-                    .padding(12)
-                    .background {
-                        if message.role == .user {
-                            RoundedRectangle(cornerRadius: 16)
-                                .fill(ModernColors.accent)
-                        } else {
-                            RoundedRectangle(cornerRadius: 16)
-                                .fill(Color.white.opacity(0.1))
-                        }
-                    }
-
-                Text(message.timestamp.formatted(date: .omitted, time: .shortened))
-                    .font(.caption2)
-                    .foregroundStyle(.secondary)
-            }
-
-            if message.role == .assistant {
-                Spacer()
-            }
         }
     }
 }

@@ -131,25 +131,10 @@ class FirmwareTrackerService: ObservableObject {
 
     #if canImport(HomeKit)
     private func extractFirmwareInfo(from accessory: HMAccessory) -> DeviceFirmwareInfo {
-        var manufacturer = "Unknown"
-        var model = "Unknown"
-        var firmwareVersion = "Unknown"
-
-        // Find accessory information service
-        if let infoService = accessory.services.first(where: { $0.serviceType == HMServiceTypeAccessoryInformation }) {
-            for characteristic in infoService.characteristics {
-                switch characteristic.characteristicType {
-                case HMCharacteristicTypeManufacturer:
-                    manufacturer = characteristic.value as? String ?? "Unknown"
-                case HMCharacteristicTypeModel:
-                    model = characteristic.value as? String ?? "Unknown"
-                case HMCharacteristicTypeFirmwareVersion:
-                    firmwareVersion = characteristic.value as? String ?? "Unknown"
-                default:
-                    break
-                }
-            }
-        }
+        // HMAccessory exposes the accessory information service values directly (iOS/tvOS 11+).
+        let manufacturer = accessory.manufacturer ?? "Unknown"
+        let model = accessory.model ?? "Unknown"
+        let firmwareVersion = accessory.firmwareVersion ?? "Unknown"
 
         return DeviceFirmwareInfo(
             deviceId: accessory.uniqueIdentifier,

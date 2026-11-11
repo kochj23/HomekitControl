@@ -8,11 +8,10 @@
 //
 
 import SwiftUI
+import NovaAIKit
 
 struct iOS_SettingsView: View {
-    @StateObject private var aiService = AIService.shared
-    @AppStorage("ollamaEndpoint") private var ollamaEndpoint = "http://localhost:11434"
-    @AppStorage("ollamaModel") private var ollamaModel = "llama3.1"
+    @ObservedObject private var ai = AppAI.shared
     @State private var showingAbout = false
 
     var body: some View {
@@ -23,21 +22,17 @@ struct iOS_SettingsView: View {
                 List {
                     // AI Settings
                     Section {
-                        Picker("Provider", selection: $aiService.selectedProvider) {
-                            ForEach(AIProvider.allCases, id: \.self) { provider in
-                                Label(provider.rawValue, systemImage: provider.icon)
-                                    .tag(provider)
+                        Toggle("Use AI", isOn: $ai.isEnabled)
+
+                        NavigationLink {
+                            NovaAISettingsView(ai: ai, footer: AppAI.settingsFooter)
+                                .navigationTitle("AI Settings")
+                        } label: {
+                            HStack {
+                                Label("AI Settings", systemImage: "slider.horizontal.3")
+                                Spacer()
+                                NovaAIStatusIndicator(ai: ai, showsLabel: false)
                             }
-                        }
-
-                        if aiService.selectedProvider == .ollama {
-                            TextField("Ollama Endpoint", text: $ollamaEndpoint)
-                                .textContentType(.URL)
-                                .keyboardType(.URL)
-                                .autocapitalization(.none)
-
-                            TextField("Model Name", text: $ollamaModel)
-                                .autocapitalization(.none)
                         }
                     } header: {
                         Label("AI Assistant", systemImage: "brain")
@@ -73,7 +68,7 @@ struct iOS_SettingsView: View {
                             HStack {
                                 Label("About HomekitControl", systemImage: "info.circle")
                                 Spacer()
-                                Text("1.0.0")
+                                Text(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "")
                                     .foregroundStyle(.secondary)
                             }
                         }
@@ -86,14 +81,6 @@ struct iOS_SettingsView: View {
             .navigationTitle("Settings")
             .sheet(isPresented: $showingAbout) {
                 AboutView()
-            }
-            .onChange(of: ollamaEndpoint) { _, newValue in
-                aiService.ollamaEndpoint = newValue
-                aiService.saveConfiguration()
-            }
-            .onChange(of: ollamaModel) { _, newValue in
-                aiService.ollamaModel = newValue
-                aiService.saveConfiguration()
             }
         }
     }
@@ -177,7 +164,7 @@ struct AboutView: View {
                         .fontWeight(.bold)
                         .foregroundStyle(.white)
 
-                    Text("Version 1.0.0")
+                    Text("Version \(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "")")
                         .foregroundStyle(.secondary)
 
                     Text("A unified smart home control app combining the best features of HomeKitAdopter, HomeKitAssistant, HomeKitRestore, HomeKitTV, and SceneFixer.")

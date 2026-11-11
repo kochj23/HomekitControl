@@ -17,6 +17,7 @@
 		0C7D6CB1AD5C8C3E131B92B7 /* SecurityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56E9A3D070E38E8D245F060 /* SecurityService.swift */; };
 		0D5B4BE5FCEE46D69E408EDE /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120A1A76A46D8BEBE813A0AB /* KeychainService.swift */; };
 		0E151A83083D2DFED0B05E12 /* tvOS_HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482B9BC1026401D680DF7052 /* tvOS_HealthView.swift */; };
+		0E4A88D2D3307CE2D6950599 /* ManufacturerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EB15C5E89E0F98B470A694 /* ManufacturerTests.swift */; };
 		0EB955015CC744106D574BFB /* iOS_UsageReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4220E69452AB7679CB28645F /* iOS_UsageReportsView.swift */; };
 		10366BFFD3880D83C76101AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DFC5E3FF020A31274FED41 /* Assets.xcassets */; };
 		10839009CBA15C569A656195 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E2EC4980F86091E1DCB23E /* GlassCard.swift */; };
@@ -27,14 +28,18 @@
 		157974542807B5D8BE468390 /* GuestModeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6630619B6C59E72D0D19C7AD /* GuestModeService.swift */; };
 		15A79C2987BDAE1F6F4CCAA9 /* IntegrationHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B70CDE3650B309C92C574 /* IntegrationHubService.swift */; };
 		1639A01FE9896B9576EEA9B8 /* MaintenanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8023E9BD0549810A1545CAE1 /* MaintenanceService.swift */; };
+		18635C4BAFA6F15DD9EB1160 /* BackupModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63A2367D4F008ECC8579926 /* BackupModelTests.swift */; };
+		18FDCAFD89E960DC406E9999 /* UnifiedSceneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459D2D3648284B6D604D8F2E /* UnifiedSceneTests.swift */; };
 		19C2B721C2E1391E4F4346F1 /* SceneAnalyzerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DF7982DF96652C50A2049 /* SceneAnalyzerService.swift */; };
+		1C191A4E53A81B8388BD0FC0 /* DeviceCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F892DA366FDCE9DB4712D4E /* DeviceCategoryTests.swift */; };
 		1C7B811178D19CFE32337425 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 120A1A76A46D8BEBE813A0AB /* KeychainService.swift */; };
 		1DE30ED863AAC76386399512 /* NovaAPIServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E5BCA1DB3976C292A122 /* NovaAPIServer.swift */; };
+		1E3E9E2FE45EF5D34D5BC7E2 /* NovaAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = C42DF6B6834956784FC21437 /* NovaAIKit */; };
 		1E918CC8BD5A4C3FE0B007DE /* UnifiedDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249E44D5A998074E51A7EE /* UnifiedDevice.swift */; };
 		1FAF26387C4F0CB5A38ED072 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4368ADAC9C15C579520248AC /* NotificationService.swift */; };
-		20EC25C8B7736BCC825257EF /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286FFA143BADE2FD65D97CB7 /* AIService.swift */; };
 		210FF9EB283671E6AD78E1E5 /* Manufacturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503841297ADFFFAED238E4F /* Manufacturer.swift */; };
 		21CE11989D4E0AFB5E7559E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7DFC5E3FF020A31274FED41 /* Assets.xcassets */; };
+		253E2DB8D02F363C8247B308 /* NovaAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = C240E69BB2F792F3286A3665 /* NovaAIKit */; };
 		263FBDE95962D4E6FE59B8A0 /* tvOS_AutomationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E4745455C7D12ED97CF28 /* tvOS_AutomationView.swift */; };
 		27ABD176157E209E42931F1D /* MaintenanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8023E9BD0549810A1545CAE1 /* MaintenanceService.swift */; };
 		2886F6B29FD58860A2D46CCD /* NovaAPIServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E5BCA1DB3976C292A122 /* NovaAPIServer.swift */; };
@@ -44,6 +49,7 @@
 		2B0AC617E04C74E6DB2286E3 /* FirmwareTrackerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A3D4F709DD5ADB106FA5D6 /* FirmwareTrackerService.swift */; };
 		2CBBF1DEF8B128BCDA5016F3 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E2EC4980F86091E1DCB23E /* GlassCard.swift */; };
 		2D62037EA2DC09BFA80C9A54 /* iOS_AIAssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C6D93B314DE6725B16D9E /* iOS_AIAssistantView.swift */; };
+		2DB863B60EE396E806540A4D /* AIChatViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BC3ABF65931D53FFA8AE68 /* AIChatViews.swift */; };
 		2DE99F10B3057BF4DF2FA838 /* SetupCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF615C48CE28711A7F4055F /* SetupCode.swift */; };
 		2F11707FC495435CEDE4D0D8 /* EncryptedCloudKitSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C23C6D05195473AF9012D /* EncryptedCloudKitSync.swift */; };
 		2F92B725D2E95A9288F30131 /* BackupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2948FA33D30BDEDF6930BCB /* BackupService.swift */; };
@@ -52,41 +58,50 @@
 		3422867174297D423E12851C /* DeviceHealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF79BEC3849F722BEE477BC /* DeviceHealthService.swift */; };
 		377E91A9F6EC40257AD4A2E0 /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E2EC4980F86091E1DCB23E /* GlassCard.swift */; };
 		37D69CF24B28D84EE21A3F5C /* DeviceComparisonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F118A270A52A7BFE4725262 /* DeviceComparisonService.swift */; };
+		382691091C47A054CB9A64FF /* SecurityAuditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F7B29C381AE12F04844F65 /* SecurityAuditTests.swift */; };
 		39F3343947906C25FC22FE21 /* tvOS_EnergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6EC104C9F28665C70B8514 /* tvOS_EnergyView.swift */; };
 		3A5588C7492AFD71939C9B43 /* HealthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE12ABFDF5025381EBCDE57 /* HealthStatus.swift */; };
 		3AECBABAA28E90414A8037F2 /* iOS_VoiceControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BCA493FD5917CEFD3DF40C /* iOS_VoiceControlView.swift */; };
 		3F50838244613D1C2F9DC152 /* SiriShortcutsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9655AB57076108976C3CEFF8 /* SiriShortcutsService.swift */; };
 		403D8B8D6EDBB9E65EEA60C2 /* SceneSuggestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913034B61692B2B727D589DB /* SceneSuggestionService.swift */; };
 		40D6E9DD6E6A8BE279924739 /* iOS_DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA887658AF38BC68B60B57B /* iOS_DevicesView.swift */; };
+		422C8C30E510D693E99372D6 /* AppAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09969378D5F4C0DB26F51BF0 /* AppAI.swift */; };
 		42E254189BA10B375B0AD673 /* WebSocketDeviceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C1064A39411A25120CA6EB /* WebSocketDeviceAPI.swift */; };
 		43C40D22A2A89223C772DB8A /* MultiHomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67DE1799EF449E190FAFA7C /* MultiHomeService.swift */; };
+		44E3A30A3B826EB669526DD9 /* AutomationModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403253A39BD8AA6D5E4CE07D /* AutomationModelTests.swift */; };
 		4584A85DBC8C658AFF525712 /* CodeVaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6486CB8485D8FAABA6496B1 /* CodeVaultService.swift */; };
-		46CB3BB533E0C34EDD5552C3 /* AIBackendStatusMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0127F70FBEA3D79CC1CB705 /* AIBackendStatusMenu.swift */; };
 		476F37CBA6D459BD2A477759 /* DeviceComparisonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F118A270A52A7BFE4725262 /* DeviceComparisonService.swift */; };
 		4799FF0430FD61A706BC2803 /* DeviceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE664AB0BE0E305B651B4CE /* DeviceCategory.swift */; };
 		4985D963939E0203FEBD9F7E /* BackupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2948FA33D30BDEDF6930BCB /* BackupService.swift */; };
+		49C10C53DCD100F4A3A0EFB4 /* SceneAnalyzerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AABB76FE554DEB5D32A394 /* SceneAnalyzerTests.swift */; };
 		4C788F2ABAA72F66D4895CDC /* AutomationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BCC6AFC9A525914AF8266B /* AutomationService.swift */; };
 		4FA19EA76B8565CF26CE48DE /* ModernColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5E2688C27041778D4B6A27 /* ModernColors.swift */; };
 		5212DC3A2D5795A6818692C8 /* EnergyMonitoringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F840E06F1DD16DC95CED8 /* EnergyMonitoringService.swift */; };
 		5247B2F7034D5E4601CB5AA2 /* PresenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1CB5067313FCA45A67F06 /* PresenceService.swift */; };
-		526E9B252CCF51D1E66FFDEC /* AIBackendManager+Generation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F04A709A08D91680B68FB7 /* AIBackendManager+Generation.swift */; };
 		536B20A7FE2F6C23108519F5 /* HomekitControl_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CCDC5704BA0248F36793EE /* HomekitControl_macOS.swift */; };
 		54052F74A307D6D1E81A1E2D /* NetworkDiscoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0926DC14D338FC4C21DFAA /* NetworkDiscoveryService.swift */; };
 		559B5618CF8CC635E6D34CE9 /* MaintenanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8023E9BD0549810A1545CAE1 /* MaintenanceService.swift */; };
 		566629DCF59E283659DF1430 /* AuditLogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303C051D299864DBE735AE96 /* AuditLogService.swift */; };
+		568504DA9D077CB76ED7F318 /* EnergyModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E20CDC479EE9CC911157D69 /* EnergyModelTests.swift */; };
+		57A695170A17CA2E8F2C5B78 /* APIIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDC9AFDA90E8A07E426C2A4 /* APIIntegrationTests.swift */; };
 		588D807933F96CD7BBD2176B /* macOS_ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6AFC1460856E3CDC684E44 /* macOS_ContentView.swift */; };
 		58B4B65A694F6309A880F058 /* DiscoveredDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60072A353B200FD41A9AED3 /* DiscoveredDevice.swift */; };
+		58C1E06D0B4081116C8BFB85 /* DeviceGroupModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50771ADAFACA2DE9532AF44 /* DeviceGroupModelTests.swift */; };
 		59324F98C20A2DE126D89057 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4368ADAC9C15C579520248AC /* NotificationService.swift */; };
 		5A283133EF496D130C4B260C /* ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8FC35168BA43672142476 /* ExportService.swift */; };
 		5A5D6836908859FACAE558B9 /* WidgetSyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25F69D5E47F52E85D5AC292 /* WidgetSyncService.swift */; };
 		5AD9BF874D86EA2CA996D6F4 /* iOS_FirmwareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5702F9ABCD5592D6798BA4 /* iOS_FirmwareView.swift */; };
 		5B8CFD0EA16F2EF9E7DA4F75 /* SceneSuggestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913034B61692B2B727D589DB /* SceneSuggestionService.swift */; };
+		5C63B94029D21246193105E2 /* NovaAPIServerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914407DA28B2A57C55763095 /* NovaAPIServerTests.swift */; };
 		5D496CFA03BB53D525FA11FF /* iOS_HealthDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202E556002A2CBFA0F1BECF6 /* iOS_HealthDashboardView.swift */; };
 		5DAC16FC106780988D4AFABD /* CircularGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF0F1979F3881CAE2977BD /* CircularGauge.swift */; };
 		5ED5B0299915D24C3358ED95 /* Manufacturer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4503841297ADFFFAED238E4F /* Manufacturer.swift */; };
 		60875551205AE493B56F8F2E /* DeviceGroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D8E10F9D0C1C160C27ADE /* DeviceGroupService.swift */; };
+		6091DFD223D99DCDB14D7DD7 /* SceneExecutionFlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3226CE8406EB57FE4A57EAFA /* SceneExecutionFlowTests.swift */; };
 		62884AAE1565C9250D1FF266 /* tvOS_GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07801F76E8ABB450BA955D24 /* tvOS_GroupsView.swift */; };
+		630AE53CAEEB9BEB513FE035 /* SecurityModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DAC8BAED278927297DBAFB /* SecurityModelTests.swift */; };
 		632F756BBB4587E4AEA6EDE1 /* iOS_BackupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56A74475BF36414EAC4AA182 /* iOS_BackupView.swift */; };
+		63EDE5B53C3EA996E434DF25 /* EnumCodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA6856098D3F478353BF56A /* EnumCodableTests.swift */; };
 		644678C3B361C83932C434A7 /* DeviceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55145EDC6807EEEE7EEF2BBA /* DeviceProtocol.swift */; };
 		6515458E028E691B454E11C1 /* SceneAnalyzerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DF7982DF96652C50A2049 /* SceneAnalyzerService.swift */; };
 		65FB6B897053508878504CB5 /* DiscoveredDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60072A353B200FD41A9AED3 /* DiscoveredDevice.swift */; };
@@ -97,10 +112,11 @@
 		6B0ADBFD926F38B9AE351B86 /* tvOS_ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62B5272BB4F5A51878F6C08 /* tvOS_ContentView.swift */; };
 		6BE4AA85469E1E4237027F36 /* ClimateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297BC6223A5C0E380D3C7A4 /* ClimateService.swift */; };
 		6DCF58FB2FF06A12F6BF139F /* iOS_AdaptiveLightingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FAF906E2D7AA678FC894F4 /* iOS_AdaptiveLightingView.swift */; };
-		6E662CE8EC84D33ABC040FED /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286FFA143BADE2FD65D97CB7 /* AIService.swift */; };
 		6E77DA49BB89AF3031960D15 /* HomekitControl_tvOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01813897B6CE969CBE3AF7AC /* HomekitControl_tvOS.swift */; };
 		6FACD1CCC88B3BD7816F54ED /* ModernColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5E2688C27041778D4B6A27 /* ModernColors.swift */; };
 		7029AF70EF654C951837998D /* NetworkTopologyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FCA8E7D86A10A93D805AD2 /* NetworkTopologyService.swift */; };
+		742BAFB6F1E5218551F34DD4 /* UnifiedDeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097F517F291A669DDBFC474 /* UnifiedDeviceTests.swift */; };
+		7555763EF55914D5845454FE /* SetupCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18383D8A85B5D96027B593ED /* SetupCodeTests.swift */; };
 		77CEFCD67DC0EF02CB9325B3 /* VoiceControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA276E4C456B631BFE743B /* VoiceControlService.swift */; };
 		79126B45E126E4CF1AB6CB47 /* UnifiedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DC03345637CB8E210A52F /* UnifiedScene.swift */; };
 		7990B2BDCDE106EE0D6B7BC6 /* IntegrationHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1B70CDE3650B309C92C574 /* IntegrationHubService.swift */; };
@@ -108,6 +124,8 @@
 		7B91D69C9C9624516C930707 /* iOS_NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45385B00F20B6518556DA69B /* iOS_NotificationsView.swift */; };
 		7ECC2BA9C71505104A4D73FF /* SecurityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56E9A3D070E38E8D245F060 /* SecurityService.swift */; };
 		80887A700E11A0BCB42F46D9 /* DeviceGroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D8E10F9D0C1C160C27ADE /* DeviceGroupService.swift */; };
+		815AA0F003935A5550BC6798 /* HomeAIAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BAE5D77CFFC5BFC57CCE2E /* HomeAIAssistant.swift */; };
+		815E5DC1BDCF68767BCAE00C /* HomeAIAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BAE5D77CFFC5BFC57CCE2E /* HomeAIAssistant.swift */; };
 		85D969312E28349413C294C0 /* iOS_IntegrationHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F59ECA8CD23685AFF2EB1E10 /* iOS_IntegrationHubView.swift */; };
 		8636DB0955BE0A25F2F5A1A2 /* NetworkTopologyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FCA8E7D86A10A93D805AD2 /* NetworkTopologyService.swift */; };
 		89013E3C5FEE06619996D877 /* iOS_EnergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999807F3EB46D25D506EE85A /* iOS_EnergyView.swift */; };
@@ -124,22 +142,30 @@
 		9955F3E87745EA54798111D4 /* VoiceControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA276E4C456B631BFE743B /* VoiceControlService.swift */; };
 		9BC9E9CD30A50DB4FBB94E40 /* ModernColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5E2688C27041778D4B6A27 /* ModernColors.swift */; };
 		9BE48AAF110E040C36BE63CD /* UnifiedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1DC03345637CB8E210A52F /* UnifiedScene.swift */; };
+		9D52DC7EF3913A076AD4FC16 /* NovaAIKit in Frameworks */ = {isa = PBXBuildFile; productRef = 74F5D725930CDE2C376582F8 /* NovaAIKit */; };
 		9E18481C33A9BEDB02634794 /* DeviceCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE664AB0BE0E305B651B4CE /* DeviceCategory.swift */; };
 		9E40C1B49ED4FDE2391B104C /* AdaptiveLightingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E9CF7F8019B9E8EF355FEB /* AdaptiveLightingService.swift */; };
+		9EA364508BAAC5FD52DFC1AC /* AdaptiveLightingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F17854FEA45F1315FA81DE8 /* AdaptiveLightingTests.swift */; };
 		A01B253FFA9BCE1C37CF3B2D /* NetworkDiscoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0926DC14D338FC4C21DFAA /* NetworkDiscoveryService.swift */; };
 		A03562D8033566D68C3B4F3F /* EnergyMonitoringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F840E06F1DD16DC95CED8 /* EnergyMonitoringService.swift */; };
 		A13061108CB49A890F936883 /* ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8FC35168BA43672142476 /* ExportService.swift */; };
+		A15C77F44184334E1AB00A52 /* SceneSchedulingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21ABC96B9E6E253FB9DB3BA1 /* SceneSchedulingTests.swift */; };
 		A2374A0D08C1CF2F66D8E1C9 /* WebSocketDeviceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C1064A39411A25120CA6EB /* WebSocketDeviceAPI.swift */; };
 		A4A5275784D31FD1D823CD61 /* iOS_DeviceComparisonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC76D470F6ADD279735C28F /* iOS_DeviceComparisonView.swift */; };
 		A535274DEC855C55B79BE61B /* DeviceGroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D19D8E10F9D0C1C160C27ADE /* DeviceGroupService.swift */; };
 		A6423A78B1BE6FCEA16C6BA4 /* DeviceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55145EDC6807EEEE7EEF2BBA /* DeviceProtocol.swift */; };
+		A67D11554ECF52B2B931449E /* GuestAccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260D66A0802820DD8D4F9DB8 /* GuestAccessTests.swift */; };
 		A7E3CBAA1347468BBCA69357 /* VoiceControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA276E4C456B631BFE743B /* VoiceControlService.swift */; };
 		AD6C6ADA1C5692A299FEFCBC /* NetworkPerformanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCA75115AEA7FFCBF1C981 /* NetworkPerformanceService.swift */; };
+		ADADC9930BE004A51DC34AB2 /* AIChatViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BC3ABF65931D53FFA8AE68 /* AIChatViews.swift */; };
 		AE13F8C646150DB06C48C0EF /* CircularGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FF0F1979F3881CAE2977BD /* CircularGauge.swift */; };
 		AED55D48AF8B18C4C188522D /* GlassmorphicBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA25866EC0428B78E7EDE89 /* GlassmorphicBackground.swift */; };
 		B0F9EBB782768717985F2709 /* FirmwareTrackerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A3D4F709DD5ADB106FA5D6 /* FirmwareTrackerService.swift */; };
 		B30AB1C864F19196DE4030F2 /* SetupCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF615C48CE28711A7F4055F /* SetupCode.swift */; };
 		B3DDC00896071C29F3019091 /* PlatformCapabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1BA78F6FC9CFE0F529BC0 /* PlatformCapabilities.swift */; };
+		B40CB44F4F9A87FB55103AB2 /* AppAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09969378D5F4C0DB26F51BF0 /* AppAI.swift */; };
+		B4229B13B80EE100A80F1A0A /* NotificationModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034EA7604AB9AD0C45F5F7A1 /* NotificationModelTests.swift */; };
+		B48B5C8423582473FA4E379C /* DiscoveredDeviceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E9AB493DF391AC04D1566 /* DiscoveredDeviceTests.swift */; };
 		B4CCFD37DA1EA9062A669BE6 /* GlassmorphicBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA25866EC0428B78E7EDE89 /* GlassmorphicBackground.swift */; };
 		B4FB1D81F5CD9558788E0AE9 /* DeviceHealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF79BEC3849F722BEE477BC /* DeviceHealthService.swift */; };
 		B5F96CF7C393EBA1EC3816E5 /* FirmwareTrackerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A3D4F709DD5ADB106FA5D6 /* FirmwareTrackerService.swift */; };
@@ -147,22 +173,25 @@
 		B655E28A643E6450D02B9416 /* NetworkDiscoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0926DC14D338FC4C21DFAA /* NetworkDiscoveryService.swift */; };
 		B93B99DC920EF29A29EF42ED /* FloorPlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A8C6F7DD51B730C72C02F /* FloorPlanService.swift */; };
 		B9ABC5362459ACD97D21FFFA /* iOS_NetworkPerformanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E5646E658ECF422415A5F1 /* iOS_NetworkPerformanceView.swift */; };
+		BA59C34A1E83F32A7477ACF8 /* ClimateServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D65B4EC16E0108354DF2B79 /* ClimateServiceTests.swift */; };
 		BAF427C7E0B7386333B48EA9 /* UsageReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506056D37347E9333FCFE80 /* UsageReportService.swift */; };
+		BC50CDFD829A8C568093FE75 /* AppAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09969378D5F4C0DB26F51BF0 /* AppAI.swift */; };
+		BD3B71A969E5C99091DC9238 /* AIKitAdoptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7CE99CE66647A31F49EC22 /* AIKitAdoptionTests.swift */; };
 		BDC60FBCB5A9DC11F54A6CCE /* UsageReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0506056D37347E9333FCFE80 /* UsageReportService.swift */; };
 		BDCAB8F1F4C2C4C7004BF92C /* CodeVaultService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6486CB8485D8FAABA6496B1 /* CodeVaultService.swift */; };
 		BE0905726E621865392D83E4 /* AutomationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BCC6AFC9A525914AF8266B /* AutomationService.swift */; };
 		BEE488C4F5142BD86CD4784F /* SceneSchedulingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1949EE7DC5F7F2E1C3860F0 /* SceneSchedulingService.swift */; };
 		C2C566991516AE945CB5975F /* UnifiedDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E249E44D5A998074E51A7EE /* UnifiedDevice.swift */; };
+		C30E956DFF3338A9816D3C22 /* WidgetDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBD6D3593A16FC873EC9082 /* WidgetDataTests.swift */; };
 		C314F3DB37B5C8D88E7A84DB /* iOS_ClimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CFA2E78A62CE861E5C4565F /* iOS_ClimateView.swift */; };
 		C74C1679C19EA0CF50B4F03A /* WebSocketDeviceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C1064A39411A25120CA6EB /* WebSocketDeviceAPI.swift */; };
 		C8D33F38CC280468AB4633DF /* ClimateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3297BC6223A5C0E380D3C7A4 /* ClimateService.swift */; };
 		C9030E38D2AF8F676230C2AD /* NetworkPerformanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCA75115AEA7FFCBF1C981 /* NetworkPerformanceService.swift */; };
-		CA0C1090BD7D5AF241A6BF99 /* AIBackendManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D873747D9843303218B5E1 /* AIBackendManager.swift */; };
 		CA661C9AF114C8728032C1AB /* iOS_NetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA430F62847D14861DC769C7 /* iOS_NetworkView.swift */; };
-		CB73702F81FD792D180F3623 /* AIBackendManager+Enhanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38054C0E88F2AE04D56D933F /* AIBackendManager+Enhanced.swift */; };
 		CB846EC3C43490743E7C8F8C /* ExportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA8FC35168BA43672142476 /* ExportService.swift */; };
 		CCA692DDEA927F70D4017E61 /* NetworkTopologyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FCA8E7D86A10A93D805AD2 /* NetworkTopologyService.swift */; };
 		CD7AD53DFC96FD4C002B9B1B /* iOS_MaintenanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4264B1C54B70F78E1CC21C0 /* iOS_MaintenanceView.swift */; };
+		D01DE6D5F28784ED01006234 /* DeviceHealthRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099CBAC4D22213A8A975FBCE /* DeviceHealthRecordTests.swift */; };
 		D0D6A94F8A340627F9F696A2 /* HomeKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615441A8A3D06D6AF29CA30 /* HomeKitService.swift */; };
 		D3C8E3C7128A5D0D354DF6CA /* FloorPlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A8C6F7DD51B730C72C02F /* FloorPlanService.swift */; };
 		D497CB9E3BE8435602ED9489 /* tvOS_RemoteControlWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03713333908ABFAAF08F6D12 /* tvOS_RemoteControlWidget.swift */; };
@@ -173,9 +202,12 @@
 		DB3B538D57EEB89667AD4D8C /* DeviceHealthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF79BEC3849F722BEE477BC /* DeviceHealthService.swift */; };
 		DBC2AB171BBFA1D4F3265906 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4368ADAC9C15C579520248AC /* NotificationService.swift */; };
 		E06A2EDAA4FBEC0634ED9ADC /* PlatformCapabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F1BA78F6FC9CFE0F529BC0 /* PlatformCapabilities.swift */; };
+		E1A269C74C195C88DEA378A7 /* AIChatViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BC3ABF65931D53FFA8AE68 /* AIChatViews.swift */; };
 		E47E56EB31C6955476B33337 /* NetworkPerformanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DCA75115AEA7FFCBF1C981 /* NetworkPerformanceService.swift */; };
 		E624EA2C364D40E9A61AB2C1 /* FloorPlanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A8C6F7DD51B730C72C02F /* FloorPlanService.swift */; };
 		E6B93A77842ABFB64F21CBFB /* SceneSuggestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913034B61692B2B727D589DB /* SceneSuggestionService.swift */; };
+		E6CE44CBD16A6E8E8531F67A /* ExportServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E9446B359DF07AB63EDC3F /* ExportServiceTests.swift */; };
+		E7B3CB21735334C5409BB0FA /* HomeAIAssistant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BAE5D77CFFC5BFC57CCE2E /* HomeAIAssistant.swift */; };
 		E7E4C4D1EBE8DB9C3ADDF381 /* iOS_SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B1AC50C5A96EB35BAA4BF7 /* iOS_SettingsView.swift */; };
 		EAA34E8C88F59860005708A6 /* iOS_GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5479E7732BD18D19896BD868 /* iOS_GroupsView.swift */; };
 		EB20B3C369029774EA303001 /* AdaptiveLightingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E9CF7F8019B9E8EF355FEB /* AdaptiveLightingService.swift */; };
@@ -199,46 +231,71 @@
 		FC2004E864A2F0824EC55614 /* SceneAnalyzerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031DF7982DF96652C50A2049 /* SceneAnalyzerService.swift */; };
 		FC8052D5833850537C9A139B /* EncryptedCloudKitSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62C23C6D05195473AF9012D /* EncryptedCloudKitSync.swift */; };
 		FDD42E923BB55AA798C19A4D /* HomeKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615441A8A3D06D6AF29CA30 /* HomeKitService.swift */; };
-		FE977A6CEF9C2F1B5B0EE5FB /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286FFA143BADE2FD65D97CB7 /* AIService.swift */; };
 		FEAA44075150415F053765B2 /* NovaAPIServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171E5BCA1DB3976C292A122 /* NovaAPIServer.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		03464455C7C087489EA77408 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3EC9AB1FA4B433778CB4416A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2CE95FFC0100A32CDEFEECF1;
+			remoteInfo = "HomekitControl-macOS";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		0097F517F291A669DDBFC474 /* UnifiedDeviceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifiedDeviceTests.swift; sourceTree = "<group>"; };
 		01813897B6CE969CBE3AF7AC /* HomekitControl_tvOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomekitControl_tvOS.swift; sourceTree = "<group>"; };
 		01DE23DBB69058A92DAC75DE /* iOS_ScenesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ScenesView.swift; sourceTree = "<group>"; };
 		031DF7982DF96652C50A2049 /* SceneAnalyzerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneAnalyzerService.swift; sourceTree = "<group>"; };
+		034EA7604AB9AD0C45F5F7A1 /* NotificationModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModelTests.swift; sourceTree = "<group>"; };
 		03713333908ABFAAF08F6D12 /* tvOS_RemoteControlWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOS_RemoteControlWidget.swift; sourceTree = "<group>"; };
 		04FF0F1979F3881CAE2977BD /* CircularGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularGauge.swift; sourceTree = "<group>"; };
 		0506056D37347E9333FCFE80 /* UsageReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageReportService.swift; sourceTree = "<group>"; };
 		07801F76E8ABB450BA955D24 /* tvOS_GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOS_GroupsView.swift; sourceTree = "<group>"; };
+		09969378D5F4C0DB26F51BF0 /* AppAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAI.swift; sourceTree = "<group>"; };
+		099CBAC4D22213A8A975FBCE /* DeviceHealthRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHealthRecordTests.swift; sourceTree = "<group>"; };
 		0D0781E8FA3B7B1B370E7D43 /* iOS_SuggestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_SuggestionsView.swift; sourceTree = "<group>"; };
+		0F892DA366FDCE9DB4712D4E /* DeviceCategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCategoryTests.swift; sourceTree = "<group>"; };
 		1171E5BCA1DB3976C292A122 /* NovaAPIServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaAPIServer.swift; sourceTree = "<group>"; };
 		120A1A76A46D8BEBE813A0AB /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		18383D8A85B5D96027B593ED /* SetupCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCodeTests.swift; sourceTree = "<group>"; };
 		185A8C6F7DD51B730C72C02F /* FloorPlanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloorPlanService.swift; sourceTree = "<group>"; };
+		1A3E9AB493DF391AC04D1566 /* DiscoveredDeviceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveredDeviceTests.swift; sourceTree = "<group>"; };
 		1CFA2E78A62CE861E5C4565F /* iOS_ClimateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ClimateView.swift; sourceTree = "<group>"; };
+		1D65B4EC16E0108354DF2B79 /* ClimateServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateServiceTests.swift; sourceTree = "<group>"; };
 		202E556002A2CBFA0F1BECF6 /* iOS_HealthDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_HealthDashboardView.swift; sourceTree = "<group>"; };
-		286FFA143BADE2FD65D97CB7 /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
+		21ABC96B9E6E253FB9DB3BA1 /* SceneSchedulingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneSchedulingTests.swift; sourceTree = "<group>"; };
+		24BAE5D77CFFC5BFC57CCE2E /* HomeAIAssistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAIAssistant.swift; sourceTree = "<group>"; };
+		260D66A0802820DD8D4F9DB8 /* GuestAccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestAccessTests.swift; sourceTree = "<group>"; };
+		28DAC8BAED278927297DBAFB /* SecurityModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityModelTests.swift; sourceTree = "<group>"; };
 		303C051D299864DBE735AE96 /* AuditLogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditLogService.swift; sourceTree = "<group>"; };
 		30E9CF7F8019B9E8EF355FEB /* AdaptiveLightingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveLightingService.swift; sourceTree = "<group>"; };
+		31BC3ABF65931D53FFA8AE68 /* AIChatViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatViews.swift; sourceTree = "<group>"; };
+		3226CE8406EB57FE4A57EAFA /* SceneExecutionFlowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneExecutionFlowTests.swift; sourceTree = "<group>"; };
 		3297BC6223A5C0E380D3C7A4 /* ClimateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateService.swift; sourceTree = "<group>"; };
-		38054C0E88F2AE04D56D933F /* AIBackendManager+Enhanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AIBackendManager+Enhanced.swift"; sourceTree = "<group>"; };
+		34F7B29C381AE12F04844F65 /* SecurityAuditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityAuditTests.swift; sourceTree = "<group>"; };
 		3BA887658AF38BC68B60B57B /* iOS_DevicesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_DevicesView.swift; sourceTree = "<group>"; };
+		3E20CDC479EE9CC911157D69 /* EnergyModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnergyModelTests.swift; sourceTree = "<group>"; };
 		3FF615C48CE28711A7F4055F /* SetupCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupCode.swift; sourceTree = "<group>"; };
+		403253A39BD8AA6D5E4CE07D /* AutomationModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationModelTests.swift; sourceTree = "<group>"; };
 		4220E69452AB7679CB28645F /* iOS_UsageReportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_UsageReportsView.swift; sourceTree = "<group>"; };
 		42FAF906E2D7AA678FC894F4 /* iOS_AdaptiveLightingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_AdaptiveLightingView.swift; sourceTree = "<group>"; };
 		4368ADAC9C15C579520248AC /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		43BCC6AFC9A525914AF8266B /* AutomationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomationService.swift; sourceTree = "<group>"; };
 		4503841297ADFFFAED238E4F /* Manufacturer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manufacturer.swift; sourceTree = "<group>"; };
 		45385B00F20B6518556DA69B /* iOS_NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_NotificationsView.swift; sourceTree = "<group>"; };
+		459D2D3648284B6D604D8F2E /* UnifiedSceneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifiedSceneTests.swift; sourceTree = "<group>"; };
 		4615441A8A3D06D6AF29CA30 /* HomeKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeKitService.swift; sourceTree = "<group>"; };
 		482B9BC1026401D680DF7052 /* tvOS_HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOS_HealthView.swift; sourceTree = "<group>"; };
 		494C6D93B314DE6725B16D9E /* iOS_AIAssistantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_AIAssistantView.swift; sourceTree = "<group>"; };
 		4F118A270A52A7BFE4725262 /* DeviceComparisonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceComparisonService.swift; sourceTree = "<group>"; };
 		5479E7732BD18D19896BD868 /* iOS_GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_GroupsView.swift; sourceTree = "<group>"; };
 		55145EDC6807EEEE7EEF2BBA /* DeviceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceProtocol.swift; sourceTree = "<group>"; };
+		55A27EBFA9DDA082E57E9D7F /* HomekitControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomekitControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56A74475BF36414EAC4AA182 /* iOS_BackupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_BackupView.swift; sourceTree = "<group>"; };
 		58CCDC5704BA0248F36793EE /* HomekitControl_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomekitControl_macOS.swift; sourceTree = "<group>"; };
-		59D873747D9843303218B5E1 /* AIBackendManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIBackendManager.swift; sourceTree = "<group>"; };
 		5CA25866EC0428B78E7EDE89 /* GlassmorphicBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassmorphicBackground.swift; sourceTree = "<group>"; };
 		5E249E44D5A998074E51A7EE /* UnifiedDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnifiedDevice.swift; sourceTree = "<group>"; };
 		5FE743BECA9965A84EBB8523 /* iOS_ShortcutsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ShortcutsView.swift; sourceTree = "<group>"; };
@@ -248,19 +305,25 @@
 		6B5702F9ABCD5592D6798BA4 /* iOS_FirmwareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_FirmwareView.swift; sourceTree = "<group>"; };
 		6BE12ABFDF5025381EBCDE57 /* HealthStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStatus.swift; sourceTree = "<group>"; };
 		6F77D8117C87903A7969BEDC /* iOS_SecurityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_SecurityView.swift; sourceTree = "<group>"; };
+		6FBD6D3593A16FC873EC9082 /* WidgetDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetDataTests.swift; sourceTree = "<group>"; };
 		71B1CB5067313FCA45A67F06 /* PresenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresenceService.swift; sourceTree = "<group>"; };
 		71EA276E4C456B631BFE743B /* VoiceControlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControlService.swift; sourceTree = "<group>"; };
+		71EB15C5E89E0F98B470A694 /* ManufacturerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerTests.swift; sourceTree = "<group>"; };
+		75E9446B359DF07AB63EDC3F /* ExportServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportServiceTests.swift; sourceTree = "<group>"; };
 		7F0926DC14D338FC4C21DFAA /* NetworkDiscoveryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDiscoveryService.swift; sourceTree = "<group>"; };
+		7F17854FEA45F1315FA81DE8 /* AdaptiveLightingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveLightingTests.swift; sourceTree = "<group>"; };
 		7FF79BEC3849F722BEE477BC /* DeviceHealthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHealthService.swift; sourceTree = "<group>"; };
 		8023E9BD0549810A1545CAE1 /* MaintenanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaintenanceService.swift; sourceTree = "<group>"; };
+		8CDC9AFDA90E8A07E426C2A4 /* APIIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIIntegrationTests.swift; sourceTree = "<group>"; };
 		913034B61692B2B727D589DB /* SceneSuggestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneSuggestionService.swift; sourceTree = "<group>"; };
+		914407DA28B2A57C55763095 /* NovaAPIServerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovaAPIServerTests.swift; sourceTree = "<group>"; };
 		9655AB57076108976C3CEFF8 /* SiriShortcutsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriShortcutsService.swift; sourceTree = "<group>"; };
 		999807F3EB46D25D506EE85A /* iOS_EnergyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_EnergyView.swift; sourceTree = "<group>"; };
 		9E6EC104C9F28665C70B8514 /* tvOS_EnergyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOS_EnergyView.swift; sourceTree = "<group>"; };
-		A0127F70FBEA3D79CC1CB705 /* AIBackendStatusMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIBackendStatusMenu.swift; sourceTree = "<group>"; };
 		A4264B1C54B70F78E1CC21C0 /* iOS_MaintenanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_MaintenanceView.swift; sourceTree = "<group>"; };
 		A62C23C6D05195473AF9012D /* EncryptedCloudKitSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptedCloudKitSync.swift; sourceTree = "<group>"; };
 		A7DFC5E3FF020A31274FED41 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AEA6856098D3F478353BF56A /* EnumCodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumCodableTests.swift; sourceTree = "<group>"; };
 		AF5AA038592F039C4E1661E9 /* HomekitControl_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomekitControl_iOS.swift; sourceTree = "<group>"; };
 		B2948FA33D30BDEDF6930BCB /* BackupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupService.swift; sourceTree = "<group>"; };
 		B2C1064A39411A25120CA6EB /* WebSocketDeviceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketDeviceAPI.swift; sourceTree = "<group>"; };
@@ -269,13 +332,14 @@
 		BAA8FC35168BA43672142476 /* ExportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportService.swift; sourceTree = "<group>"; };
 		BC5E2688C27041778D4B6A27 /* ModernColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernColors.swift; sourceTree = "<group>"; };
 		C097788E85717340DC476FFB /* HomekitControl-iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "HomekitControl-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0F04A709A08D91680B68FB7 /* AIBackendManager+Generation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AIBackendManager+Generation.swift"; sourceTree = "<group>"; };
 		C3DCA75115AEA7FFCBF1C981 /* NetworkPerformanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPerformanceService.swift; sourceTree = "<group>"; };
 		C67DE1799EF449E190FAFA7C /* MultiHomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiHomeService.swift; sourceTree = "<group>"; };
 		C6A3D4F709DD5ADB106FA5D6 /* FirmwareTrackerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirmwareTrackerService.swift; sourceTree = "<group>"; };
+		CE7CE99CE66647A31F49EC22 /* AIKitAdoptionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIKitAdoptionTests.swift; sourceTree = "<group>"; };
 		CEDF0C454C02679AC64CD0EE /* iOS_ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ScheduleView.swift; sourceTree = "<group>"; };
 		CFC76D470F6ADD279735C28F /* iOS_DeviceComparisonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_DeviceComparisonView.swift; sourceTree = "<group>"; };
 		D19D8E10F9D0C1C160C27ADE /* DeviceGroupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceGroupService.swift; sourceTree = "<group>"; };
+		D1AABB76FE554DEB5D32A394 /* SceneAnalyzerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneAnalyzerTests.swift; sourceTree = "<group>"; };
 		D25F69D5E47F52E85D5AC292 /* WidgetSyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetSyncService.swift; sourceTree = "<group>"; };
 		D3F8C562DC0A20A8970D5718 /* iOS_AutomationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_AutomationView.swift; sourceTree = "<group>"; };
 		D5F1BA78F6FC9CFE0F529BC0 /* PlatformCapabilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformCapabilities.swift; sourceTree = "<group>"; };
@@ -286,7 +350,9 @@
 		DCE664AB0BE0E305B651B4CE /* DeviceCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCategory.swift; sourceTree = "<group>"; };
 		DE05C876C992F86A203C41A5 /* iOS_GuestModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_GuestModeView.swift; sourceTree = "<group>"; };
 		E1949EE7DC5F7F2E1C3860F0 /* SceneSchedulingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneSchedulingService.swift; sourceTree = "<group>"; };
+		E50771ADAFACA2DE9532AF44 /* DeviceGroupModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceGroupModelTests.swift; sourceTree = "<group>"; };
 		E56E9A3D070E38E8D245F060 /* SecurityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityService.swift; sourceTree = "<group>"; };
+		E63A2367D4F008ECC8579926 /* BackupModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupModelTests.swift; sourceTree = "<group>"; };
 		E6486CB8485D8FAABA6496B1 /* CodeVaultService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeVaultService.swift; sourceTree = "<group>"; };
 		E99D7C21375178ECAF13DD27 /* HomekitControl-tvOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "HomekitControl-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E5646E658ECF422415A5F1 /* iOS_NetworkPerformanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_NetworkPerformanceView.swift; sourceTree = "<group>"; };
@@ -303,6 +369,33 @@
 		FC7E4745455C7D12ED97CF28 /* tvOS_AutomationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOS_AutomationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFrameworksBuildPhase section */
+		0156C28B69A4E3AB70C78FB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D52DC7EF3913A076AD4FC16 /* NovaAIKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73D77C05A863EBFAA4EE1A31 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				253E2DB8D02F363C8247B308 /* NovaAIKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDAB334E6FE020B7562BE23C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E3E9E2FE45EF5D34D5BC7E2 /* NovaAIKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
 /* Begin PBXGroup section */
 		0378505DE7212EF578EBC981 /* iOS */ = {
 			isa = PBXGroup;
@@ -311,6 +404,16 @@
 				A496722472DE6D987999A7AB /* Views */,
 			);
 			path = iOS;
+			sourceTree = "<group>";
+		};
+		03E5D8579E02251D951B5309 /* AI */ = {
+			isa = PBXGroup;
+			children = (
+				31BC3ABF65931D53FFA8AE68 /* AIChatViews.swift */,
+				09969378D5F4C0DB26F51BF0 /* AppAI.swift */,
+				24BAE5D77CFFC5BFC57CCE2E /* HomeAIAssistant.swift */,
+			);
+			path = AI;
 			sourceTree = "<group>";
 		};
 		0677F885E27AAA7C4BB747AE /* Enums */ = {
@@ -327,10 +430,6 @@
 		1270A5FA2CC52CFFE7A8A06E /* macOS */ = {
 			isa = PBXGroup;
 			children = (
-				59D873747D9843303218B5E1 /* AIBackendManager.swift */,
-				38054C0E88F2AE04D56D933F /* AIBackendManager+Enhanced.swift */,
-				C0F04A709A08D91680B68FB7 /* AIBackendManager+Generation.swift */,
-				A0127F70FBEA3D79CC1CB705 /* AIBackendStatusMenu.swift */,
 				58CCDC5704BA0248F36793EE /* HomekitControl_macOS.swift */,
 				F95F4A8C5810D09284CFB196 /* Views */,
 			);
@@ -343,6 +442,7 @@
 				C097788E85717340DC476FFB /* HomekitControl-iOS.app */,
 				FBE5D348536A52EE8A1C6131 /* HomekitControl-macOS.app */,
 				E99D7C21375178ECAF13DD27 /* HomekitControl-tvOS.app */,
+				55A27EBFA9DDA082E57E9D7F /* HomekitControlTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -351,7 +451,6 @@
 			isa = PBXGroup;
 			children = (
 				30E9CF7F8019B9E8EF355FEB /* AdaptiveLightingService.swift */,
-				286FFA143BADE2FD65D97CB7 /* AIService.swift */,
 				303C051D299864DBE735AE96 /* AuditLogService.swift */,
 				43BCC6AFC9A525914AF8266B /* AutomationService.swift */,
 				B2948FA33D30BDEDF6930BCB /* BackupService.swift */,
@@ -393,12 +492,47 @@
 		586F39430DA15B1062C328B1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				03E5D8579E02251D951B5309 /* AI */,
 				B69D85474EDE088C43C15C7F /* Design */,
 				67411DAACA0EF3457B1F702C /* Models */,
 				33AC8CEBA81B5A16EC3C4055 /* Services */,
 				C139C5570CB903CBAE6B6582 /* Utilities */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		65DF9F3F00E175D11C7E3A2E /* HomekitControlTests */ = {
+			isa = PBXGroup;
+			children = (
+				7F17854FEA45F1315FA81DE8 /* AdaptiveLightingTests.swift */,
+				CE7CE99CE66647A31F49EC22 /* AIKitAdoptionTests.swift */,
+				8CDC9AFDA90E8A07E426C2A4 /* APIIntegrationTests.swift */,
+				403253A39BD8AA6D5E4CE07D /* AutomationModelTests.swift */,
+				E63A2367D4F008ECC8579926 /* BackupModelTests.swift */,
+				1D65B4EC16E0108354DF2B79 /* ClimateServiceTests.swift */,
+				0F892DA366FDCE9DB4712D4E /* DeviceCategoryTests.swift */,
+				E50771ADAFACA2DE9532AF44 /* DeviceGroupModelTests.swift */,
+				099CBAC4D22213A8A975FBCE /* DeviceHealthRecordTests.swift */,
+				1A3E9AB493DF391AC04D1566 /* DiscoveredDeviceTests.swift */,
+				3E20CDC479EE9CC911157D69 /* EnergyModelTests.swift */,
+				AEA6856098D3F478353BF56A /* EnumCodableTests.swift */,
+				75E9446B359DF07AB63EDC3F /* ExportServiceTests.swift */,
+				260D66A0802820DD8D4F9DB8 /* GuestAccessTests.swift */,
+				71EB15C5E89E0F98B470A694 /* ManufacturerTests.swift */,
+				034EA7604AB9AD0C45F5F7A1 /* NotificationModelTests.swift */,
+				914407DA28B2A57C55763095 /* NovaAPIServerTests.swift */,
+				D1AABB76FE554DEB5D32A394 /* SceneAnalyzerTests.swift */,
+				3226CE8406EB57FE4A57EAFA /* SceneExecutionFlowTests.swift */,
+				21ABC96B9E6E253FB9DB3BA1 /* SceneSchedulingTests.swift */,
+				34F7B29C381AE12F04844F65 /* SecurityAuditTests.swift */,
+				28DAC8BAED278927297DBAFB /* SecurityModelTests.swift */,
+				18383D8A85B5D96027B593ED /* SetupCodeTests.swift */,
+				0097F517F291A669DDBFC474 /* UnifiedDeviceTests.swift */,
+				459D2D3648284B6D604D8F2E /* UnifiedSceneTests.swift */,
+				6FBD6D3593A16FC873EC9082 /* WidgetDataTests.swift */,
+			);
+			name = HomekitControlTests;
+			path = Tests/HomekitControlTests;
 			sourceTree = "<group>";
 		};
 		67411DAACA0EF3457B1F702C /* Models */ = {
@@ -471,6 +605,7 @@
 		BA5D1A4683B6DB6DACE1EF8A = {
 			isa = PBXGroup;
 			children = (
+				65DF9F3F00E175D11C7E3A2E /* HomekitControlTests */,
 				0378505DE7212EF578EBC981 /* iOS */,
 				1270A5FA2CC52CFFE7A8A06E /* macOS */,
 				6FF7D83FBAB27F959A08B2D8 /* Resources */,
@@ -528,6 +663,7 @@
 			buildPhases = (
 				3000F5FAB7B7C83A4D8ECAB0 /* Sources */,
 				CF2D0040A4224E931678E379 /* Resources */,
+				CDAB334E6FE020B7562BE23C /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -535,6 +671,7 @@
 			);
 			name = "HomekitControl-macOS";
 			packageProductDependencies = (
+				C42DF6B6834956784FC21437 /* NovaAIKit */,
 			);
 			productName = "HomekitControl-macOS";
 			productReference = FBE5D348536A52EE8A1C6131 /* HomekitControl-macOS.app */;
@@ -546,6 +683,7 @@
 			buildPhases = (
 				70AEB4AEB589D83950CA7109 /* Sources */,
 				5605B341D2862839DCEFCA3F /* Resources */,
+				0156C28B69A4E3AB70C78FB0 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -553,6 +691,7 @@
 			);
 			name = "HomekitControl-tvOS";
 			packageProductDependencies = (
+				74F5D725930CDE2C376582F8 /* NovaAIKit */,
 			);
 			productName = "HomekitControl-tvOS";
 			productReference = E99D7C21375178ECAF13DD27 /* HomekitControl-tvOS.app */;
@@ -564,6 +703,7 @@
 			buildPhases = (
 				B8A525DDB91512783A1474A6 /* Sources */,
 				F22B53FE7BDA7737F3F62DE4 /* Resources */,
+				73D77C05A863EBFAA4EE1A31 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -571,10 +711,30 @@
 			);
 			name = "HomekitControl-iOS";
 			packageProductDependencies = (
+				C240E69BB2F792F3286A3665 /* NovaAIKit */,
 			);
 			productName = "HomekitControl-iOS";
 			productReference = C097788E85717340DC476FFB /* HomekitControl-iOS.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A119DE7CACD92B61E86DEE68 /* HomekitControlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 099BF0499955B5B915302140 /* Build configuration list for PBXNativeTarget "HomekitControlTests" */;
+			buildPhases = (
+				E01436C46675DBA001B44DDB /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87B36E54C0F44C9AF54EB099 /* PBXTargetDependency */,
+				FB0A743298F93999CB90D32A /* PBXTargetDependency */,
+			);
+			name = HomekitControlTests;
+			packageProductDependencies = (
+			);
+			productName = HomekitControlTests;
+			productReference = 55A27EBFA9DDA082E57E9D7F /* HomekitControlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -597,6 +757,10 @@
 						DevelopmentTeam = QRRCB8HB3W;
 						ProvisioningStyle = Automatic;
 					};
+					A119DE7CACD92B61E86DEE68 = {
+						DevelopmentTeam = QRRCB8HB3W;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 04ECBBFB83389A732645D7D3 /* Build configuration list for PBXProject "HomekitControl" */;
@@ -608,14 +772,18 @@
 			);
 			mainGroup = BA5D1A4683B6DB6DACE1EF8A;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1E07CFFBF4888AF1500C8995 /* XCRemoteSwiftPackageReference "NovaAIKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 29B69017FAFD8B5C245AC7A6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				722708BC69014078F1964884 /* HomekitControl-iOS */,
-				2CE95FFC0100A32CDEFEECF1 /* HomekitControl-macOS */,
 				422FBF8167444668044072BA /* HomekitControl-tvOS */,
+				2CE95FFC0100A32CDEFEECF1 /* HomekitControl-macOS */,
+				A119DE7CACD92B61E86DEE68 /* HomekitControlTests */,
 			);
 		};
 /* End PBXProject section */
@@ -652,12 +820,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB73702F81FD792D180F3623 /* AIBackendManager+Enhanced.swift in Sources */,
-				526E9B252CCF51D1E66FFDEC /* AIBackendManager+Generation.swift in Sources */,
-				CA0C1090BD7D5AF241A6BF99 /* AIBackendManager.swift in Sources */,
-				46CB3BB533E0C34EDD5552C3 /* AIBackendStatusMenu.swift in Sources */,
-				6E662CE8EC84D33ABC040FED /* AIService.swift in Sources */,
+				2DB863B60EE396E806540A4D /* AIChatViews.swift in Sources */,
 				149F291C4F2DE0B19EF7AA8C /* AdaptiveLightingService.swift in Sources */,
+				422C8C30E510D693E99372D6 /* AppAI.swift in Sources */,
 				566629DCF59E283659DF1430 /* AuditLogService.swift in Sources */,
 				0C0F2A681381053753303F44 /* AutomationService.swift in Sources */,
 				F4AA4F8FD67104C149D706E2 /* BackupService.swift in Sources */,
@@ -679,6 +844,7 @@
 				D5C563BC42BEF23A6DC20985 /* GlassmorphicBackground.swift in Sources */,
 				FAEABB467AD2DFBF2F59694C /* GuestModeService.swift in Sources */,
 				3A5588C7492AFD71939C9B43 /* HealthStatus.swift in Sources */,
+				815E5DC1BDCF68767BCAE00C /* HomeAIAssistant.swift in Sources */,
 				D0D6A94F8A340627F9F696A2 /* HomeKitService.swift in Sources */,
 				536B20A7FE2F6C23108519F5 /* HomekitControl_macOS.swift in Sources */,
 				7990B2BDCDE106EE0D6B7BC6 /* IntegrationHubService.swift in Sources */,
@@ -714,8 +880,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20EC25C8B7736BCC825257EF /* AIService.swift in Sources */,
+				E1A269C74C195C88DEA378A7 /* AIChatViews.swift in Sources */,
 				EB20B3C369029774EA303001 /* AdaptiveLightingService.swift in Sources */,
+				BC50CDFD829A8C568093FE75 /* AppAI.swift in Sources */,
 				7B7A0E30A2FE452E2475E650 /* AuditLogService.swift in Sources */,
 				4C788F2ABAA72F66D4895CDC /* AutomationService.swift in Sources */,
 				2F92B725D2E95A9288F30131 /* BackupService.swift in Sources */,
@@ -737,6 +904,7 @@
 				B4CCFD37DA1EA9062A669BE6 /* GlassmorphicBackground.swift in Sources */,
 				157974542807B5D8BE468390 /* GuestModeService.swift in Sources */,
 				33F86C3B3DC901FF8E5C3FF2 /* HealthStatus.swift in Sources */,
+				E7B3CB21735334C5409BB0FA /* HomeAIAssistant.swift in Sources */,
 				FDD42E923BB55AA798C19A4D /* HomeKitService.swift in Sources */,
 				6E77DA49BB89AF3031960D15 /* HomekitControl_tvOS.swift in Sources */,
 				1433F11BCE5B7E772CEFAB1F /* IntegrationHubService.swift in Sources */,
@@ -778,8 +946,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE977A6CEF9C2F1B5B0EE5FB /* AIService.swift in Sources */,
+				ADADC9930BE004A51DC34AB2 /* AIChatViews.swift in Sources */,
 				9E40C1B49ED4FDE2391B104C /* AdaptiveLightingService.swift in Sources */,
+				B40CB44F4F9A87FB55103AB2 /* AppAI.swift in Sources */,
 				ECD663E47C9C2DEC0408D383 /* AuditLogService.swift in Sources */,
 				BE0905726E621865392D83E4 /* AutomationService.swift in Sources */,
 				4985D963939E0203FEBD9F7E /* BackupService.swift in Sources */,
@@ -801,6 +970,7 @@
 				AED55D48AF8B18C4C188522D /* GlassmorphicBackground.swift in Sources */,
 				F2A5ECA3C6920806D6F49039 /* GuestModeService.swift in Sources */,
 				2AB9688CA8CC4555D9277F4C /* HealthStatus.swift in Sources */,
+				815AA0F003935A5550BC6798 /* HomeAIAssistant.swift in Sources */,
 				F6D2BDBE761E58BDA331E1A1 /* HomeKitService.swift in Sources */,
 				11AB6A410E6916CE33DD7C3F /* HomekitControl_iOS.swift in Sources */,
 				15A79C2987BDAE1F6F4CCAA9 /* IntegrationHubService.swift in Sources */,
@@ -860,7 +1030,52 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E01436C46675DBA001B44DDB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD3B71A969E5C99091DC9238 /* AIKitAdoptionTests.swift in Sources */,
+				57A695170A17CA2E8F2C5B78 /* APIIntegrationTests.swift in Sources */,
+				9EA364508BAAC5FD52DFC1AC /* AdaptiveLightingTests.swift in Sources */,
+				44E3A30A3B826EB669526DD9 /* AutomationModelTests.swift in Sources */,
+				18635C4BAFA6F15DD9EB1160 /* BackupModelTests.swift in Sources */,
+				BA59C34A1E83F32A7477ACF8 /* ClimateServiceTests.swift in Sources */,
+				1C191A4E53A81B8388BD0FC0 /* DeviceCategoryTests.swift in Sources */,
+				58C1E06D0B4081116C8BFB85 /* DeviceGroupModelTests.swift in Sources */,
+				D01DE6D5F28784ED01006234 /* DeviceHealthRecordTests.swift in Sources */,
+				B48B5C8423582473FA4E379C /* DiscoveredDeviceTests.swift in Sources */,
+				568504DA9D077CB76ED7F318 /* EnergyModelTests.swift in Sources */,
+				63EDE5B53C3EA996E434DF25 /* EnumCodableTests.swift in Sources */,
+				E6CE44CBD16A6E8E8531F67A /* ExportServiceTests.swift in Sources */,
+				A67D11554ECF52B2B931449E /* GuestAccessTests.swift in Sources */,
+				0E4A88D2D3307CE2D6950599 /* ManufacturerTests.swift in Sources */,
+				B4229B13B80EE100A80F1A0A /* NotificationModelTests.swift in Sources */,
+				5C63B94029D21246193105E2 /* NovaAPIServerTests.swift in Sources */,
+				49C10C53DCD100F4A3A0EFB4 /* SceneAnalyzerTests.swift in Sources */,
+				6091DFD223D99DCDB14D7DD7 /* SceneExecutionFlowTests.swift in Sources */,
+				A15C77F44184334E1AB00A52 /* SceneSchedulingTests.swift in Sources */,
+				382691091C47A054CB9A64FF /* SecurityAuditTests.swift in Sources */,
+				630AE53CAEEB9BEB513FE035 /* SecurityModelTests.swift in Sources */,
+				7555763EF55914D5845454FE /* SetupCodeTests.swift in Sources */,
+				742BAFB6F1E5218551F34DD4 /* UnifiedDeviceTests.swift in Sources */,
+				18FDCAFD89E960DC406E9999 /* UnifiedSceneTests.swift in Sources */,
+				C30E956DFF3338A9816D3C22 /* WidgetDataTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		87B36E54C0F44C9AF54EB099 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2CE95FFC0100A32CDEFEECF1 /* HomekitControl-macOS */;
+			targetProxy = 03464455C7C087489EA77408 /* PBXContainerItemProxy */;
+		};
+		FB0A743298F93999CB90D32A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = "TEMP_35E2C2D0-1B7C-4AF4-82AA-EAFB0C776A10" /* NovaAIKit */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D1149E539180D529ED5246E /* Debug */ = {
@@ -881,6 +1096,24 @@
 				SDKROOT = macosx;
 			};
 			name = Debug;
+		};
+		25685A5D196EC3D01887DB27 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jordankoch.HomekitControlTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomekitControl.app/Contents/MacOS/HomekitControl";
+			};
+			name = Release;
 		};
 		429DF75CEF42AF4A9ED3A963 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -940,6 +1173,24 @@
 			};
 			name = Release;
 		};
+		8681A06A3847011C2BA85E5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jordankoch.HomekitControlTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HomekitControl.app/Contents/MacOS/HomekitControl";
+			};
+			name = Debug;
+		};
 		8893F0CCD11DAAF8DA3E618D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -998,6 +1249,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = QRRCB8HB3W;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1019,6 +1271,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.4.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1065,6 +1318,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = QRRCB8HB3W;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1080,6 +1334,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.4.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1144,6 +1399,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		099BF0499955B5B915302140 /* Build configuration list for PBXNativeTarget "HomekitControlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8681A06A3847011C2BA85E5A /* Debug */,
+				25685A5D196EC3D01887DB27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		0C87AEA61979F933731ACFAF /* Build configuration list for PBXNativeTarget "HomekitControl-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1172,6 +1436,40 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1E07CFFBF4888AF1500C8995 /* XCRemoteSwiftPackageReference "NovaAIKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kochj23/NovaAIKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		74F5D725930CDE2C376582F8 /* NovaAIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E07CFFBF4888AF1500C8995 /* XCRemoteSwiftPackageReference "NovaAIKit" */;
+			productName = NovaAIKit;
+		};
+		C240E69BB2F792F3286A3665 /* NovaAIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E07CFFBF4888AF1500C8995 /* XCRemoteSwiftPackageReference "NovaAIKit" */;
+			productName = NovaAIKit;
+		};
+		C42DF6B6834956784FC21437 /* NovaAIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E07CFFBF4888AF1500C8995 /* XCRemoteSwiftPackageReference "NovaAIKit" */;
+			productName = NovaAIKit;
+		};
+		"TEMP_35E2C2D0-1B7C-4AF4-82AA-EAFB0C776A10" /* NovaAIKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E07CFFBF4888AF1500C8995 /* XCRemoteSwiftPackageReference "NovaAIKit" */;
+			productName = NovaAIKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3EC9AB1FA4B433778CB4416A /* Project object */;
 }

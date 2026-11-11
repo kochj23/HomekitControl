@@ -161,8 +161,8 @@ class NetworkTopologyService: ObservableObject {
         var accessoryToBridge: [UUID: UUID] = [:]
 
         for accessory in accessories {
-            let isBridge = accessory.services.contains(where: { $0.serviceType == HMServiceTypeBridge }) ||
-                           accessory.isBlocked == false && accessory.services.count > 3
+            let isBridge = accessory.category.categoryType == HMAccessoryCategoryTypeBridge ||
+                           (accessory.isBlocked == false && accessory.services.count > 3)
 
             if isBridge {
                 let latency = await measureRealLatency(for: accessory)

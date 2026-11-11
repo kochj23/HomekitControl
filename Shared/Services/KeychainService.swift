@@ -123,9 +123,8 @@ final class KeychainService {
 // MARK: - Keychain Keys
 
 extension KeychainService {
+    /// Non-AI secrets. AI keys live in NovaAIKit's Keychain items (com.jkoch.homekitcontrol.<backend>).
     enum Keys {
-        static let openAIKey = "HomekitControl_OpenAI_APIKey"
-        static let claudeKey = "HomekitControl_Claude_APIKey"
         static let novaAPIToken = "HomekitControl_Nova_APIToken"
         static let cloudKitSyncToken = "HomekitControl_CloudKit_SyncToken"
         static let auditLogSigningKey = "HomekitControl_AuditLog_SigningKey"

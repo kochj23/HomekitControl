@@ -214,7 +214,7 @@ class NetworkPerformanceService: ObservableObject {
     /// Measure latency via TCP connection establishment timing to a HomeKit accessory's HAP port
     private func measureTCPLatency(for accessory: HMAccessory) -> Double {
         let semaphore = DispatchSemaphore(value: 0)
-        var latency: Double = Double.infinity
+        let latency = LatencyBox()
 
         // HomeKit accessories typically listen on port 80 or their HAP port
         // Use the accessory name for mDNS-style resolution
@@ -232,7 +232,7 @@ class NetworkPerformanceService: ObservableObject {
             switch state {
             case .ready:
                 let endTime = CFAbsoluteTimeGetCurrent()
-                latency = (endTime - startTime) * 1000.0
+                latency.set((endTime - startTime) * 1000.0)
                 connection.cancel()
                 semaphore.signal()
             case .failed, .cancelled:
@@ -250,7 +250,7 @@ class NetworkPerformanceService: ObservableObject {
             return 3000.0
         }
 
-        return latency
+        return latency.value
     }
     #endif
 
@@ -459,4 +459,12 @@ class NetworkPerformanceService: ObservableObject {
             latencyHistory = saved
         }
     }
+}
+
+/// Thread-safe holder for a latency measured in a connection callback.
+private final class LatencyBox: @unchecked Sendable {
+    private let lock = NSLock()
+    private var measured = Double.infinity
+    var value: Double { lock.lock(); defer { lock.unlock() }; return measured }
+    func set(_ v: Double) { lock.lock(); measured = v; lock.unlock() }
 }

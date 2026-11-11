@@ -360,7 +360,7 @@ struct AddGuestSheet: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Create") {
-                        var guest = guestService.createGuest(
+                        let guest = guestService.createGuest(
                             name: name.isEmpty ? "Guest" : name,
                             expiresIn: expiresIn.interval
                         )

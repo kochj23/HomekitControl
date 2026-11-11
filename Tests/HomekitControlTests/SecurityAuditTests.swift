@@ -253,6 +253,12 @@ final class SecurityAuditTests: XCTestCase {
     // MARK: - Helpers
 
     private func findProjectRoot() -> URL? {
+        // This file lives at <root>/Tests/HomekitControlTests/.
+        let fromSource = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent().deletingLastPathComponent()
+        if FileManager.default.fileExists(atPath: fromSource.appendingPathComponent("Shared").path) {
+            return fromSource
+        }
+
         // Walk up from the test bundle to find the project root
         let bundle = Bundle(for: type(of: self))
         var url = bundle.bundleURL

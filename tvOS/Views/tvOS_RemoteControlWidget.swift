@@ -8,6 +8,7 @@
 //
 
 import SwiftUI
+import Combine
 #if canImport(HomeKit)
 import HomeKit
 #endif

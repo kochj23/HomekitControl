@@ -251,7 +251,7 @@ class EncryptedCloudKitSync: ObservableObject {
         ckRecord["deviceId"] = record.deviceId as NSString
 
         do {
-            try await database.save(ckRecord)
+            _ = try await database.save(ckRecord)
         } catch let error as CKError where error.code == .serverRecordChanged {
             // Conflict — handle with last-write-wins or prompt user
             try await handleConflict(record: record, serverRecord: error.userInfo[CKRecordChangedErrorServerRecordKey] as? CKRecord)
@@ -377,7 +377,7 @@ class EncryptedCloudKitSync: ObservableObject {
             serverRecord?["deviceId"] = record.deviceId as NSString
 
             if let updatedRecord = serverRecord {
-                try await database.save(updatedRecord)
+                _ = try await database.save(updatedRecord)
             }
         }
     }
